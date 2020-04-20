@@ -3336,7 +3336,7 @@ DISPNAME 0 Arial,8,N</a:FontList>
 <a:Code>Odobravanjeleka</a:Code>
 <a:CreationDate>1587396424</a:CreationDate>
 <a:Creator>Aleksa</a:Creator>
-<a:ModificationDate>1587396425</a:ModificationDate>
+<a:ModificationDate>1587398637</a:ModificationDate>
 <a:Modifier>Aleksa</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
 \viewkind4\uc1\pard\f0\fs20 1.Lekar proverava ime i sastav leka\par
@@ -3354,8 +3354,10 @@ DISPNAME 0 Arial,8,N</a:FontList>
 \viewkind4\uc1\pard\f0\fs20 1. Upravnik je uneo novi lek\par
 }
 </a:PreCondition>
-<a:PostCondition>{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
-\viewkind4\uc1\pard\f0\fs20 1. Lek je uspesno dodat\par
+<a:PostCondition>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\f0\fs20 Lek je uspesno dodat\par
+NEUSPESNO: Lek nije dodat\par
 }
 </a:PostCondition>
 </o:UseCase>
