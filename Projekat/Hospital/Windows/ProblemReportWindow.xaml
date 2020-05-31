@@ -1,0 +1,16 @@
+﻿<Window x:Class="Hospital.Windows.ProblemReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.Windows"
+        mc:Ignorable="d"
+        Title="Problem_report" Height="656.883" Width="865.455">
+    <Grid>
+        <Label x:Name="label" Content="Problem report" Margin="295,88,0,0" VerticalAlignment="Top" Height="134" Width="361" FontSize="40" HorizontalAlignment="Left"/>
+        <TextBox x:Name="username" HorizontalAlignment="Left" Height="126" Margin="270,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.478,0.4"/>
+        <Label x:Name="label1_Copy" Content="Describe the problem you would like to report" HorizontalAlignment="Left" Margin="270,240,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="login_Copy1" Content="Send report" HorizontalAlignment="Left" Height="48" Margin="376,424,0,0" VerticalAlignment="Top" Width="127" Click="login_Copy1_Click"/>
+
+    </Grid>
+</Window>
