@@ -1,0 +1,9 @@
+﻿Dextrose;
+Potassium chloride;
+Sodium Chloride;
+Sodium bicarbonate;
+Vitamin B6 (Pyridoxine);
+Caffeine citrate;
+Ibuprofen;
+Indometacin (Indomethacin);
+Allopurinol
