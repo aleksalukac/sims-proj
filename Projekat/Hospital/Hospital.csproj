@@ -35,8 +35,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.2.0.0\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2.0.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2.0.0\lib\net45\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="Syncfusion.Licensing, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.1.0.56\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.WPF, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfChart.WPF.18.1.0.56\lib\net46\Syncfusion.SfChart.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,14 +79,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Crypt.cs" />
     <Compile Include="Model\DoctorView.cs" />
     <Compile Include="Model\DrugView.cs" />
+    <Compile Include="Model\ViewChart.cs" />
     <Compile Include="Model\EmployeeView.cs" />
     <Compile Include="Model\ManagerView.cs" />
     <Compile Include="Model\RandomData.cs" />
     <Compile Include="Model\RenovationView.cs" />
+    <Compile Include="Model\ResourceView.cs" />
+    <Compile Include="Model\ResourceViewChart.cs" />
     <Compile Include="Model\RoomType.cs" />
     <Compile Include="Model\RoomView.cs" />
+    <Compile Include="Model\SupplyView.cs" />
+    <Compile Include="Model\ViewModelDrug.cs" />
+    <Compile Include="Model\ViewModelResource.cs" />
     <Compile Include="Model\Zaposlen.cs" />
     <Compile Include="Pages\AddDoctor.xaml.cs">
       <DependentUpon>AddDoctor.xaml</DependentUpon>
@@ -73,23 +104,51 @@
     <Compile Include="Pages\AddDrug.xaml.cs">
       <DependentUpon>AddDrug.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddResourcePage.xaml.cs">
+      <DependentUpon>AddResourcePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DefaultPage.xaml.cs">
       <DependentUpon>DefaultPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DoctorProfilePage.xaml.cs">
       <DependentUpon>DoctorProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DrugChartPage.xaml.cs">
+      <DependentUpon>DrugChartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DrugPage.xaml.cs">
       <DependentUpon>DrugPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DrugProfilePage.xaml.cs">
+      <DependentUpon>DrugProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InputBox.cs" />
     <Compile Include="Pages\ProstorijePage.xaml.cs">
       <DependentUpon>ProstorijePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RenoviranjePage.xaml.cs">
       <DependentUpon>RenoviranjePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ReportPage.xaml.cs">
+      <DependentUpon>ReportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ReportsPage.xaml.cs">
       <DependentUpon>ReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourceChartPage.xaml.cs">
+      <DependentUpon>ResourceChartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourcePage.xaml.cs">
+      <DependentUpon>ResourcePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResourceProfilePage.xaml.cs">
+      <DependentUpon>ResourceProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SecretaryProfilePage.xaml.cs">
+      <DependentUpon>SecretaryProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SupplyProfilePage.xaml.cs">
+      <DependentUpon>SupplyProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserAccount.xaml.cs">
       <DependentUpon>UserAccount.xaml</DependentUpon>
@@ -102,6 +161,9 @@
     </Compile>
     <Compile Include="Windows\AlertWindow.xaml.cs">
       <DependentUpon>AlertWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ChartWindow.xaml.cs">
+      <DependentUpon>ChartWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\DoctorProfile.xaml.cs">
       <DependentUpon>DoctorProfile.xaml</DependentUpon>
@@ -142,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddResourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DefaultPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,7 +216,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DrugChartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DrugPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DrugProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,7 +236,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourceChartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourcePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResourceProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SecretaryProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SupplyProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,6 +277,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AlertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChartWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +323,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -240,6 +343,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\RandomDrugNames.txt" />
+    <Resource Include="Data\SupplyNames.txt" />
+    <Resource Include="Data\ResourceNames.txt" />
+    <Resource Include="Data\UserData.txt" />
     <Resource Include="Pages\profilePic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,7 +24,11 @@ namespace Hospital.Pages
         public DefaultPage()
         {
             InitializeComponent();
-            profileFrame.Navigate(new UserAccount());
+            var page1 = new ProstorijePage();
+            var page2 = new DrugPage();
+            var page3 = new ResourcePage();
+            var page4 = new ZaposleniPage();
+            //profileFrame.Navigate(new UserAccount());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -60,6 +64,17 @@ namespace Hospital.Pages
         {
             var nextWindow = new ProblemReportWindow();
             nextWindow.Show();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new UserAccount());
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            var nextPage = new ResourcePage();
+            frame.Navigate(nextPage);
         }
     }
 }

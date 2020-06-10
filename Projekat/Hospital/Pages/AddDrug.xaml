@@ -5,26 +5,24 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hospital.Pages"
       mc:Ignorable="d" 
+      FontSize="20"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddDrug">
 
     <Grid>
-        <Button x:Name="button_Copy" Content="Sacuvaj izmene" HorizontalAlignment="Left" Margin="17,244,0,0" VerticalAlignment="Top" Width="96" Click="button_Copy_Click"/>
-        <TextBox x:Name="imeTextBox" HorizontalAlignment="Left" Height="23" Margin="17,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="prezimeTextBox" HorizontalAlignment="Left" Height="23" Margin="17,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="specijalizacijaTextBox" HorizontalAlignment="Left" Height="23" Margin="17,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button_Copy" Content="Sacuvaj&#xD;&#xA;izmene" HorizontalAlignment="Left" Margin="255,53,0,0" VerticalAlignment="Top" Width="93" Click="button_Copy_Click" Height="65"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="31" Margin="17,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Height="29" Margin="17,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label" Content="Naziv leka" HorizontalAlignment="Left" Margin="17,14,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Kolicina" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Alternativa" HorizontalAlignment="Left" Margin="17,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="17,199,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="45,199,0,0" VerticalAlignment="Top"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="165,125,0,0" SelectionChanged="listView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Label x:Name="label_Copy1" Content="Svi lekovi" HorizontalAlignment="Left" Margin="15,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>
+        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="171,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="200,40,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" IsReadOnly="True"  HorizontalAlignment="Left" Height="281" CanUserDeleteRows="True" VerticalAlignment="Top" Width="245" Margin="15,162,0,0" SelectionChanged="dataGrid_SelectionChanged"/>
+        <Button x:Name="addDoctor" Content="=&gt;" HorizontalAlignment="Left" Height="42" Margin="275,248,0,0" VerticalAlignment="Top" Width="35" Click="addDrug_Click"/>
+        <DataGrid x:Name="dataGridAlternativeDrug" IsReadOnly="True" HorizontalAlignment="Left" Height="281" CanUserDeleteRows="True" VerticalAlignment="Top" Width="250" Margin="325,162,0,0" SelectionChanged="dataGrid_SelectionChanged"/>
+        <Button x:Name="addDoctor_Copy" Content="X" HorizontalAlignment="Left" Height="39" Margin="275,304,0,0" VerticalAlignment="Top" Width="35" Click="deleteDrug"/>
+        <Label x:Name="label_Copy2" Content="Alternativni lekovi" HorizontalAlignment="Left" Margin="325,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>
 
     </Grid>
 </Page>

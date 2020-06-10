@@ -19,6 +19,26 @@ namespace Hospital.Model
             return room;
         }
 
+        public static ResourceView GetRandomResource()
+        {
+            using (var reader = new StreamReader(@"../../Data/ResourceNames.txt"))
+            {
+                List<string> listName = new List<string>();
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+
+                    listName.Add(values[0]);
+                }
+
+                ResourceView resource = new ResourceView();
+                resource.Type = listName[rnd.Next() % listName.Count];
+                resource.RoomId = 1;
+                return resource;
+            }
+        }
+
         public static string GetRandomSpecialization()
         {
             using (var reader = new StreamReader(@"../../Data/RandomSpecialization.txt"))
@@ -36,6 +56,28 @@ namespace Hospital.Model
                 }
 
                 return specs[rnd.Next() % specs.Count];
+            }
+        }
+
+        static int supplyCount = 0;
+
+        internal static SupplyView GetRandomSupply()
+        {
+            using (var reader = new StreamReader(@"../../Data/SupplyNames.txt"))
+            {
+                List<string> listName = new List<string>();
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+
+                    listName.Add(values[0]);
+                }
+
+                SupplyView supply = new SupplyView();
+                supply.Count = rnd.Next() % 50;
+                supply.Type = listName[supplyCount++];
+                return supply;
             }
         }
 

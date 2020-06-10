@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +27,16 @@ namespace Hospital.Windows
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (emailTextbox.Text.ToUpper().Equals(ManagerView.getInstance().Email.ToUpper()))
+            {
+                ManagerView.resetPassword();
+            }
+            this.Close();
         }
     }
 }

@@ -5,11 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hospital.Pages"
       mc:Ignorable="d" 
+      
+      FontSize="20"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RenoviranjePage">
 
     <Grid>
-        <Calendar x:Name="calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,99,0,0">
+        <Calendar x:Name="calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,99,0,0" Height="156" Width="194">
             <Calendar.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE4EAF0" Offset="0"/>

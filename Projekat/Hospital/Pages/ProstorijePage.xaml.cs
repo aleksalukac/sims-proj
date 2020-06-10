@@ -22,25 +22,25 @@ namespace Hospital.Pages
     /// </summary>
     public partial class ProstorijePage : Page
     {
-        public static ObservableCollection<RoomView> ListaSoba = new ObservableCollection<RoomView>();
+        public static ObservableCollection<RoomView> RoomList = new ObservableCollection<RoomView>();
 
         public ProstorijePage()
         {
             InitializeComponent();
             this.DataContext = this;
             
-            if(ListaSoba.Count == 0)
+            if(RoomList.Count == 0)
             {
                 for (var i = 0; i < 10; i++)
-                    ListaSoba.Add(RandomData.GetRandomRoom());
+                    RoomList.Add(RandomData.GetRandomRoom());
             }
 
-            dataGrid.ItemsSource = ListaSoba;
+            dataGrid.ItemsSource = RoomList;
         }
 
         internal static void SetRenovation(uint id, DateTime selectedDate)
         {
-            foreach (var room in ProstorijePage.ListaSoba)
+            foreach (var room in ProstorijePage.RoomList)
             {
                 if (room.Id == id)
                 {
@@ -57,6 +57,11 @@ namespace Hospital.Pages
 
             var OpenPage = new RenoviranjePage((Model.RoomView)data.SelectedValue);
             frame.Navigate(OpenPage);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new ReportPage());
         }
     }
 }

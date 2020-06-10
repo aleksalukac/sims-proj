@@ -5,20 +5,30 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hospital.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="300"
-      Title="UserAccount">
+      
+      FontSize="20"
+      d:DesignHeight="450"
+      Title="UserAccount" Width="1080">
 
-    <Grid Margin="0,0,435,0">
-        <Image x:Name="profilePicture" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="130" Margin="100,40,-230,0" Source="profilePic.png"/>
-        <Label x:Name="nameLabel2" Content="Name:" HorizontalAlignment="Left" Margin="15,165,-115,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="nameLabel" Content="" HorizontalAlignment="Left" Margin="85,165,-260,0" VerticalAlignment="Top" Width="175"/>
-        <Label x:Name="surnameLabel2" Content="Surname:" HorizontalAlignment="Left" Margin="15,196,-115,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="surnameLabel" Content="" HorizontalAlignment="Left" Margin="85,196,-260,0" VerticalAlignment="Top" Width="175"/>
-        <Label x:Name="emailLabel2" Content="Email:" HorizontalAlignment="Left" Margin="15,227,-115,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="emailLabel" Content="" HorizontalAlignment="Left" Margin="85,227,-260,0" VerticalAlignment="Top" Width="175"/>
-        <Label x:Name="idLabel2" Content="Id:" HorizontalAlignment="Left" Margin="15,253,-115,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="85,253,-185,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="idLabel2_Copy" Content="Role:" HorizontalAlignment="Left" Margin="15,279,-115,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="idLabel_Copy" Content="Manager" HorizontalAlignment="Left" Margin="85,279,-185,0" VerticalAlignment="Top" Width="100"/>
+    <Grid>
+        <Image x:Name="profilePicture" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="130" Margin="550,55,-35,0" Source="profilePic.png"/>
+        <Label x:Name="nameLabel2" Content="Ime:" HorizontalAlignment="Left" Margin="435,181,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="nameLabel" Content="" HorizontalAlignment="Left" Margin="615,208,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="surnameLabel2" Content="Prezime:" HorizontalAlignment="Left" Margin="435,211,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="surnameLabel" Content="" HorizontalAlignment="Left" Margin="615,239,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="emailLabel2" Content="Email:" HorizontalAlignment="Left" Margin="435,253,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="emailLabel" Content="" HorizontalAlignment="Left" Margin="615,270,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="idLabel2" Content="Id:" HorizontalAlignment="Left" Margin="435,363,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="570,365,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="idLabel2_Copy" Content="Uloga:" HorizontalAlignment="Left" Margin="435,400,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="idLabel_Copy" Content="Upravnik" HorizontalAlignment="Left" Margin="570,400,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="32" Margin="570,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="surnameTextBox" HorizontalAlignment="Left" Height="29" Margin="570,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="29" Margin="570,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="emailLabel2_Copy" Content="Nova sifra:" HorizontalAlignment="Left" Margin="435,295,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="emailLabel2_Copy1" Content="Potvrdi sifru:" HorizontalAlignment="Left" Margin="435,332,0,0" VerticalAlignment="Top" Width="150" Height="38"/>
+        <Button x:Name="button" Content="Sacuvaj promene" HorizontalAlignment="Left" Height="40" Margin="755,389,0,0" VerticalAlignment="Top" Width="155" Click="button_Click"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="28" Margin="570,299,0,0" VerticalAlignment="Top" Width="175"/>
+        <PasswordBox x:Name="confirmedPasswordBox" HorizontalAlignment="Left" Height="32" Margin="570,333,0,0" VerticalAlignment="Top" Width="175"/>
     </Grid>
 </Page>

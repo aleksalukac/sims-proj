@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
+using System.Collections.ObjectModel;
 
 namespace Hospital.Model
 {
@@ -15,7 +16,9 @@ namespace Hospital.Model
         private bool approved;
         private int count;
 
-        public List<int> approvedByDoctor = new List<int>();
+        public ObservableCollection<int> approvedByDoctor = new ObservableCollection<int>();
+
+        public List<int> alternativeDrug = new List<int>();
 
         private static int idCount = 1;
 
@@ -25,6 +28,11 @@ namespace Hospital.Model
         public int Id { get => id; set => id = value; }
         public int Count { get => count; set => count = value; }
         public bool Approved { get => approved; set => approved = value; }
+
+        public override string ToString()
+        {
+            return Name + " | " + Id.ToString();
+        }
 
         public object Clone()
         {

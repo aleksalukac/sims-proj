@@ -5,12 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hospital.Pages"
       mc:Ignorable="d"
+      
+      FontSize="20"
       Title="ProstorijePage" Width="871.053" Height="615.789">
 
     <Grid>
-        <DataGrid x:Name="dataGrid" MouseDoubleClick="Row_MouseDoubleClick_Prostorije" HorizontalAlignment="Left" Height="229" CanUserDeleteRows="True" VerticalAlignment="Top" Width="301" Margin="75,89,0,0"/>
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" MouseDoubleClick="Row_MouseDoubleClick_Prostorije" HorizontalAlignment="Left" Height="321" CanUserDeleteRows="True" VerticalAlignment="Top" Width="315" Margin="75,89,0,0"/>
         <Label x:Name="label" Content="Prostorije" HorizontalAlignment="Left" Margin="70,43,0,0" VerticalAlignment="Top"/>
         <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="507" Margin="421,61,0,0" VerticalAlignment="Top" Width="440"/>
+        <Button x:Name="button" Content="Izvestaj" HorizontalAlignment="Left" Height="45" Margin="135,440,0,0" VerticalAlignment="Top" Width="190" Click="button_Click"/>
 
     </Grid>
 </Page>

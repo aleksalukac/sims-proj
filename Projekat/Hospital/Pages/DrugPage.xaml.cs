@@ -22,24 +22,26 @@ namespace Hospital.Pages
     /// </summary>
     public partial class DrugPage : Page
     {
-        public static List<DrugView> drugList = new List<DrugView>();
+        public static ObservableCollection<DrugView> DrugList = new ObservableCollection<DrugView>();
+        public static ObservableCollection<DrugView> DrugListUnapproved = new ObservableCollection<DrugView>();
 
         public DrugPage()
         {
             InitializeComponent();
-            if(drugList.Count == 0)
+            if(DrugList.Count == 0)
             {
                 for(var i = 0; i < 10; i++)
                 {
-                    drugList.Add(RandomData.GetRandomDrug());
+                    DrugList.Add(RandomData.GetRandomDrug());
                 }
             }
-            dataGrid.ItemsSource = drugList;
+            dataGrid.ItemsSource = DrugList;
+            dataGridAlternativeDrug.ItemsSource = DrugListUnapproved;
         }
 
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var temp = new ObservableCollection<DrugView>(from x in drugList select (DrugView)x.Clone());
+            var temp = new ObservableCollection<DrugView>(from x in DrugList select (DrugView)x.Clone());
             var filteredList = new ObservableCollection<DrugView>();
 
             foreach (var zaposlen in temp)
@@ -53,8 +55,14 @@ namespace Hospital.Pages
         {
             var data = (DataGrid)sender;
 
-            /*var openPage = new DrugProfilePage((DrugView)data.SelectedValue);
-            Drugframe.Navigate(openPage);*/
+            var openPage = new DrugProfilePage((DrugView)data.SelectedValue);
+            Drugframe.Navigate(openPage);
+        }
+        
+        private void graph_Click(object sender, RoutedEventArgs e)
+        {
+            var openPage = new DrugChartPage();
+            Drugframe.Navigate(openPage);
         }
 
         private void addDrug_Click(object sender, RoutedEventArgs e)

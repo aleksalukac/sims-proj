@@ -55,5 +55,19 @@ namespace Hospital.Pages
         {
 
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            var doctor = ZaposleniPage.DoctorList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
+
+            doctor.Name = imeTextBox.Text;
+            doctor.Surname = prezimeTextBox.Text;
+            doctor.Email = emailTextBox.Text;
+            doctor.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
+            doctor.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
+            doctor.Specialisation = specijalizacijaTextBox.Text;
+
+            NavigationService.Navigate(new Page());
+        }
     }
 }

@@ -15,6 +15,11 @@ namespace Hospital.Model
 
         public DateTime Renovation { get; set; }
 
+        public override string ToString()
+        {
+            return "Soba " + Id.ToString();
+        }
+
         public RoomView()
         {
             Id = idCount++;

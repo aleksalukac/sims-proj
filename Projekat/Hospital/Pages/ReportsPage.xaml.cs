@@ -16,25 +16,13 @@ using System.Windows.Shapes;
 namespace Hospital.Pages
 {
     /// <summary>
-    /// Interaction logic for Reports.xaml
+    /// Interaction logic for ReportsPage.xaml
     /// </summary>
     public partial class ReportsPage : Page
     {
         public ReportsPage()
         {
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

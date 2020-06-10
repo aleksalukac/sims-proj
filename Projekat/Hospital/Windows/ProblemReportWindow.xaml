@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.Windows"
         mc:Ignorable="d"
+        FontSize="25"
         Title="Problem_report" Height="656.883" Width="865.455">
     <Grid>
-        <Label x:Name="label" Content="Problem report" Margin="295,88,0,0" VerticalAlignment="Top" Height="134" Width="361" FontSize="40" HorizontalAlignment="Left"/>
-        <TextBox x:Name="username" HorizontalAlignment="Left" Height="126" Margin="270,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.478,0.4"/>
-        <Label x:Name="label1_Copy" Content="Describe the problem you would like to report" HorizontalAlignment="Left" Margin="270,240,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="login_Copy1" Content="Send report" HorizontalAlignment="Left" Height="48" Margin="376,424,0,0" VerticalAlignment="Top" Width="127" Click="login_Copy1_Click"/>
+        <Label x:Name="label" Content="Prijavite problem" Margin="276,96,0,0" VerticalAlignment="Top" Height="134" Width="361" FontSize="40" HorizontalAlignment="Left"/>
+        <TextBox x:Name="username" HorizontalAlignment="Left" Height="126" Margin="230,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="407" RenderTransformOrigin="0.478,0.4"/>
+        <Label x:Name="label1_Copy" Content="Opišite problem sa kojim ste se sreli" HorizontalAlignment="Left" Margin="230,246,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="login_Copy1" Content="Prijavi" HorizontalAlignment="Left" Height="48" Margin="336,430,0,0" VerticalAlignment="Top" Width="209" Click="login_Copy1_Click"/>
 
     </Grid>
 </Window>

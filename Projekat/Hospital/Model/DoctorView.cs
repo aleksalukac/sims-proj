@@ -15,6 +15,11 @@ namespace Hospital.Model
             return Specialisation.ToUpper().Contains(str) || base.Contains(str);
         }
 
+        public override string ToString()
+        {
+            return Name + " " + Surname + " | " + Id.ToString();
+        }
+
         public DoctorView(bool random = false) : base(random)
         {
             if (random)

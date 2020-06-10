@@ -1,5 +1,6 @@
 ﻿using Hospital.Pages;
 using Hospital.Windows;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,14 +36,30 @@ namespace Hospital
 
         private void login_Copy2_Click(object sender, RoutedEventArgs e)
         {
-            var nextWindow = new ProblemReportWindow();
+            var nextWindow = new ResetPasswordWindow();
             nextWindow.Show();
         }
 
         private void login_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            var nextPage = new DefaultPage();
-            this.Content = nextPage;
+            string password = ManagerView.getInstance().Password;
+            
+
+            if(ManagerView.getInstance().Email.Equals(emailBox.Text) && ManagerView.getInstance().Password.Equals(Crypt.Encrypt(passwordBox.Password)))
+            {
+                var nextPage = new DefaultPage();
+                this.Content = nextPage;
+            }
+            else
+            {
+                MessageBox.Show("Email i sifra nisu prepoznati", "Greska");
+            }
+
+        }
+
+        private void passwordsBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

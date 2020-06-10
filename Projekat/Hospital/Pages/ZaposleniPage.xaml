@@ -4,23 +4,18 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hospital.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Zaposleni">
+      mc:Ignorable="d"
+      
+      FontSize="20"
+      Title="Zaposleni" Width="1130" Height="685">
     <Grid Margin="0,0,0,-223">
-        <DataGrid x:Name="dataGrid" MouseDoubleClick="Row_MouseDoubleClick_Lekari" HorizontalAlignment="Left" Height="230" CanUserDeleteRows="True" VerticalAlignment="Top" Width="391" Margin="27,84,0,0"/>
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" MouseDoubleClick="Row_MouseDoubleClick_Lekari" HorizontalAlignment="Left" Height="381" CanUserDeleteRows="True" VerticalAlignment="Top" Width="407" Margin="27,89,0,0"/>
         <Label x:Name="label" Content="Lekari" HorizontalAlignment="Left" Margin="49,44,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Sekretar" HorizontalAlignment="Left" Margin="49,340,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dataGrid2" MouseDoubleClick="Row_MouseDoubleClick_Sekretari" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="391" Margin="27,394,0,0"/>
-        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="136,48,0,0" TextChanged="searchBox_TextChanged"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="298,50,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged">
-            <ComboBoxItem>Ime</ComboBoxItem>
-            <ComboBoxItem>Prezime</ComboBoxItem>
-            <ComboBoxItem>Specijalizacija</ComboBoxItem>
-            <ComboBoxItem>Id</ComboBoxItem>
-        </ComboBox>
-        <Button x:Name="addDoctor" Content="Dodaj lekara" HorizontalAlignment="Left" Height="22" Margin="280,332,0,0" VerticalAlignment="Top" Width="138" Click="addDoctor_Click"/>
+        <Label x:Name="label_Copy" Content="Sekretar" HorizontalAlignment="Left" Margin="740,44,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid2" IsReadOnly="True" MouseDoubleClick="Row_MouseDoubleClick_Sekretari" HorizontalAlignment="Left" Height="381" VerticalAlignment="Top" Width="391" Margin="718,89,0,0" SelectionChanged="dataGrid2_SelectionChanged"/>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="136,48,0,0" TextChanged="searchBox_TextChanged"/>
+        <Button x:Name="addDoctor" Content="Dodaj lekara" HorizontalAlignment="Left" Height="34" Margin="296,50,0,0" VerticalAlignment="Top" Width="138" Click="addDoctor_Click"/>
         <Frame x:Name="Doctorframe" Content="" HorizontalAlignment="Left" Height="313" Margin="439,89,0,0" VerticalAlignment="Top" Width="332" NavigationUIVisibility="Hidden"/>
-        
+
     </Grid>
 </Page>

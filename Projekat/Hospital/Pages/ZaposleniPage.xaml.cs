@@ -23,19 +23,19 @@ namespace Hospital.Pages
     /// </summary>
     public partial class ZaposleniPage : Page
     {
-        public static ObservableCollection<DoctorView> ListaLekara = new ObservableCollection<DoctorView>();
-        public ObservableCollection<EmployeeView> ListaSekretara = new ObservableCollection<EmployeeView>();
+        public static ObservableCollection<DoctorView> DoctorList = new ObservableCollection<DoctorView>();
+        public static ObservableCollection<EmployeeView> SecretaryList = new ObservableCollection<EmployeeView>();
 
         public ObservableCollection<DoctorView> GetListaLekara()
         {
-            return ListaLekara;
+            return DoctorList;
         }
 
         public static void RemoveDoctor(uint id)
         {
             List<uint> lista = new List<uint>();
             lista.Add(id);
-            ListaLekara.Remove((ListaLekara.Where(x => lista.Contains(x.Id)).First()));
+            DoctorList.Remove((DoctorList.Where(x => lista.Contains(x.Id)).First()));
         }
 
         public void NavigateEmptyPage()
@@ -46,7 +46,7 @@ namespace Hospital.Pages
 
         public static void AddDoctor(DoctorView doctor)
         {
-            ListaLekara.Add(doctor);
+            DoctorList.Add(doctor);
         }
 
         public ZaposleniPage()
@@ -54,23 +54,24 @@ namespace Hospital.Pages
             InitializeComponent();
             this.DataContext = this;
             var name = RandomData.GetRandomName();
-            if(ListaLekara.Count == 0)
+            if(DoctorList.Count == 0)
             {
                 for(int i = 0; i < 10; i++)
                 {
-                    ListaLekara.Add(new DoctorView(random: true));
+                    DoctorList.Add(new DoctorView(random: true));
                 }
 
             }
-            dataGrid.ItemsSource = ListaLekara;
+            dataGrid.ItemsSource = DoctorList;
 
-            if(ListaSekretara.Count == 0)
+            if(SecretaryList.Count == 0)
             {
-                ListaSekretara.Add(new EmployeeView(random: true));
+                SecretaryList.Add(new EmployeeView(random: true));
             }    
-            dataGrid2.ItemsSource = ListaSekretara;
+            dataGrid2.ItemsSource = SecretaryList;
             
         }
+
         private void Row_MouseDoubleClick_Lekari(object sender, MouseButtonEventArgs e)
         {
             var data = (DataGrid)sender;
@@ -81,22 +82,22 @@ namespace Hospital.Pages
 
         private void Row_MouseDoubleClick_Sekretari(object sender, MouseButtonEventArgs e)
         {
-            //var nextWindow = DoctorProfile(ListaSekretara[row.])
+            var data = (DataGrid)sender;
+
+            var openPage = new SecretaryProfilePage((EmployeeView)data.SelectedValue);
+            Doctorframe.Navigate(openPage);
         }
 
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var temp = new ObservableCollection<DoctorView>(from x in ListaLekara select (DoctorView)x.Clone());
+            var temp = new ObservableCollection<DoctorView>(from x in DoctorList select (DoctorView)x.Clone());
             var filteredList = new ObservableCollection<DoctorView>();
 
             foreach(var zaposlen in temp)
             {
-                if(comboBox.SelectedIndex == -1)
-                {
-                    if (zaposlen.Contains(searchBox.Text.ToUpper()))
-                        filteredList.Add(zaposlen);
-                    dataGrid.ItemsSource = filteredList;
-                }
+                if (zaposlen.Contains(searchBox.Text.ToUpper()))
+                    filteredList.Add(zaposlen);
+                dataGrid.ItemsSource = filteredList;
             }
         }
 
@@ -109,6 +110,11 @@ namespace Hospital.Pages
         {
             var openPage = new AddDoctorPage((int)EmployeeView.countId);
             Doctorframe.Navigate(openPage);
+        }
+
+        private void dataGrid2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
