@@ -83,3 +83,5 @@ C:\Users\Aleksa\source\repos\Hospital\Hospital\bin\Debug\itextsharp.dll
 C:\Users\Aleksa\source\repos\Hospital\Hospital\bin\Debug\itextsharp.xml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\ReportPage.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\ReportPage.baml
+C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RoomProfilePage.g.cs
+C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RoomProfilePage.baml

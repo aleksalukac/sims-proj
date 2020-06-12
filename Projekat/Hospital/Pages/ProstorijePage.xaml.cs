@@ -63,5 +63,26 @@ namespace Hospital.Pages
         {
             frame.Navigate(new ReportPage());
         }
+
+        private void renoviranjeClick(object sender, RoutedEventArgs e)
+        {
+            if(dataGrid.SelectedItem != null)
+            {
+                var OpenPage = new RenoviranjePage((Model.RoomView)dataGrid.SelectedItem);
+                frame.Navigate(OpenPage);
+            }
+        }
+
+        private void urediSobu(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new RoomProfilePage((RoomView)dataGrid.SelectedItem));
+        }
+
+        private void dodajSobu(object sender, RoutedEventArgs e)
+        {
+            var newRoom = new RoomView();
+            ProstorijePage.RoomList.Add(newRoom);
+            frame.Navigate(new RoomProfilePage(newRoom));
+        }
     }
 }

@@ -122,7 +122,6 @@
     <Compile Include="Pages\DrugProfilePage.xaml.cs">
       <DependentUpon>DrugProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\InputBox.cs" />
     <Compile Include="Pages\ProstorijePage.xaml.cs">
       <DependentUpon>ProstorijePage.xaml</DependentUpon>
     </Compile>
@@ -143,6 +142,9 @@
     </Compile>
     <Compile Include="Pages\ResourceProfilePage.xaml.cs">
       <DependentUpon>ResourceProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomProfilePage.xaml.cs">
+      <DependentUpon>RoomProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SecretaryProfilePage.xaml.cs">
       <DependentUpon>SecretaryProfilePage.xaml</DependentUpon>
@@ -256,6 +258,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RoomProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SecretaryProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -343,6 +349,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\RandomDrugNames.txt" />
+    <Resource Include="Data\search.png" />
     <Resource Include="Data\SupplyNames.txt" />
     <Resource Include="Data\ResourceNames.txt" />
     <Resource Include="Data\UserData.txt" />

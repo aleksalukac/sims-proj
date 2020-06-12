@@ -39,6 +39,18 @@ namespace Hospital.Pages
             dataGridAlternativeDrug.ItemsSource = DrugListUnapproved;
         }
 
+        private void searchBox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var temp = new ObservableCollection<DrugView>(from x in DrugListUnapproved select (DrugView)x.Clone());
+            var filteredList = new ObservableCollection<DrugView>();
+
+            foreach (var zaposlen in temp)
+            {
+                if (zaposlen.Contains(searchBox2.Text.ToUpper()))
+                    filteredList.Add(zaposlen);
+                dataGridAlternativeDrug.ItemsSource = filteredList;
+            }
+        }
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             var temp = new ObservableCollection<DrugView>(from x in DrugList select (DrugView)x.Clone());
@@ -74,6 +86,24 @@ namespace Hospital.Pages
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void openDrugProfile(object sender, RoutedEventArgs e)
+        {
+            if(dataGrid.SelectedItem != null)
+            {
+                var openPage = new DrugProfilePage((DrugView)dataGrid.SelectedItem);
+                Drugframe.Navigate(openPage);
+            }
+        }
+
+        private void unapprovedOpenDrugProfile(object sender, RoutedEventArgs e)
+        {
+            if(dataGridAlternativeDrug.SelectedItem != null)
+            {
+                var openPage = new DrugProfilePage((DrugView)dataGridAlternativeDrug.SelectedItem);
+                Drugframe.Navigate(openPage);
+            }
         }
     }
 }

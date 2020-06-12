@@ -19,8 +19,8 @@
         <Label x:Name="label1_Copy" Content="Email" HorizontalAlignment="Left" Margin="81,300,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="label1_Copy1" Content="Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="81,386,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Button x:Name="login_Copy1" Content="Login" HorizontalAlignment="Left" Height="48" Margin="81,508,0,0" VerticalAlignment="Top" Width="127" Click="login_Copy1_Click" Grid.Column="1"/>
-        <Button x:Name="login_Copy2" Content="Reset password" HorizontalAlignment="Left" Height="48" Margin="254,508,0,0" VerticalAlignment="Top" Width="172" Grid.Column="1" Click="login_Copy2_Click"/>
+        <Button x:Name="login_Copy2" Content="Reset password" HorizontalAlignment="Left" Height="48" Margin="234,508,0,0" VerticalAlignment="Top" Width="192" Grid.Column="1" Click="login_Copy3_Click"/>
         <Button x:Name="login_Copy3" Content="FAQ" HorizontalAlignment="Left" Height="48" Margin="81,596,0,0" VerticalAlignment="Top" Width="127" Grid.Column="1"/>
-        <Button x:Name="login_Copy4" Content="Prijavi problem" HorizontalAlignment="Left" Height="48" Margin="254,596,0,0" VerticalAlignment="Top" Width="172" Grid.Column="1" Click="login_Copy2_Click"/>
+        <Button x:Name="login_Copy4" Content="Prijavi problem" HorizontalAlignment="Left" Height="48" Margin="234,596,0,0" VerticalAlignment="Top" Width="192" Grid.Column="1" Click="login_Copy2_Click"/>
     </Grid>
 </Window>

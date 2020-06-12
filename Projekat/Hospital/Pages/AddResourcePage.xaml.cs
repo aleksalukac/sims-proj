@@ -27,7 +27,8 @@ namespace Hospital.Pages
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
-
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+            //NavigationService.Navigate(new Page());
         }
 
         private void roomsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

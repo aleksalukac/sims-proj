@@ -10,14 +10,14 @@
       Title="AddDoctorPage">
 
     <Grid>
-        <Button x:Name="button_Copy" Content="Sacuvaj izmene" HorizontalAlignment="Left" Margin="17,244,0,0" VerticalAlignment="Top" Width="163" Click="button_Copy_Click"/>
-        <TextBox x:Name="imeTextBox" HorizontalAlignment="Left" Height="23" Margin="17,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
-        <TextBox x:Name="prezimeTextBox" HorizontalAlignment="Left" Height="23" Margin="17,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
-        <TextBox x:Name="specijalizacijaTextBox" HorizontalAlignment="Left" Height="23" Margin="17,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
-        <Label x:Name="label" Content="Ime" HorizontalAlignment="Left" Margin="17,14,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="17,244,0,0" VerticalAlignment="Top" Width="163" Click="button_Copy_Click"/>
+        <TextBox x:Name="imeTextBox" HorizontalAlignment="Left" Height="28" Margin="17,48,0,0"  VerticalAlignment="Top" Width="228"/>
+        <TextBox x:Name="prezimeTextBox" HorizontalAlignment="Left" Height="32" Margin="17,103,0,0"  VerticalAlignment="Top" Width="228"/>
+        <TextBox x:Name="specijalizacijaTextBox" AcceptsReturn="False" HorizontalAlignment="Left" Height="34" Margin="17,165,0,0"  VerticalAlignment="Top" Width="228"/>
+        <Label x:Name="label" Content="Ime" HorizontalAlignment="Left" Margin="17,9,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Prezime" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="Specijalizacija" HorizontalAlignment="Left" Margin="17,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="17,199,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="17,199,0,0" VerticalAlignment="Top"/>
         <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="45,199,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

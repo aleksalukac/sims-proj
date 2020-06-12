@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -65,6 +66,11 @@ namespace Hospital.Pages
 
                 DrugPage.DrugListUnapproved.Add(drug);
                 var page = new Page();
+
+
+                System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+                //NavigationService.Navigate(new Page());
+
                 NavigationService.Navigate(page);
             }
             else
@@ -113,6 +119,12 @@ namespace Hospital.Pages
             }
 
             dataGridAlternativeDrug.ItemsSource = list;
+        }
+
+        private void quantityTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            quantityTextBox.Text = Regex.Replace(quantityTextBox.Text, @"[^\d]", "");
+
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,10 +42,24 @@ namespace Hospital.Pages
                     break;
                 }
             }
+
+            if(nameTextBox.Text.Length == 0)
+            {
+                ResourcePage.SupplyList.Remove(newSupply);
+                newSupply.Type = nameTextBox.Text;
+                NavigationService.Navigate(new Page());
+            }
+
             newSupply.Type = nameTextBox.Text;
             newSupply.Count = Int32.Parse(countTextBox.Text);
-            var page = new Page();
-            NavigationService.Navigate(page);
+
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+            NavigationService.Navigate(new Page());
+        }
+
+        private void countTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            countTextBox.Text = Regex.Replace(countTextBox.Text, @"[^\d]", "");
         }
     }
 }

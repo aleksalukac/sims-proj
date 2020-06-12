@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -80,6 +81,12 @@ namespace Hospital.Pages
 
             var page = new Page();
             NavigationService.Navigate(page);
+        }
+
+        private void quantityTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            quantityTextBox.Text = Regex.Replace(quantityTextBox.Text, @"[^\d]", "");
+            
         }
     }
 }

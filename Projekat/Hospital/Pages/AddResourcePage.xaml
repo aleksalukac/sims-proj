@@ -11,13 +11,13 @@
       Title="AddResourcePage">
 
     <Grid>
-        <Button x:Name="button_Copy" Content="Sacuvaj izmene" HorizontalAlignment="Left" Margin="18,147,0,0" VerticalAlignment="Top" Width="142" Click="button_Copy_Click"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="28" Margin="16,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
-        <Label x:Name="label" Content="Naziv resursa" HorizontalAlignment="Left" Margin="17,14,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="16,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="45,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Soba" HorizontalAlignment="Left" Margin="18,74,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="roomsComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="85,78,0,0" SelectionChanged="roomsComboBox_SelectionChanged"/>
+        <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="229,123,0,0" VerticalAlignment="Top" Width="142" Click="button_Copy_Click"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="28" Margin="229,32,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label x:Name="label" Content="Naziv resursa" HorizontalAlignment="Left" Margin="18,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="16,117,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="45,117,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Soba u koju se smešta" HorizontalAlignment="Left" Margin="18,74,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="roomsComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="229,78,0,0" SelectionChanged="roomsComboBox_SelectionChanged"/>
 
     </Grid>
 </Page>

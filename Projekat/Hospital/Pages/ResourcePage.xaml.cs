@@ -125,5 +125,23 @@ namespace Hospital.Pages
             /*var win2 = new ChartWindow(new ResourceChartPage());
             win2.Show();*/
         }
+
+        private void urediResurs(object sender, RoutedEventArgs e)
+        {
+            if(resourceDataGrid.SelectedItem != null)
+            {
+                var openPage = new ResourceProfilePage((ResourceView)resourceDataGrid.SelectedItem);
+                frame.Navigate(openPage);
+            }
+        }
+
+        private void urediMaterijal(object sender, RoutedEventArgs e)
+        {
+            if (supplyDataGrid.SelectedItem != null)
+            {
+                var openPage = new SupplyProfilePage((SupplyView)supplyDataGrid.SelectedItem);
+                frame.Navigate(openPage);
+            }
+        }
     }
 }

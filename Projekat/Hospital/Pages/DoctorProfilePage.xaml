@@ -11,22 +11,22 @@
       Title="DoctorProfilePage">
 
     <Grid Margin="0,0,-98,23">
-        <Button x:Name="button" Content="Daj otkaz" HorizontalAlignment="Left" Margin="230,235,0,0" VerticalAlignment="Top" Width="96" Click="button_Click"/>
-        <TextBox x:Name="imeTextBox" HorizontalAlignment="Left" Height="27" Margin="4,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="prezimeTextBox" HorizontalAlignment="Left" Height="27" Margin="1,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="specijalizacijaTextBox" HorizontalAlignment="Left" Height="27" Margin="4,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
-        <Label x:Name="label" Content="Ime" HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Prezime" HorizontalAlignment="Left" Margin="1,69,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Specijalizacija" HorizontalAlignment="Left" Margin="4,224,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="4,123,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="32,123,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button1" Content="Sacuvaj izmene" HorizontalAlignment="Left" Height="34" Margin="230,174,0,0" VerticalAlignment="Top" Width="145" Click="button1_Click"/>
-        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="27" Margin="4,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
-        <Label x:Name="label_Copy2" Content="Email" HorizontalAlignment="Left" Margin="4,165,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="workBeginTextBox" HorizontalAlignment="Left" Height="27" Margin="155,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="workEndTextBox" HorizontalAlignment="Left" Height="27" Margin="155,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label_Copy3" Content="Pocetak radnog vremena&#xD;&#xA;" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" Height="39" Width="220"/>
-        <Label x:Name="label_Copy4" Content="Kraj radnog vremena" HorizontalAlignment="Left" Margin="150,69,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Daj otkaz" HorizontalAlignment="Left" Margin="182,265,0,0" VerticalAlignment="Top" Width="96" Click="button_Click" Height="34"/>
+        <TextBox x:Name="imeTextBox" HorizontalAlignment="Left" Height="27" Margin="15,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="prezimeTextBox" HorizontalAlignment="Left" Height="27" Margin="15,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="specijalizacijaTextBox" HorizontalAlignment="Left" Height="27" Margin="182,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
+        <Label x:Name="label" Content="Ime" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Prezime" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Specijalizacija" HorizontalAlignment="Left" Margin="8,217,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="9,138,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="37,138,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button1" Content="Sačuvaj izmene" HorizontalAlignment="Left" Height="34" Margin="15,265,0,0" VerticalAlignment="Top" Width="145" Click="button1_Click"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="27" Margin="182,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" TextChanged="emailTextBox_TextChanged"/>
+        <Label x:Name="label_Copy2" Content="Email" HorizontalAlignment="Left" Margin="8,175,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="workBeginTextBox" HorizontalAlignment="Left" Height="27" Margin="182,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" TextChanged="workBeginTextBox_TextChanged"/>
+        <TextBox x:Name="workEndTextBox" HorizontalAlignment="Left" Height="27" Margin="182,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" TextChanged="workEndTextBox_TextChanged"/>
+        <Label x:Name="label_Copy3" Content="Početak radnog vremena" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Height="39" Width="250"/>
+        <Label x:Name="label_Copy4" Content="Kraj radnog vremena" HorizontalAlignment="Left" Margin="175,69,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

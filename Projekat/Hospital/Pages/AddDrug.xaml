@@ -9,20 +9,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddDrug">
 
-    <Grid>
-        <Button x:Name="button_Copy" Content="Sacuvaj&#xD;&#xA;izmene" HorizontalAlignment="Left" Margin="255,53,0,0" VerticalAlignment="Top" Width="93" Click="button_Copy_Click" Height="65"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="31" Margin="17,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Height="29" Margin="17,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Naziv leka" HorizontalAlignment="Left" Margin="17,14,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Kolicina" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Svi lekovi" HorizontalAlignment="Left" Margin="15,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>
-        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="171,40,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="200,40,0,0" VerticalAlignment="Top"/>
+    <Grid Margin="-4,0,4,0">
+        <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="485,40,0,0" VerticalAlignment="Top" Width="155" Click="button_Copy_Click" Height="35"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="31" Margin="151,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Height="29" Margin="330,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="quantityTextBox_TextChanged"/>
+        <Label x:Name="label" Content="Naziv leka" HorizontalAlignment="Left" Margin="146,12,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Količina" HorizontalAlignment="Left" Margin="325,12,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Svi lekovi" HorizontalAlignment="Left" Margin="12,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>
+        <Label x:Name="label1" Content="ID:" HorizontalAlignment="Left" Margin="151,85,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="180,85,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="dataGrid" IsReadOnly="True"  HorizontalAlignment="Left" Height="281" CanUserDeleteRows="True" VerticalAlignment="Top" Width="245" Margin="15,162,0,0" SelectionChanged="dataGrid_SelectionChanged"/>
         <Button x:Name="addDoctor" Content="=&gt;" HorizontalAlignment="Left" Height="42" Margin="275,248,0,0" VerticalAlignment="Top" Width="35" Click="addDrug_Click"/>
         <DataGrid x:Name="dataGridAlternativeDrug" IsReadOnly="True" HorizontalAlignment="Left" Height="281" CanUserDeleteRows="True" VerticalAlignment="Top" Width="250" Margin="325,162,0,0" SelectionChanged="dataGrid_SelectionChanged"/>
         <Button x:Name="addDoctor_Copy" Content="X" HorizontalAlignment="Left" Height="39" Margin="275,304,0,0" VerticalAlignment="Top" Width="35" Click="deleteDrug"/>
-        <Label x:Name="label_Copy2" Content="Alternativni lekovi" HorizontalAlignment="Left" Margin="325,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>
+        <Label x:Name="label_Copy2" Content="Odabrani alternativni lekovi" HorizontalAlignment="Left" Margin="322,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>
 
     </Grid>
 </Page>

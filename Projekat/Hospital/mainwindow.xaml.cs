@@ -36,7 +36,7 @@ namespace Hospital
 
         private void login_Copy2_Click(object sender, RoutedEventArgs e)
         {
-            var nextWindow = new ResetPasswordWindow();
+            var nextWindow = new ProblemReportWindow();
             nextWindow.Show();
         }
 
@@ -60,6 +60,12 @@ namespace Hospital
         private void passwordsBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void login_Copy3_Click(object sender, RoutedEventArgs e)
+        {
+            var nextWindow = new ResetPasswordWindow();
+            nextWindow.Show();
         }
     }
 }

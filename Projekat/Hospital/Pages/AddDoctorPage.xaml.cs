@@ -35,6 +35,9 @@ namespace Hospital.Pages
             lekar.Specialisation = this.specijalizacijaTextBox.Text;
 
             ZaposleniPage.AddDoctor(lekar);
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+
+            NavigationService.Navigate(new Page());
         }
     }
 }

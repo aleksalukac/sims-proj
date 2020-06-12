@@ -52,6 +52,12 @@ namespace Hospital.Pages
                     break;
                 }
             }
+            if(nameTextBox.Text.Length == 0)
+            {
+                ResourcePage.ResourceList.Remove(newResource);
+                //System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+                NavigationService.Navigate(new Page());
+            }
             var s = roomsComboBox.SelectedItem as RoomView;
             newResource.RoomId = (int)s.Id;
             newResource.Type = nameTextBox.Text;

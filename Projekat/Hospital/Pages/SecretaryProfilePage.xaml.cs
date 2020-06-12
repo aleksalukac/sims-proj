@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,6 +35,11 @@ namespace Hospital.Pages
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            if(!Regex.IsMatch(emailTextBox.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
+            {
+                MessageBox.Show("Email nije u dobrom formatu", "Greska");
+                return;
+            }
             var doctor = ZaposleniPage.SecretaryList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
 
             doctor.Name = imeTextBox.Text;
@@ -48,6 +54,16 @@ namespace Hospital.Pages
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void workBeginTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            workBeginTextBox.Text = Regex.Replace(workBeginTextBox.Text, @"[^\d]", "");
+        }
+
+        private void workEndTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            workEndTextBox.Text = Regex.Replace(workEndTextBox.Text, @"[^\d]", "");
         }
     }
 }

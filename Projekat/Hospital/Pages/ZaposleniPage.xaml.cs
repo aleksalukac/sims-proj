@@ -116,5 +116,23 @@ namespace Hospital.Pages
         {
 
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            if(dataGrid2.SelectedItem != null)
+            {
+                var openPage = new SecretaryProfilePage((EmployeeView)dataGrid2.SelectedItem);
+                Doctorframe.Navigate(openPage);
+            }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null)
+            {
+                var openPage = new DoctorProfilePage((DoctorView)dataGrid.SelectedItem);
+                Doctorframe.Navigate(openPage);
+            }
+        }
     }
 }
