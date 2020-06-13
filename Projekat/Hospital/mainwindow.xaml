@@ -14,7 +14,7 @@
             <ColumnDefinition Width="527*"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="label" Content="Login" Margin="200,207,0,0" VerticalAlignment="Top" Height="72" Width="114" FontSize="40" HorizontalAlignment="Left" Grid.Column="1"/>
-        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="50" Margin="81,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.478,0.4" Grid.Column="1"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="50" Margin="81,336,0,0"   VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.478,0.4" Grid.Column="1"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="345" Margin="81,430,0,0" Height="50" Grid.Column="1"/>
         <Label x:Name="label1_Copy" Content="Email" HorizontalAlignment="Left" Margin="81,300,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="label1_Copy1" Content="Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="81,386,0,0" VerticalAlignment="Top" Grid.Column="1"/>

@@ -55,13 +55,17 @@ namespace Hospital.Pages
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             DrugView drug = null;
+            bool approved = false;
             foreach(var approvedDrug in DrugPage.DrugList)
             {
                 if (approvedDrug.Id == Int32.Parse(idLabel.Content.ToString()))
                 {
                     drug = approvedDrug;
+                    approved = true;
+                    DrugPage.DrugList.Remove(drug);
                     break;
                 }
+
             }
 
             if(drug != null)
@@ -71,16 +75,26 @@ namespace Hospital.Pages
                     if (unapprovedDrug.Id == Int32.Parse(idLabel.Content.ToString()))
                     {
                         drug = unapprovedDrug;
+                        DrugPage.DrugListUnapproved.Remove(drug);
                         break;
                     }
                 }
+
             }
+
 
             drug.Name = nameTextBox.Text;
             drug.Count = Int32.Parse(quantityTextBox.Text);
 
-            var page = new Page();
-            NavigationService.Navigate(page);
+            if (approved)
+            {
+                DrugPage.DrugList.Add(drug);
+            }
+            else
+                DrugPage.DrugListUnapproved.Add(drug);
+
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+            NavigationService.Navigate(new Page());
         }
 
         private void quantityTextBox_TextChanged(object sender, TextChangedEventArgs e)

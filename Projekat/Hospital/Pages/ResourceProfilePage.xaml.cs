@@ -28,10 +28,10 @@ namespace Hospital.Pages
 
             nameTextBox.Text = resource.Type;
             idLabel.Content = resource.Id;
-            var rm = new ProstorijePage();
-            roomsComboBox.ItemsSource = ProstorijePage.RoomList;
+            var rm = new RoomPage();
+            roomsComboBox.ItemsSource = RoomPage.RoomList;
 
-            foreach(var room in ProstorijePage.RoomList)
+            foreach(var room in RoomPage.RoomList)
             {
                 if(room.Id == resource.RoomId)
                 {
@@ -59,10 +59,16 @@ namespace Hospital.Pages
                 NavigationService.Navigate(new Page());
             }
             var s = roomsComboBox.SelectedItem as RoomView;
+
+            ResourcePage.ResourceList.Remove(newResource);
+
             newResource.RoomId = (int)s.Id;
             newResource.Type = nameTextBox.Text;
-            var page = new Page();
-            NavigationService.Navigate(page);
+
+            ResourcePage.ResourceList.Add(newResource);
+
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+            NavigationService.Navigate(new Page());
         }
 
         private void roomsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

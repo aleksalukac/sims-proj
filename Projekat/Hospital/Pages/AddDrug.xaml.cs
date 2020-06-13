@@ -126,5 +126,10 @@ namespace Hospital.Pages
             quantityTextBox.Text = Regex.Replace(quantityTextBox.Text, @"[^\d]", "");
 
         }
+
+        private void nameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

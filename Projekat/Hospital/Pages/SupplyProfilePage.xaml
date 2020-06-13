@@ -12,12 +12,12 @@
 
     <Grid>
         <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="21,182,0,0" VerticalAlignment="Top" Width="139" Click="button_Copy_Click"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="26" Margin="21,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="26" Margin="21,45,0,0"   VerticalAlignment="Top" Width="239"/>
         <Label x:Name="label" Content="Vrsta potrošnog materijala" HorizontalAlignment="Left" Margin="17,14,0,0" VerticalAlignment="Top" Width="243"/>
         <Label x:Name="label_Copy" Content="Količina" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="21,140,0,0" VerticalAlignment="Top"/>
         <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="50,140,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="countTextBox" HorizontalAlignment="Left" Height="29" Margin="21,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" TextChanged="countTextBox_TextChanged"/>
+        <TextBox x:Name="countTextBox" HorizontalAlignment="Left" Height="29" Margin="21,106,0,0"   VerticalAlignment="Top" Width="139" TextChanged="countTextBox_TextChanged"/>
 
     </Grid>
 </Page>

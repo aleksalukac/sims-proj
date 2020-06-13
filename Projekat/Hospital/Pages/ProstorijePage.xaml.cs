@@ -20,11 +20,11 @@ namespace Hospital.Pages
     /// <summary>
     /// Interaction logic for ProstorijePage.xaml
     /// </summary>
-    public partial class ProstorijePage : Page
+    public partial class RoomPage : Page
     {
         public static ObservableCollection<RoomView> RoomList = new ObservableCollection<RoomView>();
 
-        public ProstorijePage()
+        public RoomPage()
         {
             InitializeComponent();
             this.DataContext = this;
@@ -40,7 +40,7 @@ namespace Hospital.Pages
 
         internal static void SetRenovation(uint id, DateTime selectedDate)
         {
-            foreach (var room in ProstorijePage.RoomList)
+            foreach (var room in RoomPage.RoomList)
             {
                 if (room.Id == id)
                 {
@@ -75,13 +75,14 @@ namespace Hospital.Pages
 
         private void urediSobu(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new RoomProfilePage((RoomView)dataGrid.SelectedItem));
+            if(dataGrid.SelectedItem != null)
+                frame.Navigate(new RoomProfilePage((RoomView)dataGrid.SelectedItem));
         }
 
         private void dodajSobu(object sender, RoutedEventArgs e)
         {
             var newRoom = new RoomView();
-            ProstorijePage.RoomList.Add(newRoom);
+            RoomPage.RoomList.Add(newRoom);
             frame.Navigate(new RoomProfilePage(newRoom));
         }
     }

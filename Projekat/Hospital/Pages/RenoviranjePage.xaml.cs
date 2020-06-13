@@ -29,11 +29,15 @@ namespace Hospital.Pages
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ProstorijePage.SetRenovation((uint)idLabel.Content, (DateTime)calendar.SelectedDate);
-           
-            
-            var page = new Page();
-            NavigationService.Navigate(page);
+            if(calendar.SelectedDate == null)
+            {
+                System.Windows.MessageBox.Show("Unesite datum renoviranja.");
+                return;
+            }
+            RoomPage.SetRenovation((uint)idLabel.Content, (DateTime)calendar.SelectedDate);
+
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+            NavigationService.Navigate(new Page());
         }
     }
 }

@@ -11,8 +11,8 @@
 
     <Grid Margin="-4,0,4,0">
         <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="485,40,0,0" VerticalAlignment="Top" Width="155" Click="button_Copy_Click" Height="35"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="31" Margin="151,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Height="29" Margin="330,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="quantityTextBox_TextChanged"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="31" Margin="151,44,0,0"  VerticalAlignment="Top" Width="120" TextChanged="nameTextBox_TextChanged"/>
+        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Height="29" Margin="330,44,0,0"  VerticalAlignment="Top" Width="120" TextChanged="quantityTextBox_TextChanged"/>
         <Label x:Name="label" Content="Naziv leka" HorizontalAlignment="Left" Margin="146,12,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Količina" HorizontalAlignment="Left" Margin="325,12,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="Svi lekovi" HorizontalAlignment="Left" Margin="12,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.186,0.577"/>

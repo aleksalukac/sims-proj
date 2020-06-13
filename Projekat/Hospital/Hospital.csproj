@@ -107,6 +107,7 @@
     <Compile Include="Pages\AddResourcePage.xaml.cs">
       <DependentUpon>AddResourcePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AutoClosingMessageBox.cs" />
     <Compile Include="Pages\DefaultPage.xaml.cs">
       <DependentUpon>DefaultPage.xaml</DependentUpon>
     </Compile>

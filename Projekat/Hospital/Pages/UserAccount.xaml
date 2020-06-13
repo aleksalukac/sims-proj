@@ -25,9 +25,9 @@
         <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="570,365,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
         <Label x:Name="idLabel2_Copy" Content="Uloga:" HorizontalAlignment="Left" Margin="435,0,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
         <Label x:Name="idLabel_Copy" Content="Upravnik" HorizontalAlignment="Left" Margin="570,0,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="32" Margin="570,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
-        <TextBox x:Name="surnameTextBox" HorizontalAlignment="Left" Height="29" Margin="570,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
-        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="29" Margin="570,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="32" Margin="570,187,0,0"   Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="surnameTextBox" HorizontalAlignment="Left" Height="29" Margin="570,224,0,0"   Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="29" Margin="570,258,0,0"   Text="" VerticalAlignment="Top" Width="175"/>
         <Label x:Name="emailLabel2_Copy" Content="Nova šifra:" HorizontalAlignment="Left" Margin="435,290,0,0" VerticalAlignment="Top" Width="110"/>
         <Label x:Name="emailLabel2_Copy1" Content="Potvrdi šifru:" HorizontalAlignment="Left" Margin="435,327,0,0" VerticalAlignment="Top" Width="150" Height="38"/>
         <Button x:Name="button" Content="Sačuvaj promene" HorizontalAlignment="Left" Height="35" Margin="525,60,0,0" VerticalAlignment="Top" Width="155" Click="button_Click" Grid.Row="1"/>

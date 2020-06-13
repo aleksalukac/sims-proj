@@ -34,7 +34,7 @@ namespace Hospital.Pages
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
             RoomView newRoom = null;
-            foreach(var room in ProstorijePage.RoomList)
+            foreach(var room in RoomPage.RoomList)
             {
                 if(room.Id == Int32.Parse(idLabel.Content.ToString()))
                 {
@@ -42,9 +42,9 @@ namespace Hospital.Pages
                     break;
                 }
             }
-            ProstorijePage.RoomList.Remove(newRoom);
+            RoomPage.RoomList.Remove(newRoom);
             newRoom.RoomType = roomComboBox.SelectedItem.ToString();
-            ProstorijePage.RoomList.Add(newRoom);
+            RoomPage.RoomList.Add(newRoom);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());
@@ -53,7 +53,7 @@ namespace Hospital.Pages
         private void deleteRoom(object sender, RoutedEventArgs e)
         {
             RoomView newRoom = null;
-            foreach (var room in ProstorijePage.RoomList)
+            foreach (var room in RoomPage.RoomList)
             {
                 if (room.Id == Int32.Parse(idLabel.Content.ToString()))
                 {
@@ -64,7 +64,7 @@ namespace Hospital.Pages
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da obrisete sobu?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                ProstorijePage.RoomList.Remove(newRoom);
+                RoomPage.RoomList.Remove(newRoom);
                 System.Windows.MessageBox.Show("Uspešno ste obrisali sobu.");
                 NavigationService.Navigate(new Page());
             }

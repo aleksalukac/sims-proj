@@ -66,8 +66,8 @@ namespace Hospital.Pages
             manager.Name = nameTextBox.Text;
             ManagerView.saveManager();
 
-            var page = new Page();
-            NavigationService.Navigate(page);
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
+            NavigationService.Navigate(new Page());
         }
 
         public static bool IsValid(string emailaddress)

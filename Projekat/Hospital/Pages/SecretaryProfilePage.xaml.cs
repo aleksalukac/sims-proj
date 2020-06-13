@@ -40,14 +40,19 @@ namespace Hospital.Pages
                 MessageBox.Show("Email nije u dobrom formatu", "Greska");
                 return;
             }
-            var doctor = ZaposleniPage.SecretaryList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
+            var secretary = ZaposleniPage.SecretaryList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
 
-            doctor.Name = imeTextBox.Text;
-            doctor.Surname = prezimeTextBox.Text;
-            doctor.Email = emailTextBox.Text;
-            doctor.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
-            doctor.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
+            ZaposleniPage.SecretaryList.Remove(secretary);
 
+            secretary.Name = imeTextBox.Text;
+            secretary.Surname = prezimeTextBox.Text;
+            secretary.Email = emailTextBox.Text;
+            secretary.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
+            secretary.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
+
+            ZaposleniPage.SecretaryList.Add(secretary);
+
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());
         }
 

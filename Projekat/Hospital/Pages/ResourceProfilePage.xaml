@@ -12,7 +12,7 @@
 
     <Grid>
         <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="190,113,0,0" VerticalAlignment="Top" Width="155" Click="button_Copy_Click"/>
-        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="35" Margin="190,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="35" Margin="190,14,0,0"   VerticalAlignment="Top" Width="155"/>
         <Label x:Name="label" Content="Vrsta resursa" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="168"/>
         <Label x:Name="label_Copy" Content="Soba u &#xD;&#xA;koju se smešta" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="11,110,0,0" VerticalAlignment="Top"/>

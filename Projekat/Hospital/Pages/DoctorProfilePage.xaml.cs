@@ -66,6 +66,8 @@ namespace Hospital.Pages
             }
             var doctor = ZaposleniPage.DoctorList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
 
+            ZaposleniPage.DoctorList.Remove(doctor);
+
             doctor.Name = imeTextBox.Text;
             doctor.Surname = prezimeTextBox.Text;
             doctor.Email = emailTextBox.Text;
@@ -73,6 +75,9 @@ namespace Hospital.Pages
             doctor.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
             doctor.Specialisation = specijalizacijaTextBox.Text;
 
+            ZaposleniPage.DoctorList.Add(doctor); 
+            //AutoClosingMessageBox.Show("Uspešno ste sačuvali informacije.", "", 10);
+            System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());
         }
 

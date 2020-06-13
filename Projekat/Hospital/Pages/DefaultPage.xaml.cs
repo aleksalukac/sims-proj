@@ -24,7 +24,7 @@ namespace Hospital.Pages
         public DefaultPage()
         {
             InitializeComponent();
-            var page1 = new ProstorijePage();
+            var page1 = new RoomPage();
             var page2 = new DrugPage();
             var page3 = new ResourcePage();
             var page4 = new ZaposleniPage();
@@ -56,7 +56,7 @@ namespace Hospital.Pages
 
         private void Button_Click_Prostorije(object sender, RoutedEventArgs e)
         {
-            var nextPage = new ProstorijePage();
+            var nextPage = new RoomPage();
             frame.Navigate(nextPage);
         }
 

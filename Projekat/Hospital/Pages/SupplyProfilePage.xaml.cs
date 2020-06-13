@@ -50,8 +50,13 @@ namespace Hospital.Pages
                 NavigationService.Navigate(new Page());
             }
 
+            ResourcePage.SupplyList.Remove(newSupply);
+
+
             newSupply.Type = nameTextBox.Text;
             newSupply.Count = Int32.Parse(countTextBox.Text);
+
+            ResourcePage.SupplyList.Add(newSupply);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());

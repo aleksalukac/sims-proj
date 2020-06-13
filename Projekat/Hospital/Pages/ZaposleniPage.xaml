@@ -13,7 +13,7 @@
         <Label x:Name="label" Content="Lekari" HorizontalAlignment="Left" Margin="27,44,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Sekretar" HorizontalAlignment="Left" Margin="455,44,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="dataGrid2" IsReadOnly="True" MouseDoubleClick="Row_MouseDoubleClick_Sekretari" HorizontalAlignment="Left" Height="381" VerticalAlignment="Top" Width="260" Margin="455,89,0,0" SelectionChanged="dataGrid2_SelectionChanged"/>
-        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="136,48,0,0" TextChanged="searchBox_TextChanged"/>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="36"   VerticalAlignment="Top" Width="139" Margin="136,48,0,0" TextChanged="searchBox_TextChanged"/>
         <Button x:Name="addDoctor" Content="Dodaj lekara" HorizontalAlignment="Left" Height="34" Margin="296,50,0,0" VerticalAlignment="Top" Width="138" Click="addDoctor_Click"/>
         <Frame x:Name="Doctorframe" Content="" HorizontalAlignment="Left" Height="381" Margin="750,89,0,0" VerticalAlignment="Top" Width="332" NavigationUIVisibility="Hidden"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" Margin="105,53,0,0" Source="/Hospital;component/Data/search.png"/>
