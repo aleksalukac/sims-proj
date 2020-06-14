@@ -56,7 +56,16 @@ namespace Hospital.Pages
 
 
             newSupply.Type = nameTextBox.Text;
-            newSupply.Count = Int32.Parse(countTextBox.Text);
+
+            string s = countTextBox.Text;
+            int x = 0;
+            int ux;
+            if (int.TryParse(s, out ux))
+            {
+                x = int.Parse(s) % 24;
+            }
+            newSupply.Count = x;
+
 
             ResourcePage.SupplyList.Add(newSupply);
 

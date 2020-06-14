@@ -56,6 +56,7 @@ namespace Hospital.Pages
             }
 
             int count = 0;
+
             bool success = Int32.TryParse(quantityTextBox.Text, out count);
             if(success)
             {

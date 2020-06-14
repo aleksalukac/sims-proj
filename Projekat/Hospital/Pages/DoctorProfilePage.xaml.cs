@@ -72,10 +72,29 @@ namespace Hospital.Pages
             doctor.Surname = prezimeTextBox.Text;
             doctor.Email = emailTextBox.Text;
             if(workBeginTextBox.Text.Length != 0)
-                doctor.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
+            {
+                string s = workBeginTextBox.Text;
+                int x = 0;
+                int ux;
+                if (int.TryParse(s, out ux))
+                {
+                    x = int.Parse(s) % 24;
+                }
+                doctor.StartWorkingHours = (uint)x;
+            }
 
             if (workEndTextBox.Text.Length != 0)
-                doctor.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
+            {
+                string s = workEndTextBox.Text;
+                int x = 0;
+                int ux;
+                if (int.TryParse(s, out ux))
+                {
+                    x = int.Parse(workEndTextBox.Text) % 24;
+                }
+                doctor.EndWorkingHours = (uint)x;
+                // x = -100
+            }
             doctor.Specialisation = specijalizacijaTextBox.Text;
 
             ZaposleniPage.DoctorList.Add(doctor); 

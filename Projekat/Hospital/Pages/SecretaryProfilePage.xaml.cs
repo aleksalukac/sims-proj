@@ -44,13 +44,35 @@ namespace Hospital.Pages
 
             ZaposleniPage.SecretaryList.Remove(secretary);
 
+            if (workBeginTextBox.Text.Length != 0)
+            {
+                string s = workBeginTextBox.Text;
+                int x = 0;
+                int ux;
+                if (int.TryParse(s, out ux))
+                {
+                    x = int.Parse(s) % 24;
+                }
+                secretary.StartWorkingHours = (uint)x;
+            }
+
+            if (workEndTextBox.Text.Length != 0)
+            {
+                string s = workEndTextBox.Text;
+                int x = 0;
+                int ux;
+                if (int.TryParse(s, out ux))
+                {
+                    x = int.Parse(workEndTextBox.Text) % 24;
+                }
+                secretary.EndWorkingHours = (uint)x;
+                // x = -100
+            }
+
             secretary.Name = imeTextBox.Text;
             secretary.Surname = prezimeTextBox.Text;
             secretary.Email = emailTextBox.Text;
-            if(workBeginTextBox.Text.Length != 0)
-                secretary.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
-            if(workEndTextBox.Text.Length != 0)
-                secretary.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
+            
 
             ZaposleniPage.SecretaryList.Add(secretary);
 

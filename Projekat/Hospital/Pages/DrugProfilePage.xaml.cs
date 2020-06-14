@@ -89,7 +89,16 @@ namespace Hospital.Pages
                 drug.Count = 0;
             }
             else
-                drug.Count = Int32.Parse(quantityTextBox.Text);
+            {
+                string s = quantityTextBox.Text;
+                int x = 0;
+                int ux;
+                if (int.TryParse(s, out ux))
+                {
+                    x = int.Parse(s) % 24;
+                }
+                drug.Count = x;
+            }
 
             if (approved)
             {
