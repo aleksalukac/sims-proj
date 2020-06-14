@@ -22,7 +22,7 @@ namespace Hospital.Model
         public static void saveManager()
         {
             var jsonManager = Newtonsoft.Json.JsonConvert.SerializeObject(Manager);
-            System.IO.File.WriteAllText(@"C:\Users\Aleksa\source\repos\Hospital\Hospital\Data\UserData.txt", jsonManager);
+            System.IO.File.WriteAllText(@"..\..\Data\UserData.txt", jsonManager);
         }
 
         public static void resetPassword()
@@ -34,7 +34,7 @@ namespace Hospital.Model
         {
             if(String.IsNullOrEmpty(Manager.Email))
             {
-                var newManager = Newtonsoft.Json.JsonConvert.DeserializeObject<ManagerView>(System.IO.File.ReadAllText(@"C:\Users\Aleksa\source\repos\Hospital\Hospital\Data\UserData.txt"));
+                var newManager = Newtonsoft.Json.JsonConvert.DeserializeObject<ManagerView>(System.IO.File.ReadAllText(@"..\..\Data\UserData.txt"));
                 Manager.Password = newManager.Password;
                 Manager.Name = newManager.Name;
                 Manager.Surname = newManager.Surname;

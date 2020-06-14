@@ -54,9 +54,11 @@ namespace Hospital.Pages
             }
             if(nameTextBox.Text.Length == 0)
             {
-                ResourcePage.ResourceList.Remove(newResource);
-                //System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
-                NavigationService.Navigate(new Page());
+                //ResourcePage.SupplyList.Remove(newSupply);
+                //newSupply.Type = nameTextBox.Text;
+                System.Windows.MessageBox.Show("Unesite pravilno ime materijala.");
+                //NavigationService.Navigate(new Page());
+                return;
             }
             var s = roomsComboBox.SelectedItem as RoomView;
 
@@ -74,6 +76,28 @@ namespace Hospital.Pages
         private void roomsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void delete(object sender, RoutedEventArgs e)
+        {
+            ResourceView newResource = null;
+            foreach (var resource in ResourcePage.ResourceList)
+            {
+                if (resource.Id == Int32.Parse(idLabel.Content.ToString()))
+                {
+                    newResource = resource;
+                    break;
+                }
+            }
+
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da izbrišete ovaj resurs?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                ResourcePage.ResourceList.Remove(newResource);
+                System.Windows.MessageBox.Show("Promene uspešno sačuvane");
+                NavigationService.Navigate(new Page());
+                return;
+            }
         }
     }
 }

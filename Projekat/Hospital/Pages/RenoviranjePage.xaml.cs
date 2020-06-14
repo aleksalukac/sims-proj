@@ -34,6 +34,7 @@ namespace Hospital.Pages
                 System.Windows.MessageBox.Show("Unesite datum renoviranja.");
                 return;
             }
+            
             RoomPage.SetRenovation((uint)idLabel.Content, (DateTime)calendar.SelectedDate);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");

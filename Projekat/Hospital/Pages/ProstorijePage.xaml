@@ -14,13 +14,13 @@
             <RowDefinition Height="535*"/>
             <RowDefinition Height="81*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dataGrid" IsReadOnly="True" MouseDoubleClick="Row_MouseDoubleClick_Prostorije" HorizontalAlignment="Left" Height="321" CanUserDeleteRows="True" VerticalAlignment="Top" Width="315" Margin="75,89,0,0"/>
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" MouseDoubleClick="Row_MouseDoubleClick_Prostorije" HorizontalAlignment="Left" Height="321" CanUserDeleteRows="True" VerticalAlignment="Top" Width="370" Margin="40,89,0,0"/>
         <Label x:Name="label" Content="Prostorije" HorizontalAlignment="Left" Margin="70,43,0,0" VerticalAlignment="Top"/>
-        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="507" Margin="421,61,0,0" VerticalAlignment="Top" Width="440" Grid.RowSpan="2"/>
-        <Button x:Name="button" Content="Izveštaj" HorizontalAlignment="Left" Height="45" Margin="75,435,0,0" VerticalAlignment="Top" Width="120" Click="button_Click"/>
-        <Button x:Name="button_Copy" Content="Zakaži renoviranje" HorizontalAlignment="Left" Height="45" Margin="215,435,0,0" VerticalAlignment="Top" Width="175" Click="renoviranjeClick"/>
-        <Button x:Name="button_Copy1" Content="Dodaj sobu" HorizontalAlignment="Left" Height="45" Margin="75,490,0,0" VerticalAlignment="Top" Width="120" Click="dodajSobu"/>
-        <Button x:Name="button_Copy2" Content="Uredi sobu" HorizontalAlignment="Left" Height="45" Margin="215,490,0,0" VerticalAlignment="Top" Width="175" Click="urediSobu"/>
+        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="507" Margin="445,61,0,0" VerticalAlignment="Top" Width="416" Grid.RowSpan="2"/>
+        <Button x:Name="button" Content="Izveštaj" HorizontalAlignment="Left" Height="45" Margin="40,425,0,0" VerticalAlignment="Top" Width="175" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Zakaži renoviranje" HorizontalAlignment="Left" Height="45" Margin="235,425,0,0" VerticalAlignment="Top" Width="175" Click="renoviranjeClick"/>
+        <Button x:Name="button_Copy1" Content="Dodaj sobu" HorizontalAlignment="Left" Height="45" Margin="40,490,0,0" VerticalAlignment="Top" Width="175" Click="dodajSobu"/>
+        <Button x:Name="button_Copy2" Content="Uredi sobu" HorizontalAlignment="Left" Height="45" Margin="235,490,0,0" VerticalAlignment="Top" Width="175" Click="urediSobu"/>
 
     </Grid>
 </Page>

@@ -44,7 +44,9 @@ namespace Hospital.Pages
             {
                 if (room.Id == id)
                 {
+                    RoomList.Remove(room);
                     room.Renovation = selectedDate;
+                    RoomList.Add(room);
                     break;
                 }
             }

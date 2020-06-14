@@ -94,7 +94,6 @@
     <Compile Include="Model\SupplyView.cs" />
     <Compile Include="Model\ViewModelDrug.cs" />
     <Compile Include="Model\ViewModelResource.cs" />
-    <Compile Include="Model\Zaposlen.cs" />
     <Compile Include="Pages\AddDoctor.xaml.cs">
       <DependentUpon>AddDoctor.xaml</DependentUpon>
     </Compile>
@@ -159,26 +158,14 @@
     <Compile Include="Pages\ZaposleniPage.xaml.cs">
       <DependentUpon>ZaposleniPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AddDoctor.xaml.cs">
-      <DependentUpon>AddDoctor.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\AlertWindow.xaml.cs">
       <DependentUpon>AlertWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ChartWindow.xaml.cs">
       <DependentUpon>ChartWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\DoctorProfile.xaml.cs">
-      <DependentUpon>DoctorProfile.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\LoggedWindow.xaml.cs">
-      <DependentUpon>LoggedWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\ProblemReportWindow.xaml.cs">
       <DependentUpon>ProblemReportWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\RenoviranjeWindow.xaml.cs">
-      <DependentUpon>RenoviranjeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ResetPasswordWindow.xaml.cs">
       <DependentUpon>ResetPasswordWindow.xaml</DependentUpon>
@@ -279,10 +266,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AddDoctor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\AlertWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -291,19 +274,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\DoctorProfile.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\LoggedWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\ProblemReportWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\RenoviranjeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

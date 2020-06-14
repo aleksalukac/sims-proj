@@ -18,6 +18,7 @@
         <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="21,140,0,0" VerticalAlignment="Top"/>
         <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="50,140,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="countTextBox" HorizontalAlignment="Left" Height="29" Margin="21,106,0,0"   VerticalAlignment="Top" Width="139" TextChanged="countTextBox_TextChanged"/>
+        <Button x:Name="button_Copy1" Content="Obriši" HorizontalAlignment="Left" Margin="170,182,0,0" VerticalAlignment="Top" Width="90" Click="detele"/>
 
     </Grid>
 </Page>

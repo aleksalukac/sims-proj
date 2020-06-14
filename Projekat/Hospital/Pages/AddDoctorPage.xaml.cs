@@ -33,8 +33,14 @@ namespace Hospital.Pages
             lekar.Name = this.imeTextBox.Text;
             lekar.Surname = this.prezimeTextBox.Text;
             lekar.Specialisation = this.specijalizacijaTextBox.Text;
+            if (lekar.Name.Length == 0 || lekar.Surname.Length == 0)
+            {
+                System.Windows.MessageBox.Show("Niste uneli adekvatno ime lekara.");
+                return;
+            }
 
-            ZaposleniPage.AddDoctor(lekar);
+
+                ZaposleniPage.AddDoctor(lekar);
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
 
             NavigationService.Navigate(new Page());

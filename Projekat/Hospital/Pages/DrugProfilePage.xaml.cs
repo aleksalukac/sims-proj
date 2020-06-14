@@ -68,7 +68,7 @@ namespace Hospital.Pages
 
             }
 
-            if(drug != null)
+            if(drug == null)
             {
                 foreach (var unapprovedDrug in DrugPage.DrugListUnapproved)
                 {
@@ -84,7 +84,12 @@ namespace Hospital.Pages
 
 
             drug.Name = nameTextBox.Text;
-            drug.Count = Int32.Parse(quantityTextBox.Text);
+            if(quantityTextBox.Text.Length == 0)
+            {
+                drug.Count = 0;
+            }
+            else
+                drug.Count = Int32.Parse(quantityTextBox.Text);
 
             if (approved)
             {

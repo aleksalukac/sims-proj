@@ -40,6 +40,11 @@ namespace Hospital.Pages
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
+            if(nameTextBox.Text.Length == 0)
+            {
+                System.Windows.MessageBox.Show("Unesite adekvatno ime leka.");
+                return;
+            }
             DrugView drug = new DrugView();
             drug.Name = nameTextBox.Text;
             drug.Approved = false;

@@ -47,8 +47,10 @@ namespace Hospital.Pages
             secretary.Name = imeTextBox.Text;
             secretary.Surname = prezimeTextBox.Text;
             secretary.Email = emailTextBox.Text;
-            secretary.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
-            secretary.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
+            if(workBeginTextBox.Text.Length != 0)
+                secretary.StartWorkingHours = (uint)Int32.Parse(workBeginTextBox.Text);
+            if(workEndTextBox.Text.Length != 0)
+                secretary.EndWorkingHours = (uint)Int32.Parse(workEndTextBox.Text);
 
             ZaposleniPage.SecretaryList.Add(secretary);
 

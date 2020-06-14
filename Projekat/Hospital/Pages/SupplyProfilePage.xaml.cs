@@ -45,9 +45,11 @@ namespace Hospital.Pages
 
             if(nameTextBox.Text.Length == 0)
             {
-                ResourcePage.SupplyList.Remove(newSupply);
-                newSupply.Type = nameTextBox.Text;
-                NavigationService.Navigate(new Page());
+                //ResourcePage.SupplyList.Remove(newSupply);
+                //newSupply.Type = nameTextBox.Text;
+                System.Windows.MessageBox.Show("Unesite pravilno ime materijala.");
+                //NavigationService.Navigate(new Page());
+                return;
             }
 
             ResourcePage.SupplyList.Remove(newSupply);
@@ -65,6 +67,27 @@ namespace Hospital.Pages
         private void countTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             countTextBox.Text = Regex.Replace(countTextBox.Text, @"[^\d]", "");
+        }
+
+        private void detele(object sender, RoutedEventArgs e)
+        {
+            SupplyView newSupply = null;
+            foreach (var supply in ResourcePage.SupplyList)
+            {
+                if (supply.Id == Int32.Parse(idLabel.Content.ToString()))
+                {
+                    newSupply = supply;
+                    break;
+                }
+            }
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da izbrišete ovaj materijal?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                ResourcePage.SupplyList.Remove(newSupply);
+                System.Windows.MessageBox.Show("Promene uspešno sačuvane");
+                NavigationService.Navigate(new Page());
+                return;
+            }
         }
     }
 }
