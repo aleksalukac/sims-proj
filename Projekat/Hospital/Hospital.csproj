@@ -94,6 +94,7 @@
     <Compile Include="Model\SupplyView.cs" />
     <Compile Include="Model\ViewModelDrug.cs" />
     <Compile Include="Model\ViewModelResource.cs" />
+    <Compile Include="Model\ViewModelRoom.cs" />
     <Compile Include="Pages\AddDoctor.xaml.cs">
       <DependentUpon>AddDoctor.xaml</DependentUpon>
     </Compile>
@@ -142,6 +143,9 @@
     </Compile>
     <Compile Include="Pages\ResourceProfilePage.xaml.cs">
       <DependentUpon>ResourceProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomChartPage.xaml.cs">
+      <DependentUpon>RoomChartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RoomProfilePage.xaml.cs">
       <DependentUpon>RoomProfilePage.xaml</DependentUpon>
@@ -243,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ResourceProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RoomChartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

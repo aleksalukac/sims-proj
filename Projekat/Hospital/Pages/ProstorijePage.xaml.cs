@@ -53,6 +53,18 @@ namespace Hospital.Pages
             //dataGrid.ItemsSource = ListaSoba;
         }
 
+        public static int GetRoomCount(string type)
+        {
+            int count = 0;
+            foreach(var room in RoomList)
+            {
+                if (room.RoomType.Equals(type))
+                    count++;
+            }
+
+            return count;
+        }
+
         private void Row_MouseDoubleClick_Prostorije(object sender, MouseButtonEventArgs e)
         {
             var data = (DataGrid)sender;
@@ -77,8 +89,7 @@ namespace Hospital.Pages
 
         private void urediSobu(object sender, RoutedEventArgs e)
         {
-            if(dataGrid.SelectedItem != null)
-                frame.Navigate(new RoomProfilePage((RoomView)dataGrid.SelectedItem));
+            frame.Navigate(new RoomChartPage());
         }
 
         private void dodajSobu(object sender, RoutedEventArgs e)
