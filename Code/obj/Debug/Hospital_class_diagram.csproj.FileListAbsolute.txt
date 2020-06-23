@@ -1,0 +1,9 @@
+F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.csprojAssemblyReference.cache
+F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.csproj.CoreCompileInputs.cache
+F:\FTN\SiMS\Code\bin\Debug\Hospital_class_diagram.dll
+F:\FTN\SiMS\Code\bin\Debug\Hospital_class_diagram.pdb
+F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.dll
+F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.pdb
+F:\FTN\SiMS\Code\bin\Debug\Newtonsoft.Json.dll
+F:\FTN\SiMS\Code\bin\Debug\Newtonsoft.Json.xml
+F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.csproj.CopyComplete
