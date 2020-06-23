@@ -22,7 +22,6 @@ namespace Repository
                     break;
                 }
             }
-
             WriteAllDrug(drugs);
 
             return drug;
