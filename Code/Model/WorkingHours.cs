@@ -9,8 +9,8 @@ namespace Model
 {
    public class WorkingHours
    {
-      private TimeSpan startingHour;
-      private TimeSpan endingHour;
+      public TimeSpan StartingHour { get; set; }
+      public TimeSpan EndingHour { get; set; }
    
    }
 }

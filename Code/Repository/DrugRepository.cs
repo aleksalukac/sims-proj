@@ -4,81 +4,35 @@
 // Purpose: Definition of Class DrugRepository
 
 using Model; using System; using System.Collections.Generic;
-using System.Linq;
 
 namespace Repository
 {
    public class DrugRepository
    {
-      public static Drug SetDrug(Drug drug)
+      public Drug SetDrug(Drug drug)
       {
-            List<Drug> drugs = GetAllDrug();
-
-            for (int i = 0; i < drugs.Count; i++)
-            {
-                if (drugs[i].id == drug.id)
-                {
-                    drugs[i] = drug;
-                    break;
-                }
-            }
-            WriteAllDrug(drugs);
-
-            return drug;
-        }
+         throw new NotImplementedException();
+      }
       
-      public static Drug GetDrug(int id)
+      public Drug GetDrug(int id)
       {
-            List<Drug> drugs = GetAllDrug();
-
-            foreach (Drug drug in drugs)
-            {
-                if (drug.id == id)
-                    return drug;
-            }
-
-            return null;
-        }
+         throw new NotImplementedException();
+      }
       
-      public static Drug DeleteDrug(int id)
+      public Drug DeleteDrug(int id)
       {
-            List<Drug> drugs = GetAllDrug();
-
-            Drug drugToRemove = drugs.SingleOrDefault(r => r.id == id);
-
-            if (drugToRemove != null)
-            {
-                drugs.Remove(drugToRemove);
-                WriteAllDrug(drugs);
-            }
-
-            return drugToRemove;
-        }
+         throw new NotImplementedException();
+      }
       
-      public static Drug AddDrug(Drug drug)
+      public Drug AddDrug(Drug drug)
       {
-            List<Drug> drugs = GetAllDrug();
-            drugs.Add(drug);
-            WriteAllDrug(drugs);
-
-            return drug;
-        }
-        public static void WriteAllDrug(List<Drug> drugs)
-        {
-            string drugsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(drugs);
-
-            System.IO.File.WriteAllText(@"..\..\Data\DrugData.txt", drugsSerialized);
-        }
-
-
-        public static List<Drug> GetAllDrug()
+         throw new NotImplementedException();
+      }
+      
+      public List<Drug> GetAllDrug()
       {
-            string drugsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DrugData.txt");
-
-            List<Drug> drugs = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Drug>>(drugsSerialized);
-
-            return drugs;
-        }
+         throw new NotImplementedException();
+      }
    
    }
 }

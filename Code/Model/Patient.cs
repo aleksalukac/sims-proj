@@ -9,105 +9,16 @@ namespace Model
 {
    public class Patient : User
    {
-      private string jmbg;
-      private int insuranceNumber;
-      private string insuranceCarrier;
-      private string gender;
-      private string address;
-      private string phoneNumber;
-      
-      public System.Collections.Generic.List<Drug> alergy;
-      
-      /// <summary>
-      /// Property for collection of Drug
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Drug> Alergy
-      {
-         get
-         {
-            if (alergy == null)
-               alergy = new System.Collections.Generic.List<Drug>();
-            return alergy;
-         }
-         set
-         {
-            RemoveAllAlergy();
-            if (value != null)
-            {
-               foreach (Drug oDrug in value)
-                  AddAlergy(oDrug);
-            }
-         }
-      }
-      
-      /// <summary>
-      /// Add a new Drug in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
-      public void AddAlergy(Drug newDrug)
-      {
-         if (newDrug == null)
-            return;
-         if (this.alergy == null)
-            this.alergy = new System.Collections.Generic.List<Drug>();
-         if (!this.alergy.Contains(newDrug))
-            this.alergy.Add(newDrug);
-      }
-      
-      /// <summary>
-      /// Remove an existing Drug from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemoveAlergy(Drug oldDrug)
-      {
-         if (oldDrug == null)
-            return;
-         if (this.alergy != null)
-            if (this.alergy.Contains(oldDrug))
-               this.alergy.Remove(oldDrug);
-      }
-      
-      /// <summary>
-      /// Remove all instances of Drug from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
-      public void RemoveAllAlergy()
-      {
-         if (alergy != null)
-            alergy.Clear();
-      }
-      public MedicalRecord medicalRecord;
-      public Room room;
-      
-      /// <summary>
-      /// Property for Room
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Room Room
-      {
-         get
-         {
-            return room;
-         }
-         set
-         {
-            if (this.room == null || !this.room.Equals(value))
-            {
-               if (this.room != null)
-               {
-                  Room oldRoom = this.room;
-                  this.room = null;
-                  oldRoom.RemovePatient(this);
-               }
-               if (value != null)
-               {
-                  this.room = value;
-                  this.room.AddPatient(this);
-               }
-            }
-         }
-      }
-   
-   }
+        public string Jmbg { get; set; }
+        public int InsuranceNumber { get; set; }
+        public string InsuranceCarrier { get; set; }
+        public string Gender { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+
+        public System.Collections.Generic.List<int> Alergy { get; set; }
+
+        public int MedicalRecord { get; set; }
+        public int Room { get; set; }
+    }
 }

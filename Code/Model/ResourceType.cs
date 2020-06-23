@@ -9,7 +9,7 @@ namespace Model
 {
    public class ResourceType
    {
-      private string name;
+      public string Name { get; set; }
    
    }
 }

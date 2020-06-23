@@ -3,79 +3,27 @@
 // Created: Thursday, May 7, 2020 9:41:02 PM
 // Purpose: Definition of Class Drug
 
+using Hospital_class_diagram.Model;
 using Model; using System; using System.Collections.Generic;
 
 namespace Model
 {
-   public class Drug
+   public class Drug : BaseModel
    {
-      private string name;
-      public int id;
-      private int count;
-      private bool approved;
+        private const string ID_PATH = @"..\..\Data\DrugId.txt";
+
+        public Drug() : base(ID_PATH)
+        {
+
+        }
+
+        public string Name { get; set; }
+        public int Count { get; set; }
+        public bool Approved { get; set; }
       
-      public System.Collections.Generic.List<Drug> similarDrug;
+        public System.Collections.Generic.List<int> SimilarDrug { get; set; }
       
-      /// <summary>
-      /// Property for collection of Drug
-      /// </summary>
-      /// <pdGenerated>Default opposite class collection property</pdGenerated>
-      public System.Collections.Generic.List<Drug> SimilarDrug
-      {
-         get
-         {
-            if (similarDrug == null)
-               similarDrug = new System.Collections.Generic.List<Drug>();
-            return similarDrug;
-         }
-         set
-         {
-            RemoveAllSimilarDrug();
-            if (value != null)
-            {
-               foreach (Drug oDrug in value)
-                  AddSimilarDrug(oDrug);
-            }
-         }
-      }
-      
-      /// <summary>
-      /// Add a new Drug in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
-      public void AddSimilarDrug(Drug newDrug)
-      {
-         if (newDrug == null)
-            return;
-         if (this.similarDrug == null)
-            this.similarDrug = new System.Collections.Generic.List<Drug>();
-         if (!this.similarDrug.Contains(newDrug))
-            this.similarDrug.Add(newDrug);
-      }
-      
-      /// <summary>
-      /// Remove an existing Drug from the collection
-      /// </summary>
-      /// <pdGenerated>Default Remove</pdGenerated>
-      public void RemoveSimilarDrug(Drug oldDrug)
-      {
-         if (oldDrug == null)
-            return;
-         if (this.similarDrug != null)
-            if (this.similarDrug.Contains(oldDrug))
-               this.similarDrug.Remove(oldDrug);
-      }
-      
-      /// <summary>
-      /// Remove all instances of Drug from the collection
-      /// </summary>
-      /// <pdGenerated>Default removeAll</pdGenerated>
-      public void RemoveAllSimilarDrug()
-      {
-         if (similarDrug != null)
-            similarDrug.Clear();
-      }
-      public Doctor[] approvedByDoctor;
+        public List<int> ApprovedByDoctor { get; set; }
    
    }
 }

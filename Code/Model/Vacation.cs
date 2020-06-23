@@ -9,8 +9,8 @@ namespace Model
 {
    public class Vacation
    {
-      private DateTime startDate;
-      private int endDate;
+      public DateTime StartDate { get; set; }
+      public int EndDate { get; set; }
    
    }
 }

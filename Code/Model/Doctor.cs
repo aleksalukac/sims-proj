@@ -10,8 +10,7 @@ namespace Model
    public class Doctor : Employee
    {
       public SpecialisationType specialisationType;
-      public MedicalExam[] medicalExam;
-      public DoctorReview[] doctorReview;
+      public List<int> medicalExam;
    
    }
 }

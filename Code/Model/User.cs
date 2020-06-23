@@ -9,12 +9,11 @@ namespace Model
 {
    public class User : GuestUser
    {
-      private string email;
-      private string password;
-      private int id;
+      public string Email { get; set; }
+      public string Password { get; set; }
       
-      public Notification[] notification;
-      public TextContent[] textContent;
+      public List<int> Notification { get; set; }
+      public List<int> TextContent { get; set; }
    
    }
 }

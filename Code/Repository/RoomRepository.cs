@@ -14,7 +14,7 @@ namespace Repository
       {
             List<Room> rooms = GetAllRoom();
 
-            Room roomToRemove = rooms.SingleOrDefault(r => r.id == id);
+            Room roomToRemove = rooms.SingleOrDefault(r => r.Id == id);
 
             if(roomToRemove != null)
             {
@@ -31,7 +31,7 @@ namespace Repository
 
             for(int i = 0; i < rooms.Count; i++)
             {
-                if(rooms[i].id == room.id)
+                if(rooms[i].Id == room.Id)
                 {
                     rooms[i] = room;
                     break;
@@ -58,7 +58,7 @@ namespace Repository
 
             foreach(Room room in rooms)
             {
-                if (room.id == id)
+                if (room.Id == id)
                     return room;
             }
 
@@ -74,7 +74,7 @@ namespace Repository
       
       public static List<Room> GetAllRoom()
       {
-            string roomsSerialized = System.IO.File.ReadAllText(@"..\..\Data\RoomData.txt");
+            string roomsSerialized = System.IO.File.ReadAllText(@"..\..\Data\RoomData.txt"); //roomPath
 
             List<Room> rooms = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Room>>(roomsSerialized);
 

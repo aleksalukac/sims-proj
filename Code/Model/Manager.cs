@@ -9,7 +9,7 @@ namespace Model
 {
    public class Manager : Employee
    {
-      public Report[] report;
-   
+        public List<Report> Report { get; set; }
+        
    }
 }

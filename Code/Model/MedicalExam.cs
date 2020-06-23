@@ -3,68 +3,30 @@
 // Created: Thursday, May 7, 2020 9:41:02 PM
 // Purpose: Definition of Class MedicalExam
 
+using Hospital_class_diagram.Model;
 using Model; using System; using System.Collections.Generic;
 
 namespace Model
 {
-   public class MedicalExam
-   {
-      private string report;
-      private DateTime appointmentStart;
-      private bool isSurgery;
-      private DateTime appointmentEnd;
-      
-      public Doctor doctor;
-      public DoctorReview doctorReview;
-      public MedicalRecord medicalRecord;
-      public Room room;
-      
-      /// <summary>
-      /// Property for Room
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Room Room
-      {
-         get
-         {
-            return room;
-         }
-         set
-         {
-            if (this.room == null || !this.room.Equals(value))
+       public class MedicalExam : BaseModel
+       {
+            private const string ID_PATH = @"..\..\Data\MedicalExamId.txt";
+            public MedicalExam() : base(ID_PATH)
             {
-               if (this.room != null)
-               {
-                  Room oldRoom = this.room;
-                  this.room = null;
-                  oldRoom.RemoveMedicalExam(this);
-               }
-               if (value != null)
-               {
-                  this.room = value;
-                  this.room.AddMedicalExam(this);
-               }
+
             }
-         }
-      }
-      public GuestUser guestUser;
-      public Drug therapyDrug;
+
+            public string Report { get; set; }
+            public DateTime AppointmentStart { get; set; }
+            public bool IsSurgery { get; set; }
+            public DateTime AppointmentEnd { get; set; }
+
+            public int Doctor { get; set; }
+            public DoctorReview DoctorReview { get; set; }
+            public int MedicalRecord { get; set; }
+            public int Room { get; set; }
       
-      /// <summary>
-      /// Property for Drug
-      /// </summary>
-      /// <pdGenerated>Default opposite class property</pdGenerated>
-      public Drug TherapyDrug
-      {
-         get
-         {
-            return therapyDrug;
-         }
-         set
-         {
-            this.therapyDrug = value;
-         }
-      }
-   
-   }
+            public GuestUser GuestUser { get; set; }
+            public int TherapyDrug { get; set; }  
+       }
 }

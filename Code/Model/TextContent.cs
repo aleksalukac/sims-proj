@@ -3,22 +3,23 @@
 // Created: Thursday, May 7, 2020 9:41:02 PM
 // Purpose: Definition of Class TextContent
 
+using Hospital_class_diagram.Model;
 using Model; using System; using System.Collections.Generic;
 
 namespace Model
 {
-   public class TextContent
+   public class TextContent : BaseModel
    {
-      public int id;
-      private string text;
-      private TextContentType type;
+        private const string ID_PATH = @"..\..\Data\TextContentId.txt";
+        public TextContent() : base(ID_PATH)
+        {
+
+        }
+
+        public string Text { get; set; }
+        public TextContentType Type { get; set; }
       
-      public TextContent GenerateTextContent()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public User creator;
+        public int CreatorUser { get; set; }
    
    }
 }

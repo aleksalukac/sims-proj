@@ -9,7 +9,7 @@ namespace Model
 {
    public class SpecialisationType
    {
-      private string name;
+      public string Name { get; set; }
    
    }
 }

@@ -9,8 +9,8 @@ namespace Model
 {
    public class Employee : User
    {
-      public WorkingHours workingHours;
-      public Vacation vacation;
+      public WorkingHours WorkingHours { get; set; }
+      public Vacation Vacation { get; set; }
    
    }
 }
