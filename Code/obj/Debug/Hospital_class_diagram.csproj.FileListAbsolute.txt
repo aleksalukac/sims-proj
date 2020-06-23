@@ -7,3 +7,12 @@ F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.pdb
 F:\FTN\SiMS\Code\bin\Debug\Newtonsoft.Json.dll
 F:\FTN\SiMS\Code\bin\Debug\Newtonsoft.Json.xml
 F:\FTN\SiMS\Code\obj\Debug\Hospital_class_diagram.csproj.CopyComplete
+C:\Users\andja\Desktop\git\sims-proj\Code\bin\Debug\Hospital_class_diagram.dll
+C:\Users\andja\Desktop\git\sims-proj\Code\bin\Debug\Hospital_class_diagram.pdb
+C:\Users\andja\Desktop\git\sims-proj\Code\bin\Debug\Newtonsoft.Json.dll
+C:\Users\andja\Desktop\git\sims-proj\Code\bin\Debug\Newtonsoft.Json.xml
+C:\Users\andja\Desktop\git\sims-proj\Code\obj\Debug\Hospital_class_diagram.csprojAssemblyReference.cache
+C:\Users\andja\Desktop\git\sims-proj\Code\obj\Debug\Hospital_class_diagram.csproj.CoreCompileInputs.cache
+C:\Users\andja\Desktop\git\sims-proj\Code\obj\Debug\Hospital_class_diagram.csproj.CopyComplete
+C:\Users\andja\Desktop\git\sims-proj\Code\obj\Debug\Hospital_class_diagram.dll
+C:\Users\andja\Desktop\git\sims-proj\Code\obj\Debug\Hospital_class_diagram.pdb

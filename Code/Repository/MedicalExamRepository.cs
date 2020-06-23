@@ -23,16 +23,32 @@ namespace Repository
       {
          throw new NotImplementedException();
       }
-      
-      public MedicalExam AddMedicalExam(MedicalExam medicalExam)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<MedicalExam> GetAllMedicalExam()
-      {
-         throw new NotImplementedException();
-      }
-   
-   }
+
+        public MedicalExam AddMedicalExam(MedicalExam medicalExam)
+        {
+            List<MedicalExam> medicalExams = GetAllMedicalExam();
+            medicalExams.Add(medicalExam);
+            WriteAllMedicalExam(medicalExams);
+
+            return medicalExam;
+
+        }
+        public static void WriteAllMedicalExam(List<MedicalExam> medicalExams)
+        {
+            string medicalExamsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalExams);
+
+            System.IO.File.WriteAllText(@"..\..\Data\MedicalExamData.txt", medicalExamsSerialized);
+        }
+
+        public static List<MedicalExam> GetAllMedicalExam()
+        {
+            string medicalExamsSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalExamData.txt");
+
+            List<MedicalExam> medicalExams = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MedicalExam>>(medicalExamsSerialized);
+
+            return medicalExams;
+        }
+
+
+    }
 }

@@ -21,13 +21,20 @@ namespace Repository
       
       public Notification AddNotification(Notification notification)
       {
-         throw new NotImplementedException();
-      }
-      
-      public Notification RemoveNotification(int id)
+
+            throw new NotImplementedException();
+        }
+
+      public  void WriteAllNotification(List<Notification> notifications)
+        {
+            throw new NotImplementedException();
+        }
+
+
+      public  Notification RemoveNotification(int id)
       {
-         throw new NotImplementedException();
-      }
+            throw new NotImplementedException();
+        }
    
    }
 }

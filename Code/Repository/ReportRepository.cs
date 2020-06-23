@@ -23,11 +23,22 @@ namespace Repository
       {
          throw new NotImplementedException();
       }
-      
-      public List<Report> GetAllReport()
-      {
-         throw new NotImplementedException();
-      }
-   
-   }
+
+        public static void WriteAllReport(List<Report> reports)
+        {
+            string reportsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(reports);
+
+            System.IO.File.WriteAllText(@"..\..\Data\ReportData.txt", reportsSerialized);
+        }
+
+        public static List<Report> GetAllReport()
+        {
+            string reportsSerialized = System.IO.File.ReadAllText(@"..\..\Data\ReportData.txt");
+
+            List<Report> reports = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Report>>(reportsSerialized);
+
+            return reports;
+        }
+
+    }
 }
