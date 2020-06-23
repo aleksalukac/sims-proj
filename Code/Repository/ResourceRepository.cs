@@ -4,35 +4,84 @@
 // Purpose: Definition of Class ResourceRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.Linq;
 
 namespace Repository
 {
    public class ResourceRepository
    {
-      public Resource RemoveResource(int id)
+      public static Resource RemoveResource(int id)
       {
-         throw new NotImplementedException();
-      }
+            List<Resource> resources = GetAllResource();
+
+            Resource resourceToRemove = resources.SingleOrDefault(r => r.id == id);
+
+            if (resourceToRemove != null)
+            {
+                resources.Remove(resourceToRemove);
+                WriteAllResource(resources);
+            }
+
+            return resourceToRemove;
+        }
       
-      public Resource SetResource(Resource resource)
+      public static Resource SetResource(Resource resource)
       {
-         throw new NotImplementedException();
-      }
+
+            List<Resource> resources = GetAllResource();
+
+            for (int i = 0; i < resources.Count; i++)
+            {
+                if (resources[i].id == resource.id)
+                {
+                    resources[i] = resource;
+                    break;
+                }
+            }
+
+            WriteAllResource(resources);
+
+            return resource;
+        }
       
-      public Resource AddResource(Resource resource)
+      public static Resource AddResource(Resource resource)
       {
-         throw new NotImplementedException();
-      }
+            List<Resource> resources = GetAllResource();
+            resources.Add(resource);
+            WriteAllResource(resources);
+
+            return resource;
+        }
       
-      public Resource GetResource(int id)
+      public static Resource GetResource(int id)
       {
-         throw new NotImplementedException();
-      }
-      
-      public List<Resource> GetAllResource()
+            List<Resource> resources= GetAllResource();
+
+            foreach (Resource resource in resources)
+            {
+                if (resource.id == id)
+                    return resource;
+            }
+
+            return null;
+
+        }
+
+        public static void WriteAllResource(List<Resource> resources)
+        {
+            string resourcesSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(resources);
+
+            System.IO.File.WriteAllText(@"..\..\Data\ResourceData.txt", resourcesSerialized);
+        }
+
+        public static List<Resource> GetAllResource()
       {
-         throw new NotImplementedException();
-      }
+            string resourcesSerialized = System.IO.File.ReadAllText(@"..\..\Data\ResourceData.txt");
+
+            List<Resource> resources = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Resource>>(resourcesSerialized);
+
+            return resources;
+        }
    
    }
 }

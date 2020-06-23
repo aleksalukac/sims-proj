@@ -11,7 +11,7 @@ namespace Model
    {
       private string text;
       private DateTime date;
-      private int id;
+      public int id;
       
       public User user;
    

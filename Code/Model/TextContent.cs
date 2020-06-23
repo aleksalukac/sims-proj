@@ -9,7 +9,7 @@ namespace Model
 {
    public class TextContent
    {
-      private int id;
+      public int id;
       private string text;
       private TextContentType type;
       

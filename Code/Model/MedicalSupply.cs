@@ -9,7 +9,7 @@ namespace Model
 {
    public class MedicalSupply
    {
-      private int id;
+      public int id;
       private string name;
       private int count;
    

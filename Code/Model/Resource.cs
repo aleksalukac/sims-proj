@@ -9,7 +9,7 @@ namespace Model
 {
    public class Resource
    {
-      private int id;
+      public int id;
       private int type;
       
       public ResourceType resourceType;

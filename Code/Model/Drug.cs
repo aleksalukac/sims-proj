@@ -10,7 +10,7 @@ namespace Model
    public class Drug
    {
       private string name;
-      private int id;
+      public int id;
       private int count;
       private bool approved;
       
