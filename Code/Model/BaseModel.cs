@@ -8,7 +8,7 @@ namespace Hospital_class_diagram.Model
 {
     public abstract class BaseModel
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         public BaseModel(string path)
         {

@@ -4,30 +4,45 @@
 // Purpose: Definition of Class ManagerRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 
 namespace Repository
 {
    public class ManagerRepository
    {
-      public Manager SetManager(Manager manager)
-      {
-         throw new NotImplementedException();
-      }
+        public static Manager SetManager(Manager manager)
+        {
+            if(GetManager().Id != manager.Id)
+            {
+                return null;
+            }
+
+            string managerSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(manager);
+
+            System.IO.File.WriteAllText(@"..\..\Data\ManagerData.txt", managerSerialized);
+
+            return GetManager();
+        }
       
-      public Manager GetManager(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public static Manager GetManager()
+        {
+            string managerSerialized = System.IO.File.ReadAllText(@"..\..\Data\ManagerData.txt"); //doctorPath
+
+            Manager manager = Newtonsoft.Json.JsonConvert.DeserializeObject<Manager>(managerSerialized);
+
+            return manager;
+        }
       
-      public Manager RemoveManager(int id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Manager AddManager(Manager manager)
-      {
-         throw new NotImplementedException();
-      }
-   
-   }
+        public static Manager AddManager(Manager manager)
+        {
+            if(!File.Exists(@"..\..\Data\ManagerData.txt") || GetManager() == null)
+            {
+                string managerSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(manager);
+
+                System.IO.File.WriteAllText(@"..\..\Data\ManagerData.txt", managerSerialized);
+            }
+
+            return GetManager();
+        }
+    }
 }

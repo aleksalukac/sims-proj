@@ -4,30 +4,46 @@
 // Purpose: Definition of Class SecretaryRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 
 namespace Repository
 {
    public class SecretaryRepository
    {
-      public Secretary SetSecretary(Secretary secretary)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Secretary GetSecretary(int id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Secretary RemoveSecretary(int id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Secretary AddSecretary(Secretary secretary)
-      {
-         throw new NotImplementedException();
-      }
-   
-   }
+        public static Secretary SetSecretary(Secretary secretary)
+        {
+            if (GetSecretary().Id != secretary.Id)
+            {
+                return null;
+            }
+
+            string secretarySerialized = Newtonsoft.Json.JsonConvert.SerializeObject(secretary);
+
+            System.IO.File.WriteAllText(@"..\..\Data\SecretaryData.txt", secretarySerialized);
+
+            return GetSecretary();
+        }
+
+        public static Secretary GetSecretary()
+        {
+            string secretarySerialized = System.IO.File.ReadAllText(@"..\..\Data\SecretaryData.txt"); //doctorPath
+
+            Secretary secretary = Newtonsoft.Json.JsonConvert.DeserializeObject<Secretary>(secretarySerialized);
+
+            return secretary;
+        }
+
+        public static Secretary AddSecretary(Secretary secretary)
+        {
+            if (!File.Exists(@"..\..\Data\SecretaryData.txt") || GetSecretary() == null)
+            {
+                string secretarySerialized = Newtonsoft.Json.JsonConvert.SerializeObject(secretary);
+
+                System.IO.File.WriteAllText(@"..\..\Data\SecretaryData.txt", secretarySerialized);
+            }
+
+            return GetSecretary();
+        }
+
+    }
 }

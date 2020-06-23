@@ -4,37 +4,83 @@
 // Purpose: Definition of Class NotificationRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.Linq;
 
 namespace Repository
 {
    public class NotificationRepository
    {
-      public Notification SetNotification(Notification notification)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Notification GetNotification(int id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Notification AddNotification(Notification notification)
-      {
-
-            throw new NotImplementedException();
-        }
-
-      public  void WriteAllNotification(List<Notification> notifications)
+        public static Notification SetNotification(Notification notification)
         {
-            throw new NotImplementedException();
+            List<Notification> notifications = GetAllNotification();
+
+            for (int i = 0; i < notifications.Count; i++)
+            {
+                if (notifications[i].Id == notification.Id)
+                {
+                    notifications[i] = notification;
+                    break;
+                }
+            }
+
+            WriteAllNotification(notifications);
+
+            return notification;
+        }
+
+        public static Notification GetNotification(int id)
+        {
+            List<Notification> notifications = GetAllNotification();
+
+            foreach (Notification notification in notifications)
+            {
+                if (notification.Id == id)
+                    return notification;
+            }
+
+            return null;
+        }
+
+        public static Notification RemoveNotification(int id)
+        {
+            List<Notification> notifications = GetAllNotification();
+
+            Notification notificationToRemove = notifications.SingleOrDefault(r => r.Id == id);
+
+            if (notificationToRemove != null)
+            {
+                notifications.Remove(notificationToRemove);
+                WriteAllNotification(notifications);
+            }
+
+            return notificationToRemove;
+        }
+
+        public static Notification AddNotification(Notification notification)
+        {
+            List<Notification> notifications = GetAllNotification();
+            notifications.Add(notification);
+            WriteAllNotification(notifications);
+
+            return notification;
+        }
+
+        public static List<Notification> GetAllNotification()
+        {
+            string notificationsSerialized = System.IO.File.ReadAllText(@"..\..\Data\NotificationData.txt"); //notificationPath
+
+            List<Notification> notifications = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Notification>>(notificationsSerialized);
+
+            return notifications;
         }
 
 
-      public  Notification RemoveNotification(int id)
-      {
-            throw new NotImplementedException();
+        public static void WriteAllNotification(List<Notification> notifications)
+        {
+            string notificationsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(notifications);
+
+            System.IO.File.WriteAllText(@"..\..\Data\NotificationData.txt", notificationsSerialized);
         }
-   
-   }
+
+    }
 }

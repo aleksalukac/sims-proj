@@ -4,35 +4,82 @@
 // Purpose: Definition of Class DoctorRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.Linq;
 
 namespace Repository
 {
    public class DoctorRepository
    {
-      public Doctor SetDoctor(Doctor doctor)
-      {
-         throw new NotImplementedException();
-      }
+        public static Doctor SetDoctor(Doctor doctor)
+        {
+            List<Doctor> doctors = GetAllDoctor();
+
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].Id == doctor.Id)
+                {
+                    doctors[i] = doctor;
+                    break;
+                }
+            }
+
+            WriteAllDoctor(doctors);
+
+            return doctor;
+        }
       
-      public Doctor GetDoctor(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public static Doctor GetDoctor(int id)
+        {
+            List<Doctor> doctors = GetAllDoctor();
+
+            foreach (Doctor doctor in doctors)
+            {
+                if (doctor.Id == id)
+                    return doctor;
+            }
+
+            return null;
+        }
       
-      public Doctor RemoveDoctor(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public static Doctor RemoveDoctor(int id)
+        {
+            List<Doctor> doctors = GetAllDoctor();
+
+            Doctor doctorToRemove = doctors.SingleOrDefault(r => r.Id == id);
+
+            if (doctorToRemove != null)
+            {
+                doctors.Remove(doctorToRemove);
+                WriteAllDoctor(doctors);
+            }
+
+            return doctorToRemove;
+        }
       
-      public Doctor AddDoctor(Doctor doctor)
-      {
-         throw new NotImplementedException();
-      }
+        public static Doctor AddDoctor(Doctor doctor)
+        {
+            List<Doctor> doctors = GetAllDoctor();
+            doctors.Add(doctor);
+            WriteAllDoctor(doctors);
+
+            return doctor;
+        }
       
-      public List<Doctor> GetAllDoctor()
-      {
-         throw new NotImplementedException();
-      }
-   
+        public static List<Doctor> GetAllDoctor()
+        {
+            string doctorsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DoctorData.txt"); //doctorPath
+
+            List<Doctor> doctors = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Doctor>>(doctorsSerialized);
+
+            return doctors;
+        }
+    
+
+        public static void WriteAllDoctor(List<Doctor> doctors)
+        {
+            string doctorsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(doctors);
+
+            System.IO.File.WriteAllText(@"..\..\Data\DoctorData.txt", doctorsSerialized);
+        }
    }
 }
