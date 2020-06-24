@@ -3,13 +3,24 @@
 // Created: Tuesday, May 26, 2020 7:59:18 PM
 // Purpose: Definition of Class UserService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
    public class UserService
    {
-      public Model.User Login(string email, string password)
+        private EmployeeService _employeeService;
+        private PatientRepository _patientRepository;
+
+        public UserService(EmployeeService employeeService, PatientRepository patientRepository)
+        {
+            this._employeeService = employeeService;
+            this._patientRepository = patientRepository;
+        }
+
+        public Model.User Login(string email, string password)
       {
          throw new NotImplementedException();
       }

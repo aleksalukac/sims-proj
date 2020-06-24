@@ -26,7 +26,7 @@ namespace Model
             public int MedicalRecord { get; set; }
             public int Room { get; set; }
       
-            public GuestUser GuestUser { get; set; }
+            public int GuestUser { get; set; }
             public int TherapyDrug { get; set; }  
        }
 }

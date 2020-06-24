@@ -16,8 +16,11 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public DoctorRepository doctorRepository;
+        private MedicalExamRepository _medicalExamRepository;
 
-      public PatientRepository patientRepository;
-   }
+        public GuestUserService(MedicalExamRepository medicalExamRepository)
+        {
+            this._medicalExamRepository = medicalExamRepository;
+        }
+    }
 }

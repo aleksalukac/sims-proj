@@ -3,7 +3,9 @@
 // Created: Wednesday, May 27, 2020 12:50:23 AM
 // Purpose: Definition of Class PatientService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
@@ -34,8 +36,11 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public Repository.PatientRepository patientRepository;
-      public UserService userService;
-   
-   }
+        private PatientRepository _patientRepository;
+
+        public PatientService(PatientRepository patientRepository1)
+        {
+            this._patientRepository = patientRepository1;
+        }
+    }
 }

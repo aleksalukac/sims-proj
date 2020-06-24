@@ -3,7 +3,9 @@
 // Created: Wednesday, May 27, 2020 3:21:08 PM
 // Purpose: Definition of Class ResourceService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
@@ -19,7 +21,11 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public Repository.ResourceRepository resourceRepository;
-   
-   }
+        private ResourceRepository _resourceRepository;
+
+        public ResourceService(ResourceRepository resourceRepository1)
+        {
+            this._resourceRepository = resourceRepository1;
+        }
+    }
 }

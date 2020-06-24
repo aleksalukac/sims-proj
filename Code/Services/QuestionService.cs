@@ -3,7 +3,9 @@
 // Created: Friday, May 29, 2020 11:22:30 PM
 // Purpose: Definition of Class QuestionService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
@@ -29,7 +31,11 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public Repository.TextContentRepository textContentRepository;
-   
-   }
+        private TextContentRepository _textContentRepository;
+
+        public QuestionService(TextContentRepository textContentRepository1)
+        {
+            this._textContentRepository = textContentRepository1;
+        }
+    }
 }

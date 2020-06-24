@@ -3,7 +3,9 @@
 // Created: Wednesday, May 27, 2020 1:25:14 PM
 // Purpose: Definition of Class RoomService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
@@ -29,7 +31,11 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public Repository.RoomRepository roomRepository;
-   
-   }
+        private RoomRepository _roomRepository;
+
+        public RoomService(RoomRepository roomRepository1)
+        {
+            this._roomRepository = roomRepository1;
+        }
+    }
 }

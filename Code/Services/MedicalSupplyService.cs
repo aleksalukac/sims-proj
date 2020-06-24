@@ -3,7 +3,9 @@
 // Created: Wednesday, May 27, 2020 3:26:25 PM
 // Purpose: Definition of Class MedicalSupplyService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
@@ -14,7 +16,11 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public Repository.MedicalSupplyRespository medicalSupplyRespository;
-   
-   }
+        private MedicalSupplyRespository _medicalSupplyRepository;
+
+        public MedicalSupplyService(MedicalSupplyRespository medicalSupplyRepository)
+        {
+            this._medicalSupplyRepository = medicalSupplyRepository;
+        }
+    }
 }

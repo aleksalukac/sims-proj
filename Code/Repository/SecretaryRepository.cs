@@ -26,7 +26,7 @@ namespace Repository
 
         public static Secretary Get()
         {
-            string secretarySerialized = System.IO.File.ReadAllText(@"..\..\Data\SecretaryData.txt"); //doctorPath
+            string secretarySerialized = System.IO.File.ReadAllText(@"..\..\Data\SecretaryData.txt"); 
 
             Secretary secretary = Newtonsoft.Json.JsonConvert.DeserializeObject<Secretary>(secretarySerialized);
 

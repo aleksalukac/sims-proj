@@ -3,29 +3,32 @@
 // Created: Wednesday, May 27, 2020 12:51:23 PM
 // Purpose: Definition of Class DoctorService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
    public class DoctorService
-   {
-      public SpecialisationType GetSpecialisation()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Doctor GetDoctor(int id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public List<Doctor> GetAllDoctor()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Repository.DoctorRepository doctorRepository;
-      public UserService userService;
-   
+    {
+        private DoctorRepository _doctorRepository;
+
+        public DoctorService(DoctorRepository doctorRepository)
+        {
+            _doctorRepository = doctorRepository;
+        }
+
+        public Doctor Get(int id) 
+            => _doctorRepository.Get(id);
+
+        public List<Doctor> GetAll()
+            => _doctorRepository.GetAll();
+
+        public Doctor Add(Doctor doctor) 
+            => _doctorRepository.Add(doctor);
+
+        public Doctor Remove(Doctor doctor)
+            => _doctorRepository.Remove(doctor.Id);
+
    }
 }

@@ -3,7 +3,9 @@
 // Created: Wednesday, May 27, 2020 12:55:32 PM
 // Purpose: Definition of Class MedicalExamService
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Repository;
+using System; using System.Collections.Generic;
 
 namespace Services
 {
@@ -74,8 +76,12 @@ namespace Services
          throw new NotImplementedException();
       }
       
-      public Repository.MedicalExamRepository medicalExamRepository;
       public ScheduleMedicalExam scheduleMedicalExam;
-   
-   }
+        private MedicalExamRepository _medicalExamRepository;
+
+        public MedicalExamService(MedicalExamRepository medicalExamRepository1)
+        {
+            this._medicalExamRepository = medicalExamRepository1;
+        }
+    }
 }

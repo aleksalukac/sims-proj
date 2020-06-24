@@ -26,7 +26,7 @@ namespace Repository
       
         public static Manager Get()
         {
-            string managerSerialized = System.IO.File.ReadAllText(@"..\..\Data\ManagerData.txt"); //doctorPath
+            string managerSerialized = System.IO.File.ReadAllText(@"..\..\Data\ManagerData.txt"); 
 
             Manager manager = Newtonsoft.Json.JsonConvert.DeserializeObject<Manager>(managerSerialized);
 

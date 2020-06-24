@@ -10,7 +10,7 @@ namespace Repository
 {
    public class DoctorRepository
    {
-        public static Doctor Update(Doctor doctor)
+        public Doctor Update(Doctor doctor)
         {
             List<Doctor> doctors = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return doctor;
         }
       
-        public static Doctor Get(int id)
+        public Doctor Get(int id)
         {
             List<Doctor> doctors = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
       
-        public static Doctor Remove(int id)
+        public Doctor Remove(int id)
         {
             List<Doctor> doctors = GetAll();
 
@@ -56,26 +56,30 @@ namespace Repository
             return doctorToRemove;
         }
       
-        public static Doctor Add(Doctor doctor)
+        public Doctor Add(Doctor doctor)
         {
-            List<Doctor> doctors = GetAll();
-            doctors.Add(doctor);
-            WriteAll(doctors);
+            if (Get(doctor.Id) == null)
+            {
+                List<Doctor> doctors = GetAll();
+                doctors.Add(doctor);
+                WriteAll(doctors);
 
-            return doctor;
+                return doctor;
+            }
+
+            return null;
         }
       
-        public static List<Doctor> GetAll()
+        public List<Doctor> GetAll()
         {
-            string doctorsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DoctorData.txt"); //doctorPath
+            string doctorsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DoctorData.txt"); 
 
             List<Doctor> doctors = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Doctor>>(doctorsSerialized);
 
             return doctors;
         }
-    
 
-        public static void WriteAll(List<Doctor> doctors)
+        public void WriteAll(List<Doctor> doctors)
         {
             string doctorsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(doctors);
 
