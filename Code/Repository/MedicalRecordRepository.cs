@@ -10,7 +10,7 @@ namespace Repository
 {
    public class MedicalRecordRepository
    {
-        public static MedicalRecord Remove(int id)
+        public  MedicalRecord Remove(int id)
         {
             List<MedicalRecord> medicalRecords = GetAll();
 
@@ -25,7 +25,7 @@ namespace Repository
             return medicalRecordToRemove;
         }
 
-        public static MedicalRecord Update(MedicalRecord medicalRecord)
+        public  MedicalRecord Update(MedicalRecord medicalRecord)
         {
 
             List<MedicalRecord> medicalRecords = GetAll();
@@ -44,7 +44,7 @@ namespace Repository
             return medicalRecord;
         }
 
-        public static MedicalRecord Add(MedicalRecord medicalRecord)
+        public  MedicalRecord Add(MedicalRecord medicalRecord)
         {
             if (Get(medicalRecord.Id) == null)
             {
@@ -57,7 +57,7 @@ namespace Repository
             return null;
         }
 
-        public static MedicalRecord Get(int id)
+        public  MedicalRecord Get(int id)
         {
             List<MedicalRecord> medicalRecords = GetAll();
 
@@ -71,14 +71,14 @@ namespace Repository
 
         }
 
-        public static void WriteAll(List<MedicalRecord> medicalRecords)
+        public  void WriteAll(List<MedicalRecord> medicalRecords)
         {
             string medicalRecordsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalRecords);
 
             System.IO.File.WriteAllText(@"..\..\Data\MedicalRecordData.txt", medicalRecordsSerialized);
         }
 
-        public static List<MedicalRecord> GetAll()
+        public  List<MedicalRecord> GetAll()
         {
             string medicalRecordsSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalRecordData.txt");
 

@@ -10,7 +10,7 @@ namespace Repository
 {
    public class PatientRepository
    {
-        public static Patient Update(Patient patient)
+        public  Patient Update(Patient patient)
         {
             List<Patient> patients = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return patient;
         }
 
-        public static Patient Get(int id)
+        public  Patient Get(int id)
         {
             List<Patient> patients = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
 
-        public static Patient Remove(int id)
+        public  Patient Remove(int id)
         {
             List<Patient> patients = GetAll();
 
@@ -56,7 +56,7 @@ namespace Repository
             return patientToRemove;
         }
 
-        public static Patient Add(Patient patient)
+        public  Patient Add(Patient patient)
         {
             if (Get(patient.Id) == null)
             {
@@ -69,7 +69,7 @@ namespace Repository
             return null;
         }
 
-        public static List<Patient> GetAll()
+        public  List<Patient> GetAll()
         {
             string patientsSerialized = System.IO.File.ReadAllText(@"..\..\Data\PatientData.txt"); //patientPath
 
@@ -79,7 +79,7 @@ namespace Repository
         }
 
 
-        public static void WriteAll(List<Patient> patients)
+        public  void WriteAll(List<Patient> patients)
         {
             string patientsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(patients);
 

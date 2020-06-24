@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:39:18 PM
 // Purpose: Definition of Class MedicalSupplyController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -14,7 +16,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
 
-      public Services.MedicalSupplyService medicalSupplyService;
-   
-   }
+        private MedicalSupplyService _medicalSupplyService;
+
+        public MedicalSupplyController(MedicalSupplyService medicalSupplyService1)
+        {
+            this._medicalSupplyService = medicalSupplyService1;
+        }
+    }
 }

@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:17:14 PM
 // Purpose: Definition of Class MedicalExamController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -74,7 +76,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.MedicalExamService medicalExamService;
-   
-   }
+        private MedicalExamService _medicalExamService;
+
+        public MedicalExamController(MedicalExamService medicalExamService1)
+        {
+            this._medicalExamService = medicalExamService1;
+        }
+    }
 }

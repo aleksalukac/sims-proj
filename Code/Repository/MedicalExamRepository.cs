@@ -10,7 +10,7 @@ namespace Repository
 {
    public class MedicalExamRepository
    {
-        public static MedicalExam Update(MedicalExam medicalExam)
+        public  MedicalExam Update(MedicalExam medicalExam)
         {
             List<MedicalExam> medicalExams = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return medicalExam;
         }
 
-        public static MedicalExam Get(int id)
+        public  MedicalExam Get(int id)
         {
             List<MedicalExam> medicalExams = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
 
-        public static MedicalExam Remove(int id)
+        public  MedicalExam Remove(int id)
         {
             List<MedicalExam> medicalExams = GetAll();
 
@@ -56,7 +56,7 @@ namespace Repository
             return medicalExamToRemove;
         }
 
-        public static MedicalExam Add(MedicalExam medicalExam)
+        public  MedicalExam Add(MedicalExam medicalExam)
         {
             if (Get(medicalExam.Id) == null)
             {
@@ -69,7 +69,7 @@ namespace Repository
             return null;
         }
 
-        public static List<MedicalExam> GetAll()
+        public  List<MedicalExam> GetAll()
         {
             string medicalExamsSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalExamData.txt"); //medicalExamPath
 
@@ -79,7 +79,7 @@ namespace Repository
         }
 
 
-        public static void WriteAll(List<MedicalExam> medicalExams)
+        public  void WriteAll(List<MedicalExam> medicalExams)
         {
             string medicalExamsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalExams);
 

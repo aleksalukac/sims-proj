@@ -4,6 +4,7 @@
 // Purpose: Definition of Class FeedbackController
 
 using Model;
+using Services;
 using System;
 using System.Collections.Generic;
 
@@ -31,7 +32,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.FeedbackService feedbackService;
-   
-   }
+        private FeedbackService _feedbackService;
+
+        public FeedbackController(FeedbackService feedbackService1)
+        {
+            this._feedbackService = feedbackService1;
+        }
+    }
 }

@@ -11,21 +11,21 @@ namespace Services
 {
    public class DoctorReviewService
    {
-        private DoctorRepository _doctorRepository;
+        private MedicalExamRepository _medicalExamRepository;
 
-        public DoctorReviewService(DoctorRepository doctorRepository)
+        public DoctorReviewService(MedicalExamRepository medicalExamRepository)
         {
-            this._doctorRepository = doctorRepository;
+            this._medicalExamRepository = medicalExamRepository;
         }
 
         public Model.DoctorReview GetDoctorReview(MedicalExam medicalExam)
-        => Repository.MedicalExamRepository.Get(medicalExam.Id).DoctorReview;
+        => _medicalExamRepository.Get(medicalExam.Id).DoctorReview;
       
         public Model.DoctorReview SetDoctorReview(Model.DoctorReview doctorReview)
         {
-            MedicalExam medicalExam = _doctorRepository.Get(doctorReview.MedicalExam);
+            MedicalExam medicalExam = _medicalExamRepository.Get(doctorReview.MedicalExam);
             medicalExam.DoctorReview = doctorReview;
-            _doctorRepository.Update(medicalExam);
+            _medicalExamRepository.Update(medicalExam);
 
             return doctorReview;
         }

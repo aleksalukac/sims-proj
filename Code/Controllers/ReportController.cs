@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:40:30 PM
 // Purpose: Definition of Class ReportController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -14,7 +16,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.ReportService reportService;
-   
-   }
+        private ReportService _reportService;
+
+        public ReportController(ReportService reportService1)
+        {
+            this._reportService = reportService1;
+        }
+    }
 }

@@ -10,7 +10,7 @@ namespace Repository
 {
    public class SecretaryRepository
    {
-        public static Secretary Update(Secretary secretary)
+        public  Secretary Update(Secretary secretary)
         {
             if (Get().Id != secretary.Id)
             {
@@ -24,7 +24,7 @@ namespace Repository
             return Get();
         }
 
-        public static Secretary Get()
+        public  Secretary Get()
         {
             string secretarySerialized = System.IO.File.ReadAllText(@"..\..\Data\SecretaryData.txt"); 
 
@@ -33,7 +33,7 @@ namespace Repository
             return secretary;
         }
 
-        public static Secretary Add(Secretary secretary)
+        public  Secretary Add(Secretary secretary)
         {
             if (!File.Exists(@"..\..\Data\SecretaryData.txt") || Get() == null)
             {

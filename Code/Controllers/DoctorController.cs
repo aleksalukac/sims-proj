@@ -11,16 +11,16 @@ namespace Controllers
 {
    public class DoctorController
    {
-        private DoctorService _service;
+        private DoctorService _doctorService;
 
         public DoctorController(DoctorService service)
         {
-            _service = service;
+            _doctorService = service;
         }
 
-        public SpecialisationType Add(DoctorView doctorView)
+        public SpecialisationType Add()
         {
-            _service.Add();
+            //_doctorService.Add();
             throw new NotImplementedException();
         }
 

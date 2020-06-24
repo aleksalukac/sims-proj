@@ -10,7 +10,7 @@ namespace Repository
 {
    public class DrugRepository
    {
-        public static Drug Update(Drug drug)
+        public  Drug Update(Drug drug)
         {
             List<Drug> drugs = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return drug;
         }
 
-        public static Drug Get(int id)
+        public  Drug Get(int id)
         {
             List<Drug> drugs = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
 
-        public static Drug Remove(int id)
+        public  Drug Remove(int id)
         {
             List<Drug> drugs = GetAll();
 
@@ -56,7 +56,7 @@ namespace Repository
             return drugToRemove;
         }
 
-        public static Drug Add(Drug drug)
+        public  Drug Add(Drug drug)
         {
             if (Get(drug.Id) == null)
             {
@@ -69,7 +69,7 @@ namespace Repository
             return null;
         }
 
-        public static List<Drug> GetAll()
+        public  List<Drug> GetAll()
         {
             string drugsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DrugData.txt"); //drugPath
 
@@ -79,7 +79,7 @@ namespace Repository
         }
 
 
-        public static void WriteAll(List<Drug> drugs)
+        public  void WriteAll(List<Drug> drugs)
         {
             string drugsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(drugs);
 

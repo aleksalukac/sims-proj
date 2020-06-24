@@ -10,7 +10,7 @@ namespace Repository
 {
    public class NotificationRepository
    {
-        public static Notification Update(Notification notification)
+        public  Notification Update(Notification notification)
         {
             List<Notification> notifications = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return notification;
         }
 
-        public static Notification Get(int id)
+        public  Notification Get(int id)
         {
             List<Notification> notifications = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
 
-        public static Notification Remove(int id)
+        public  Notification Remove(int id)
         {
             List<Notification> notifications = GetAll();
 
@@ -56,7 +56,7 @@ namespace Repository
             return notificationToRemove;
         }
 
-        public static Notification Add(Notification notification)
+        public  Notification Add(Notification notification)
         {
             if (Get(notification.Id) == null)
             {
@@ -69,7 +69,7 @@ namespace Repository
             return null;
         }
 
-        public static List<Notification> GetAll()
+        public  List<Notification> GetAll()
         {
             string notificationsSerialized = System.IO.File.ReadAllText(@"..\..\Data\NotificationData.txt"); //notificationPath
 
@@ -79,7 +79,7 @@ namespace Repository
         }
 
 
-        public static void WriteAll(List<Notification> notifications)
+        public  void WriteAll(List<Notification> notifications)
         {
             string notificationsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(notifications);
 

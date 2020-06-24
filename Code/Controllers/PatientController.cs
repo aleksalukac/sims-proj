@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:37:50 PM
 // Purpose: Definition of Class PatientController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -34,7 +36,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.PatientService patientService;
-   
-   }
+        private PatientService _patientService;
+
+        public PatientController(PatientService patientService1)
+        {
+            this._patientService = patientService1;
+        }
+    }
 }

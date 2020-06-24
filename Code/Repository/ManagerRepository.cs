@@ -10,7 +10,7 @@ namespace Repository
 {
    public class ManagerRepository
    {
-        public static Manager Update(Manager manager)
+        public  Manager Update(Manager manager)
         {
             if(Get().Id != manager.Id)
             {
@@ -24,7 +24,7 @@ namespace Repository
             return Get();
         }
       
-        public static Manager Get()
+        public  Manager Get()
         {
             string managerSerialized = System.IO.File.ReadAllText(@"..\..\Data\ManagerData.txt"); 
 
@@ -33,7 +33,7 @@ namespace Repository
             return manager;
         }
 
-        public static Manager Add(Manager manager)
+        public  Manager Add(Manager manager)
         {
 
             if (!File.Exists(@"..\..\Data\ManagerData.txt") || Get() == null)

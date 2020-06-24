@@ -10,7 +10,7 @@ namespace Repository
 {
    public class ResourceRepository
    {
-        public static Resource Remove(int id)
+        public  Resource Remove(int id)
         {
             List<Resource> resources = GetAll();
 
@@ -25,7 +25,7 @@ namespace Repository
             return resourceToRemove;
         }
 
-        public static Resource Update(Resource resource)
+        public  Resource Update(Resource resource)
         {
 
             List<Resource> resources = GetAll();
@@ -44,7 +44,7 @@ namespace Repository
             return resource;
         }
 
-        public static Resource Add(Resource resource)
+        public  Resource Add(Resource resource)
         {
             if (Get(resource.Id) == null)
             {
@@ -57,7 +57,7 @@ namespace Repository
             return null;
         }
 
-        public static Resource Get(int id)
+        public  Resource Get(int id)
         {
             List<Resource> resources = GetAll();
 
@@ -71,14 +71,14 @@ namespace Repository
 
         }
 
-        public static void WriteAll(List<Resource> resources)
+        public  void WriteAll(List<Resource> resources)
         {
             string resourcesSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(resources);
 
             System.IO.File.WriteAllText(@"..\..\Data\ResourceData.txt", resourcesSerialized);
         }
 
-        public static List<Resource> GetAll()
+        public  List<Resource> GetAll()
         {
             string resourcesSerialized = System.IO.File.ReadAllText(@"..\..\Data\ResourceData.txt");
 

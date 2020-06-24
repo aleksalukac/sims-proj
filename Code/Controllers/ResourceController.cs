@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:40:30 PM
 // Purpose: Definition of Class ResourceController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -19,7 +21,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.ResourceService resourceService;
-   
-   }
+        private ResourceService _resourceService;
+
+        public ResourceController(ResourceService resourceService1)
+        {
+            this._resourceService = resourceService1;
+        }
+    }
 }

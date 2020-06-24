@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:37:59 PM
 // Purpose: Definition of Class UserController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -39,7 +41,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.UserService userService;
-   
-   }
+        private UserService _userService;
+
+        public UserController(UserService userService1)
+        {
+            this._userService = userService1;
+        }
+    }
 }

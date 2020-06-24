@@ -10,7 +10,7 @@ namespace Repository
 {
    public class ReportRepository
    {
-        public static Report Update(Report report)
+        public  Report Update(Report report)
         {
             List<Report> reports = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return report;
         }
 
-        public static Report Get(int id)
+        public  Report Get(int id)
         {
             List<Report> reports = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
 
-        public static Report Remove(int id)
+        public  Report Remove(int id)
         {
             List<Report> reports = GetAll();
 
@@ -56,7 +56,7 @@ namespace Repository
             return reportToRemove;
         }
 
-        public static Report Add(Report report)
+        public  Report Add(Report report)
         {
 
             if (Get(report.Id) == null)
@@ -70,7 +70,7 @@ namespace Repository
             return null;
         }
 
-        public static List<Report> GetAll()
+        public  List<Report> GetAll()
         {
             string reportsSerialized = System.IO.File.ReadAllText(@"..\..\Data\ReportData.txt"); //reportPath
 
@@ -80,7 +80,7 @@ namespace Repository
         }
 
 
-        public static void WriteAll(List<Report> reports)
+        public  void WriteAll(List<Report> reports)
         {
             string reportsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(reports);
 

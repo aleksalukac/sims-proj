@@ -10,7 +10,7 @@ namespace Repository
 {
    public class RoomRepository
    {
-      public static Room Remove(int id)
+      public  Room Remove(int id)
       {
             List<Room> rooms = GetAll();
 
@@ -25,7 +25,7 @@ namespace Repository
             return roomToRemove;
       }
       
-      public static Room Update(Room room)
+      public  Room Update(Room room)
       {
             List<Room> rooms = GetAll();
 
@@ -43,7 +43,7 @@ namespace Repository
             return room;
       }
       
-      public static Room Add(Room room)
+      public  Room Add(Room room)
       {
             if (Get(room.Id) == null)
             {
@@ -56,7 +56,7 @@ namespace Repository
             return null;
       }
       
-      public static Room Get(int id)
+      public  Room Get(int id)
       {
             List<Room> rooms = GetAll();
 
@@ -69,14 +69,14 @@ namespace Repository
             return null;
       }
 
-      public static void WriteAll(List<Room> rooms)
+      public  void WriteAll(List<Room> rooms)
       {
             string roomsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(rooms);
 
             System.IO.File.WriteAllText(@"..\..\Data\RoomData.txt", roomsSerialized);
       }
       
-      public static List<Room> GetAll()
+      public  List<Room> GetAll()
       {
             string roomsSerialized = System.IO.File.ReadAllText(@"..\..\Data\RoomData.txt"); //roomPath
 

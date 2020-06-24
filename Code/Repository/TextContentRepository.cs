@@ -10,7 +10,7 @@ namespace Repository
 {
    public class TextContentRepository
    {
-        public static TextContent Update(TextContent textContent)
+        public  TextContent Update(TextContent textContent)
         {
             List<TextContent> textContents = GetAll();
 
@@ -28,7 +28,7 @@ namespace Repository
             return textContent;
         }
 
-        public static TextContent Get(int id)
+        public  TextContent Get(int id)
         {
             List<TextContent> textContents = GetAll();
 
@@ -41,7 +41,7 @@ namespace Repository
             return null;
         }
 
-        public static TextContent Remove(int id)
+        public  TextContent Remove(int id)
         {
             List<TextContent> textContents = GetAll();
 
@@ -55,14 +55,14 @@ namespace Repository
 
             return textContentToRemove;
         }
-        public static void WriteAll(List<TextContent> textContents)
+        public  void WriteAll(List<TextContent> textContents)
         {
             string textContentsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(textContents);
 
             System.IO.File.WriteAllText(@"..\..\Data\TextContentData.txt", textContentsSerialized);
         }
 
-        public static TextContent Add(TextContent textContent)
+        public  TextContent Add(TextContent textContent)
         {
             if (Get(textContent.Id) == null)
             {
@@ -75,7 +75,7 @@ namespace Repository
             return null;
         }
 
-        public static List<TextContent> GetAll()
+        public  List<TextContent> GetAll()
         {
             string textContentsSerialized = System.IO.File.ReadAllText(@"..\..\Data\TextContentData.txt");
 

@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:43:02 PM
 // Purpose: Definition of Class EmployeeController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -14,7 +16,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.EmployeeService employeeService;
-   
-   }
+        private EmployeeService _employeeService;
+
+        public EmployeeController(EmployeeService employeeService1)
+        {
+            this._employeeService = employeeService1;
+        }
+    }
 }

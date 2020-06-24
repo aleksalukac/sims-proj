@@ -4,7 +4,9 @@
 // Purpose: Definition of Class DoctorReviewController
 
 using Model;
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -20,7 +22,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.DoctorReviewService doctorReviewService;
-   
-   }
+        private DoctorReviewService _doctorReviewService;
+
+        public DoctorReviewController(DoctorReviewService doctorReviewService1)
+        {
+            this._doctorReviewService = doctorReviewService1;
+        }
+    }
 }

@@ -54,7 +54,7 @@ namespace Repository
             return null;
         }
 
-        public static MedicalSupply Remove(int id)
+        public  MedicalSupply Remove(int id)
         {
             List<MedicalSupply> medicalSupplies = GetAll();
 
@@ -69,13 +69,13 @@ namespace Repository
             return medicalSupplyToRemove;
         }
 
-        public static void WriteAll(List<MedicalSupply> medicalSupplies)
+        public  void WriteAll(List<MedicalSupply> medicalSupplies)
         {
             string medicalSuppliesSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalSupplies);
 
             System.IO.File.WriteAllText(@"..\..\Data\MedicalSupplyData.txt", medicalSuppliesSerialized);
         }
-        public static List<MedicalSupply> GetAll()
+        public  List<MedicalSupply> GetAll()
         {
             string medicalSuppliesSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalSupplyData.txt");
 

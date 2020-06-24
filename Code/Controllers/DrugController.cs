@@ -3,7 +3,9 @@
 // Created: Tuesday, June 2, 2020 3:39:05 PM
 // Purpose: Definition of Class DrugController
 
-using Model; using System; using System.Collections.Generic;
+using Model;
+using Services;
+using System; using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -19,7 +21,11 @@ namespace Controllers
          throw new NotImplementedException();
       }
       
-      public Services.DrugService drugService;
-   
-   }
+        private DrugService _drugService;
+
+        public DrugController(DrugService drugService1)
+        {
+            this._drugService = drugService1;
+        }
+    }
 }
