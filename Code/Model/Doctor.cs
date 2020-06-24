@@ -9,8 +9,13 @@ namespace Model
 {
    public class Doctor : Employee
    {
-      public SpecialisationType specialisationType;
-      public List<int> medicalExam;
+        public Doctor()
+        {
+            this.specialisationType = new SpecialisationType();
+        }
+
+        public SpecialisationType specialisationType;
+        public List<int> medicalExam;
    
    }
 }

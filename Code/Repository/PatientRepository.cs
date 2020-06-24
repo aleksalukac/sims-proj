@@ -4,6 +4,7 @@
 // Purpose: Definition of Class PatientRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class PatientRepository
     {
         private const string PATIENT_FILE = @"..\..\Data\PatientData.txt";
+
+        public PatientRepository()
+        {
+            if (!File.Exists(PATIENT_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(PATIENT_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  Patient Update(Patient patient)
         {
             List<Patient> patients = GetAll();

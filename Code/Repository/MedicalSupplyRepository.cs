@@ -4,13 +4,26 @@
 // Purpose: Definition of Class MedicalSupplyRespository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
 {
-   public class MedicalSupplyRespository
+   public class MedicalSupplyRepository
     {
         private const string MEDICAL_SUPPLY_FILE = @"..\..\Data\MedicalSupplyData.txt";
+
+        public MedicalSupplyRepository()
+        {
+            if (!File.Exists(MEDICAL_SUPPLY_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(MEDICAL_SUPPLY_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public MedicalSupply Update(MedicalSupply medicalSupply)
         {
             List<MedicalSupply> medicalSupplies = GetAll();

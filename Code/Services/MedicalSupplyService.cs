@@ -16,9 +16,9 @@ namespace Services
          throw new NotImplementedException();
       }
       
-        private MedicalSupplyRespository _medicalSupplyRepository;
+        private MedicalSupplyRepository _medicalSupplyRepository;
 
-        public MedicalSupplyService(MedicalSupplyRespository medicalSupplyRepository)
+        public MedicalSupplyService(MedicalSupplyRepository medicalSupplyRepository)
         {
             this._medicalSupplyRepository = medicalSupplyRepository;
         }

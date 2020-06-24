@@ -18,10 +18,9 @@ namespace Controllers
             _doctorService = service;
         }
 
-        public SpecialisationType Add()
+        public Doctor Add(Doctor doctor)
         {
-            //_doctorService.Add();
-            throw new NotImplementedException();
+            return _doctorService.Add(doctor);
         }
 
         public SpecialisationType GetSpecialisation()
@@ -31,15 +30,24 @@ namespace Controllers
       
         public Doctor GetDoctor(int id)
         {
-            throw new NotImplementedException();
+            return _doctorService.Get(id);
         }
       
         public List<Doctor> GetAllDoctor()
         {
-            throw new NotImplementedException();
+            return _doctorService.GetAll();
         }
       
         public Services.DoctorService doctorService;
-   
-   }
+
+        public void WriteAll(List<Doctor> list)
+        {
+            _doctorService.WriteAll(list);
+        }
+
+        public void Update(Doctor doctor)
+        {
+            _doctorService.Update(doctor);
+        }
+    }
 }

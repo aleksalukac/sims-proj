@@ -20,6 +20,15 @@ namespace Services
             this._patientRepository = patientRepository;
         }
 
+        internal User Get(int id)
+        {
+            Employee employee = _employeeService.Get(id);
+            if (employee != null)
+                return employee;
+
+            return _patientRepository.Get(id);
+        }
+
         public Model.User Login(string email, string password)
       {
          throw new NotImplementedException();

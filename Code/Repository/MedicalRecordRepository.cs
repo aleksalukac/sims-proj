@@ -4,6 +4,7 @@
 // Purpose: Definition of Class MedicalRecordRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,17 @@ namespace Repository
    public class MedicalRecordRepository
    {
         private const string MEDICAL_RECORD_FILE = @"..\..\Data\MedicalRecordData.txt";
+
+        public MedicalRecordRepository()
+        {
+            if (!File.Exists(MEDICAL_RECORD_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(MEDICAL_RECORD_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
 
         public  MedicalRecord Remove(int id)
         {

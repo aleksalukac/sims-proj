@@ -4,6 +4,7 @@
 // Purpose: Definition of Class DrugRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class DrugRepository
     {
         private const string DRUG_FILE = @"..\..\Data\DrugData.txt";
+
+        public DrugRepository()
+        {
+            if (!File.Exists(DRUG_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(DRUG_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  Drug Update(Drug drug)
         {
             List<Drug> drugs = GetAll();

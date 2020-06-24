@@ -103,7 +103,7 @@
     <Compile Include="Repository\DrugRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\ResourceRepository.cs" />
-    <Compile Include="Repository\MedicalSupplyRespository.cs" />
+    <Compile Include="Repository\MedicalSupplyRepository.cs" />
     <Compile Include="Repository\NotificationRepository.cs" />
     <Compile Include="Repository\TextContentRepository.cs" />
     <Compile Include="Repository\MedicalExamRepository.cs" />

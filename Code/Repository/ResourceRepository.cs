@@ -4,6 +4,7 @@
 // Purpose: Definition of Class ResourceRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class ResourceRepository
     {
         private const string RESOURCE_FILE = @"..\..\Data\ResourceData.txt";
+
+        public ResourceRepository()
+        {
+            if (!File.Exists(RESOURCE_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(RESOURCE_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  Resource Remove(int id)
         {
             List<Resource> resources = GetAll();

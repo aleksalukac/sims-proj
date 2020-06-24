@@ -9,8 +9,14 @@ namespace Model
 {
    public class Employee : User
    {
-      public WorkingHours WorkingHours { get; set; }
-      public Vacation Vacation { get; set; }
+        public Employee()
+        {
+            this.WorkingHours = new WorkingHours(8, 16);
+            this.Vacation = new Vacation();
+        }
+
+        public WorkingHours WorkingHours { get; set; }
+        public Vacation Vacation { get; set; }
    
    }
 }

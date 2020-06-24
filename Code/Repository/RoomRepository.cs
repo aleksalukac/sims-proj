@@ -4,6 +4,7 @@
 // Purpose: Definition of Class RoomRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class RoomRepository
     {
         private const string ROOM_FILE = @"..\..\Data\RoomData.txt";
+
+        public RoomRepository()
+        {
+            if (!File.Exists(ROOM_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(ROOM_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  Room Remove(int id)
       {
             List<Room> rooms = GetAll();

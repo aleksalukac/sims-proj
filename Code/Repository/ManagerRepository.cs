@@ -12,6 +12,17 @@ namespace Repository
    {
         private const string MANAGER_FILE = @"..\..\Data\ManagerData.txt";
 
+        public ManagerRepository()
+        {
+            if (!File.Exists(MANAGER_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(MANAGER_FILE))
+                {
+                    sw.WriteLine("{}");
+                }
+            }
+        }
+
         public  Manager Update(Manager manager)
         {
             if(Get().Id != manager.Id)
@@ -25,7 +36,13 @@ namespace Repository
 
             return Get();
         }
-      
+        public Manager Get(int id)
+        {
+            if (this.Get().Id == id)
+                return this.Get();
+            return null;
+        }
+
         public  Manager Get()
         {
             string managerSerialized = System.IO.File.ReadAllText(MANAGER_FILE); 

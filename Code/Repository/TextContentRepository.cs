@@ -4,6 +4,7 @@
 // Purpose: Definition of Class TextContentRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class TextContentRepository
     {
         private const string TEXT_CONTENT_FILE = @"..\..\Data\TextContentData.txt";
+
+        public TextContentRepository()
+        {
+            if (!File.Exists(TEXT_CONTENT_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(TEXT_CONTENT_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  TextContent Update(TextContent textContent)
         {
             List<TextContent> textContents = GetAll();

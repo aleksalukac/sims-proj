@@ -10,7 +10,6 @@ namespace Model
    public class Vacation
    {
       public DateTime StartDate { get; set; }
-      public int EndDate { get; set; }
-   
+      public DateTime EndDate { get; set; }
    }
 }

@@ -15,8 +15,13 @@ namespace Controllers
       {
          throw new NotImplementedException();
       }
-      
-      public Boolean Logout()
+
+        public User Get(int id)
+        {
+            return _userService.Get(id);
+        }
+
+        public Boolean Logout()
       {
          throw new NotImplementedException();
       }

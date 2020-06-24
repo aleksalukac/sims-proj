@@ -4,6 +4,7 @@
 // Purpose: Definition of Class ReportRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class ReportRepository
     {
         private const string REPORT_FILE = @"..\..\Data\ReportData.txt";
+
+        public ReportRepository()
+        {
+            if (!File.Exists(REPORT_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(REPORT_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  Report Update(Report report)
         {
             List<Report> reports = GetAll();

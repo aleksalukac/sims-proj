@@ -4,6 +4,7 @@
 // Purpose: Definition of Class MedicalExamRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,17 @@ namespace Repository
    public class MedicalExamRepository
     {
         private const string MEDICAL_EXAM_FILE = @"..\..\Data\MedicalExamData.txt";
+
+        public MedicalExamRepository()
+        {
+            if (!File.Exists(MEDICAL_EXAM_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(MEDICAL_EXAM_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
 
         public  MedicalExam Update(MedicalExam medicalExam)
         {

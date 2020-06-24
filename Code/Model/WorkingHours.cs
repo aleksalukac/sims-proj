@@ -9,8 +9,14 @@ namespace Model
 {
    public class WorkingHours
    {
-      public TimeSpan StartingHour { get; set; }
-      public TimeSpan EndingHour { get; set; }
+        public WorkingHours(int start, int end)
+        {
+            this.StartingHour = new TimeSpan(start, 0, 0);
+            this.EndingHour = new TimeSpan(end, 0, 0);
+        }
+
+        public TimeSpan StartingHour { get; set; }
+        public TimeSpan EndingHour { get; set; }
    
    }
 }

@@ -4,6 +4,7 @@
 // Purpose: Definition of Class NotificationRepository
 
 using Model; using System; using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Repository
@@ -11,6 +12,18 @@ namespace Repository
    public class NotificationRepository
     {
         private const string NOTIFICATION_FILE = @"..\..\Data\NotificationData.txt";
+
+        public NotificationRepository()
+        {
+            if (!File.Exists(NOTIFICATION_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(NOTIFICATION_FILE))
+                {
+                    sw.WriteLine("[]");
+                }
+            }
+        }
+
         public  Notification Update(Notification notification)
         {
             List<Notification> notifications = GetAll();

@@ -11,6 +11,18 @@ namespace Repository
    public class SecretaryRepository
     {
         private const string SECRETARY_FILE = @"..\..\Data\SecretaryData.txt";
+
+        public SecretaryRepository()
+        {
+            if (!File.Exists(SECRETARY_FILE))
+            {
+                using (StreamWriter sw = File.CreateText(SECRETARY_FILE))
+                {
+                    sw.WriteLine("");
+                }
+            }
+        }
+
         public  Secretary Update(Secretary secretary)
         {
             if (Get().Id != secretary.Id)
@@ -23,6 +35,13 @@ namespace Repository
             System.IO.File.WriteAllText(SECRETARY_FILE, secretarySerialized);
 
             return Get();
+        }
+
+        public Secretary Get(int id)
+        {
+            if (this.Get().Id == id)
+                return this.Get();
+            return null;
         }
 
         public  Secretary Get()
@@ -45,6 +64,5 @@ namespace Repository
 
             return Get();
         }
-
     }
 }
