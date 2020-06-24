@@ -1,0 +1,44 @@
+﻿<Page x:Class="Bolnica.Layouts.Povratneinformacije"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Povratneinformacije">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" Povratne informacije" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Margin="265,30,0,0"/>
+        <Button Background="#e6ffff" Content="Vrati se na profil" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Height="73" Margin="656,656,0,0" FontSize="22" Click="Profil" FontWeight="Bold"/>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Margin="388,112,0,0" Height="56" Click="Tutorijal" FontSize="22" FontWeight="Bold"/>
+
+        <ListBox x:Name="listBox" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="277" VerticalAlignment="Top" Width="856" Margin="87,193,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Width="850">
+                        <TextBlock FontWeight="Bold" Text=" Korisnik: " FontSize="15" DockPanel.Dock="Left"/>
+                        <TextBlock Text="  "/>
+                        <TextBlock Text="{Binding Korisnik}" Foreground="Blue" FontSize="15" FontWeight="Bold"/>
+                        <TextBlock Text="   "/>
+                        <TextBlock FontWeight="Bold" Text=" Informacija: " FontSize="15" DockPanel.Dock="Left"/>
+                        <TextBlock Text="  "/>
+                        <TextBlock Text="{Binding  Informacija}" FontSize="15" Foreground="Green" FontWeight="Bold"/>
+                        <TextBlock Text="   "/>
+                        <TextBlock FontWeight="Bold" Text=" Ocena: " FontSize="15" DockPanel.Dock="Left"/>
+                        <TextBlock Text="  "/>
+                        <TextBlock Text="{Binding Ocena}" Foreground="Red" FontSize="15" FontWeight="Bold"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox HorizontalAlignment="Left" Height="52" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="360" Margin="136,560,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="52" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="345" Margin="547,560,0,0"/>
+        <Label Content="Informacija:" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="22" Margin="136,0,0,213"/>
+        <Label Content="Ocena:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="3.099,3.517" Margin="547,515,0,0"/>
+        <Button Content="Pošalji" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Background="#e6ffff" FontSize="22" FontWeight="Bold" Margin="165,656,0,0" Height="73"/>
+    </Grid>
+</Page>

@@ -1,0 +1,25 @@
+﻿<Page x:Class="Bolnica.Layouts.KontaktiSvi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="KontaktiSvi" Background="White">
+
+    <Grid>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Margin="414,28,396,0" Text=" Kontakti" Width="214"/>
+        <Label Content="Kontakti lekara" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,327,0,0" FontSize="28" FontWeight="Bold"/>
+        <Label Content="Kontakti pacijenta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="635,327,0,0" FontSize="28" FontWeight="Bold"/>
+        <Button Content="Lekari" HorizontalAlignment="Left" Background="#e6ffff" VerticalAlignment="Top" Width="186" Margin="160,425,0,0" Height="56" FontSize="22" FontWeight="Bold" Click="KontaktiLekara"/>
+        <Button Content="Pacijenti" Background="#e6ffff" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="662,425,0,0" Height="56" FontSize="22" FontWeight="Bold" Click="KontaktiPacijenta"/>
+        <Button Content="Tutorijal"  Background="#e6ffff" HorizontalAlignment="Left" VerticalAlignment="Top" Width="224" Margin="383,146,0,0" Height="51" FontWeight="Bold" FontSize="22" Click="Tutorijal"/>
+        <Button Background="#e6ffff" Content="Vrati se na profil" HorizontalAlignment="Left" VerticalAlignment="Top" Width="224" Margin="688,592,0,0" Height="59" FontWeight="Bold" FontSize="22" Click="Profil"/>
+    </Grid>
+
+</Page>

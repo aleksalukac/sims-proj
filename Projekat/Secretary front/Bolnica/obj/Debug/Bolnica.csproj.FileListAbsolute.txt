@@ -1,0 +1,81 @@
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.csprojAssemblyReference.cache
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Layouts\Tutorijal.g.cs
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Layouts\WindowsPage.g.cs
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\MainWindow.g.cs
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\App.g.cs
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica_MarkupCompile.cache
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica_MarkupCompile.lref
+C:\Users\Selic\source\repos\Bolnica\bin\Debug\Bolnica.exe.config
+C:\Users\Selic\source\repos\Bolnica\bin\Debug\Bolnica.exe
+C:\Users\Selic\source\repos\Bolnica\bin\Debug\Bolnica.pdb
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Layouts\Tutorijal.baml
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Layouts\WindowsPage.baml
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\MainWindow.baml
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.g.resources
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.Properties.Resources.resources
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.exe
+C:\Users\Selic\source\repos\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\andja\Desktop\HCI projekat\Bolnica\bin\Debug\Bolnica.exe.config
+C:\Users\andja\Desktop\HCI projekat\Bolnica\bin\Debug\Bolnica.exe
+C:\Users\andja\Desktop\HCI projekat\Bolnica\bin\Debug\Bolnica.pdb
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.csprojAssemblyReference.cache
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Tutorijal.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\WindowsPage.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\MainWindow.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\App.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica_MarkupCompile.cache
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica_MarkupCompile.lref
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Tutorijal.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\WindowsPage.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\MainWindow.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.g.resources
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.Properties.Resources.resources
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.exe
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Profil.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Profil.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Registruj.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Registruj.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zakazivanje_termina.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Neregitrovani.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Regitrovani.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zakazivanje_termina.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Neregitrovani.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Regitrovani.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Kontakt.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Kontakt.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Kontakt1.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Kontakt1.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\KontaktiSvi.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\KontaktiSvi.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Manipulacijaterminom.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Pitanja.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Rasporedlekara.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Upravljanjesalama.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Manipulacijaterminom.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Pitanja.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Rasporedlekara.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Upravljanjesalama.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\CestaPitanja.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\CestaPitanja.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zakazivanje_operacije.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zakazivanje_operacije.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Povratneinformacije.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Povratneinformacije.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\PacijentiRegistrovani.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\PacijentiRegistrovani.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Slobodnesale1.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Termin1.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zauzetesale1xaml.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zauzimanjeslobodne1.g.cs
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Slobodnesale1.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Termin1.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zauzetesale1xaml.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Layouts\Zauzimanjeslobodne1.baml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\bin\Debug\Newtonsoft.Json.dll
+C:\Users\andja\Desktop\HCI projekat\Bolnica\bin\Debug\Newtonsoft.Json.xml
+C:\Users\andja\Desktop\HCI projekat\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete

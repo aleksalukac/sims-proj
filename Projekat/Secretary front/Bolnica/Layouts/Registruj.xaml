@@ -1,0 +1,43 @@
+﻿<Page x:Class="Bolnica.Layouts.Registruj"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Registruj" Background="White">
+
+    <Grid>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <Button Background="#e6ffff" Content="Vrati se na profil" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Height="75" Margin="607,538,0,0" FontSize="22" Click="Profil" FontWeight="Bold"/>
+
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text=" Registracija pacijenta" VerticalAlignment="Top" Margin="249,28,254,0" FontSize="24" Width="297" FontWeight="Bold"/>
+        <Label Content="Ime:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="28,193,0,0" RenderTransformOrigin="0.823,2.199"/>
+        <Label Content="Prezime:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="26,248,0,0" RenderTransformOrigin="0.493,-0.007"/>
+        <Label Content="Datum rodjenja:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="28,335,0,0"/>
+        <Label Content="Kontakt:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="28,380,0,0"/>
+        <Label Content="E-mail:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="548,327,0,0"/>
+        <Label Content="Sifra:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="548,380,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding ime}" VerticalAlignment="Top" Width="148" Margin="198,210,0,0" Name="ImePacijenta"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding prezime}" VerticalAlignment="Top" Width="148" Margin="198,256,0,0" Name="PrezimePacijenta"  RenderTransformOrigin="0.487,1.062"/>
+        <TextBox x:Name="KontaktPacijenta" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding kontakt}" VerticalAlignment="Top" Width="148" Margin="198,397,0,0"/>
+        <TextBox x:Name="JMBGPacijenta" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="{Binding JMBG}" VerticalAlignment="Top" Width="148" Margin="198,298,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="{Binding sifra}" x:Name="sifraTextBox" VerticalAlignment="Top" Width="220" Margin="648,397,0,0"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="220" Margin="648,335,0,0"/>
+        <DatePicker Name="Datum" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,345,0,0" Height="28" Width="148"/>
+        <Button x:Name="Dodavanjepacijenta" Background="#e6ffff" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Margin="221,538,0,0" Click="Potvrdi" Height="75" FontWeight="Bold" FontSize="22"/>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Margin="423,107,0,0" Height="57" Click="Tutorijal" FontSize="22" FontWeight="Bold"/>
+        <Label Content="JMBG:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="30,293,0,0"/>
+        <Label Content="Broj knjizice:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="30,425,0,0"/>
+        <TextBox x:Name="BrZPacijenta" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="{Binding BrZ}" VerticalAlignment="Top" Width="148" Margin="198,440,0,0"/>
+        <Label Content="Pol:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="548,248,0,0"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="648,256,0,0"/>
+
+
+
+    </Grid>
+</Page>

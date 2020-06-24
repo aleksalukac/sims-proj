@@ -1,0 +1,37 @@
+﻿<Page x:Class="Bolnica.Layouts.Zauzimanjeslobodne1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Zauzimanjeslobodne1">
+
+    <Grid>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Margin="223,222,0,0" Name="comboBox1" Loaded="Form1_Load" SelectionChanged="comboBox1_SelectedIndexChanged" Height="30" RenderTransformOrigin="0.572,-0.569" ></ComboBox>
+        <ComboBox   Name="comboBox2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Margin="576,222,0,0" Height="30" RenderTransformOrigin="0.583,-0.765">
+
+        </ComboBox>
+
+        <Label Content="Sala:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="501,311,0,0" FontSize="22"/>
+        <Label Content="Specijalizacija:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,212,0,0" FontSize="22"/>
+        <Label Content="Lekar:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="501,212,0,0"/>
+        <ComboBox HorizontalAlignment="Left" Loaded="Form1_Load1" Name="comboBox3" VerticalAlignment="Top" Width="150" Margin="576,322,0,0" Height="29" />
+
+        <TextBox HorizontalAlignment="Left" Height="19"   Name="txtFilter" TextChanged="txtFilter_TextChanged" VerticalAlignment="Top" Width="242" Margin="162,332,0,0"/>
+        <DataGrid Name="lvUsers" Margin="114,387,228.6,170.4" IsReadOnly="True" AutoGenerateColumns="True">
+
+        </DataGrid>
+        <Label Content="Ime i prezime pacijenta:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="40,282,0,0"/>
+        <Button Background="#e6ffff"  Content="Potvrdi" Click="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" Margin="79,620,0,0" Height="80" FontWeight="Bold" FontSize="22"/>
+        <Button Content="Vrati se" Background="#e6ffff"  Click="Otkazi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="359,620,0,0" Height="80" FontWeight="Bold" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" Zauzimanje slobodne sale " VerticalAlignment="Top" Margin="223,42,0,0" FontSize="48" FontWeight="Bold"/>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="412,0,0,562.4" Height="51" Width="156" FontSize="24" Click="Tutorijal" FontWeight="Bold"/>
+        <Button Content="Vrati se na profil"  Background="#e6ffff"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="223" Margin="675,0,0,69.4" Height="80" FontWeight="Bold" FontSize="22" Click="Button_Click"/>
+    </Grid>
+</Page>

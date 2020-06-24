@@ -1,0 +1,36 @@
+﻿<Page x:Class="Bolnica.Layouts.Pitanja"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Pitanja" Background="White">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" Pitanja i odgovori" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Margin="293,55,0,0"/>
+        <Button Background="#e6ffff" Content="Vrati se na profil" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Height="73" Margin="700,671,0,0" FontSize="22" Click="Profil" FontWeight="Bold"/>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Margin="388,132,0,0" Height="56" Click="Tutorijal" FontSize="22" FontWeight="Bold"/>
+        <DataGrid Name="ListViewPitanja" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="875" Margin="61,336,0,0" FontSize="20" IsReadOnly="True">
+
+            <!--ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Pitanje" DisplayMemberBinding="{Binding pitanje}"/>
+                    <GridViewColumn Header="Odgovor" DisplayMemberBinding="{Binding pitanje.odgovor.Text}"/>
+                </GridView>
+            </-->
+        </DataGrid>
+        <TextBox  Text="{Binding odgovor}" HorizontalAlignment="Left" Height="53" TextWrapping="Wrap"  VerticalAlignment="Top" Width="853" Margin="83,596,0,0" Name="odgovorTextBox"/>
+        <Label Content="Odgovori:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,551,0,0" FontSize="22"/>
+        <Button Background="#e6ffff" Content="Odgovori" HorizontalAlignment="Left" VerticalAlignment="Top" Width="243" Height="73" Margin="83,671,0,0" FontSize="22" FontWeight="Bold" Click="Odgovori"/>
+        <Label Content="Postavi pitanje:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="61,211,0,0"/>
+        <TextBox HorizontalAlignment="Left" Name="PitanjeTextBox" Height="55"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="613" Margin="61,256,0,0"/>
+        <Button  Background="#e6ffff" Content="Pošalji" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" FontSize="22" FontWeight="Bold" Height="55" Margin="736,256,0,0" Click="Button_Click"/>
+        <Button  Background="#e6ffff" Content="U česta pitanja" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" FontSize="22" FontWeight="Bold" Height="73" Margin="388,671,0,0"/>
+
+    </Grid>
+</Page>

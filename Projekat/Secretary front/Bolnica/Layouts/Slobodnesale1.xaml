@@ -1,0 +1,34 @@
+﻿<Page x:Class="Bolnica.Layouts.Slobodnesale1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1014"
+      Title="Slobodnesale1">
+
+    <Grid>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Margin="388,132,0,0" Height="56" Click="Tutorijal" FontSize="22" FontWeight="Bold"/>
+
+        <Button Background="#e6ffff" Content="Vrati se na profil" HorizontalAlignment="Left" VerticalAlignment="Top" Width="203" FontSize="24" Margin="746,565,0,0" Height="80" Click="Profil" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" Slobodne sale" VerticalAlignment="Top" FontSize="48" Margin="317,51,0,0" FontWeight="Bold"/>
+
+        <Button  Background="#e6ffff"  Content="Vrazi se"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="219" Margin="89,565,0,0" Height="80" FontSize="22" FontWeight="Bold" Click="Button_Click"/>
+        <Button Background="#e6ffff"  Content="Pretrazi zauzete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="229" Margin="414,565,0,0" Height="80" FontSize="22" FontWeight="Bold" Click="Button_Click_1" RenderTransformOrigin="0.148,0.462"/>
+        <ListView HorizontalAlignment="Left" Height="182" Name="lvUsers" VerticalAlignment="Top" Width="131" Margin="317,285,0,0" >
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Sale:" Width="120"  DisplayMemberBinding="{Binding Sala}" />
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <Button Content="Zauzmi " Background="#e6ffff" FontSize="22" Margin="526,340,290.4,333" FontWeight="Bold" Click="Button_Click_2"/>
+    </Grid>
+</Page>

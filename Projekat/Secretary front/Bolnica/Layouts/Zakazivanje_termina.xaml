@@ -1,0 +1,27 @@
+﻿<Page x:Class="Bolnica.Layouts.Zakazivanje_termina"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Zakazivanje_termina" Background="White">
+
+    <Grid>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="48" Margin="307,60,191,0" FontWeight="Bold" Width="526" Text="Zakazivanje termina"/>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="432,0,0,513" Height="51" Width="156" FontSize="24" Click="Tutorijal" FontWeight="Bold"/>
+        <Label Content=" Zakazivanje neregistrovanim pacijentima" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,343,0,0" FontSize="24"/>
+        <Label Content="Zakazivanje registrovanim pacijentima" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Margin="583,343,0,0"/>
+        <Button Background="#e6ffff" Content="Neregistrovani pacijenti" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Margin="137,455,0,0" Click="Neregitrovani" Height="64" FontSize="22" FontWeight="Bold"/>
+        <Button  Background="#e6ffff" Content="Regitrovani pacijenti"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Margin="639,455,0,0" Click="Regitrovani" Height="64" FontSize="22" FontWeight="Bold" />
+        <Button Background="#e6ffff" Content="Vrati se na profil" HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Margin="639,614,0,0" Height="61" Click="Profil" FontSize="22" FontWeight="Bold"/>
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,37 @@
+﻿<Page x:Class="Bolnica.Layouts.Zauzetesale1xaml"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.Layouts"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Zauzetesale1xaml">
+
+    <Grid>
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/Image/pozadina.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <ListView Name="lvUsers" Margin="163,290,165,238" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Ime i prezime pacijenta:" Width="120" DisplayMemberBinding="{Binding ImePrezime}" />
+                    <GridViewColumn Header="Specijalnost:" Width="120" DisplayMemberBinding="{Binding Specijalnost}" />
+                    <GridViewColumn Header="Lekar:" Width="50" DisplayMemberBinding="{Binding ImePrezimaLekara}" />
+                    <GridViewColumn Header="Datum:" Width="50" DisplayMemberBinding="{Binding Datum}" />
+                    <GridViewColumn Header="Vreme:" Width="50" DisplayMemberBinding="{Binding Vreme}" />
+                    <GridViewColumn Header="Sala:" Width="50" DisplayMemberBinding="{Binding Sala}" />
+
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Background="#e6ffff" Content="Tutorijal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="432,0,0,513" Height="51" Width="156" FontSize="24" Click="Tutorijal" FontWeight="Bold"/>
+        <Button Background="#e6ffff"  Content="Vrati se" Click="vratise" HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Margin="341,568,0,0" Height="80" FontWeight="Bold" FontSize="22"/>
+        <Button Content="Izmeni"  Background="#e6ffff"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="211" Margin="78,568,0,0" Height="80" FontSize="22" FontWeight="Bold" Click="Button_Click_1"/>
+        <Button Content="Vrati se na profil"  Background="#e6ffff"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="223" Margin="685,0,0,120" Height="80" FontWeight="Bold" FontSize="22" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" Zauzete sale" VerticalAlignment="Top" FontSize="48" Margin="341,39,0,0" FontWeight="Bold"/>
+
+    </Grid>
+</Page>
