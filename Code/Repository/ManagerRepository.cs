@@ -32,10 +32,11 @@ namespace Repository
 
             return manager;
         }
-      
+
         public static Manager Add(Manager manager)
         {
-            if(!File.Exists(@"..\..\Data\ManagerData.txt") || Get() == null)
+
+            if (!File.Exists(@"..\..\Data\ManagerData.txt") || Get() == null)
             {
                 string managerSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(manager);
 

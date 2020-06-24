@@ -43,11 +43,15 @@ namespace Repository
 
         public MedicalSupply Add(MedicalSupply medicalSupply)
         {
-            List<MedicalSupply> medicalSupplies = GetAll();
-            medicalSupplies.Add(medicalSupply);
-            WriteAll(medicalSupplies);
+            if (Get(medicalSupply.Id) == null)
+            {
+                List<MedicalSupply> medicalSupplies = GetAll();
+                medicalSupplies.Add(medicalSupply);
+                WriteAll(medicalSupplies);
 
-            return medicalSupply;
+                return medicalSupply;
+            }
+            return null;
         }
 
         public static MedicalSupply Remove(int id)

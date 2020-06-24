@@ -46,11 +46,15 @@ namespace Repository
 
         public static Resource Add(Resource resource)
         {
-            List<Resource> resources = GetAll();
-            resources.Add(resource);
-            WriteAll(resources);
+            if (Get(resource.Id) == null)
+            {
+                List<Resource> resources = GetAll();
+                resources.Add(resource);
+                WriteAll(resources);
 
-            return resource;
+                return resource;
+            }
+            return null;
         }
 
         public static Resource Get(int id)

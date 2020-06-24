@@ -58,11 +58,15 @@ namespace Repository
 
         public static MedicalExam Add(MedicalExam medicalExam)
         {
-            List<MedicalExam> medicalExams = GetAll();
-            medicalExams.Add(medicalExam);
-            WriteAll(medicalExams);
+            if (Get(medicalExam.Id) == null)
+            {
+                List<MedicalExam> medicalExams = GetAll();
+                medicalExams.Add(medicalExam);
+                WriteAll(medicalExams);
 
-            return medicalExam;
+                return medicalExam;
+            }
+            return null;
         }
 
         public static List<MedicalExam> GetAll()

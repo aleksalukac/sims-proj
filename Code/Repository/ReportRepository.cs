@@ -58,11 +58,16 @@ namespace Repository
 
         public static Report Add(Report report)
         {
-            List<Report> reports = GetAll();
-            reports.Add(report);
-            WriteAll(reports);
 
-            return report;
+            if (Get(report.Id) == null)
+            {
+                List<Report> reports = GetAll();
+                reports.Add(report);
+                WriteAll(reports);
+
+                return report;
+            }
+            return null;
         }
 
         public static List<Report> GetAll()

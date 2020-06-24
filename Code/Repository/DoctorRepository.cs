@@ -58,11 +58,14 @@ namespace Repository
       
         public static Doctor Add(Doctor doctor)
         {
-            List<Doctor> doctors = GetAll();
-            doctors.Add(doctor);
-            WriteAll(doctors);
-
-            return doctor;
+            if (Get(doctor.Id) == null)
+            {
+                List<Doctor> doctors = GetAll();
+                doctors.Add(doctor);
+                WriteAll(doctors);
+                return doctor;
+            }
+            return null;
         }
       
         public static List<Doctor> GetAll()
