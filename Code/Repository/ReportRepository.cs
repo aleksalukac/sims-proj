@@ -10,9 +10,9 @@ namespace Repository
 {
    public class ReportRepository
    {
-        public static Report SetReport(Report report)
+        public static Report Update(Report report)
         {
-            List<Report> reports = GetAllReport();
+            List<Report> reports = GetAll();
 
             for (int i = 0; i < reports.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllReport(reports);
+            WriteAll(reports);
 
             return report;
         }
 
-        public static Report GetReport(int id)
+        public static Report Get(int id)
         {
-            List<Report> reports = GetAllReport();
+            List<Report> reports = GetAll();
 
             foreach (Report report in reports)
             {
@@ -41,31 +41,31 @@ namespace Repository
             return null;
         }
 
-        public static Report RemoveReport(int id)
+        public static Report Remove(int id)
         {
-            List<Report> reports = GetAllReport();
+            List<Report> reports = GetAll();
 
             Report reportToRemove = reports.SingleOrDefault(r => r.Id == id);
 
             if (reportToRemove != null)
             {
                 reports.Remove(reportToRemove);
-                WriteAllReport(reports);
+                WriteAll(reports);
             }
 
             return reportToRemove;
         }
 
-        public static Report AddReport(Report report)
+        public static Report Add(Report report)
         {
-            List<Report> reports = GetAllReport();
+            List<Report> reports = GetAll();
             reports.Add(report);
-            WriteAllReport(reports);
+            WriteAll(reports);
 
             return report;
         }
 
-        public static List<Report> GetAllReport()
+        public static List<Report> GetAll()
         {
             string reportsSerialized = System.IO.File.ReadAllText(@"..\..\Data\ReportData.txt"); //reportPath
 
@@ -75,7 +75,7 @@ namespace Repository
         }
 
 
-        public static void WriteAllReport(List<Report> reports)
+        public static void WriteAll(List<Report> reports)
         {
             string reportsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(reports);
 

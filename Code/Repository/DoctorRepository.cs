@@ -10,9 +10,9 @@ namespace Repository
 {
    public class DoctorRepository
    {
-        public static Doctor SetDoctor(Doctor doctor)
+        public static Doctor Update(Doctor doctor)
         {
-            List<Doctor> doctors = GetAllDoctor();
+            List<Doctor> doctors = GetAll();
 
             for (int i = 0; i < doctors.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllDoctor(doctors);
+            WriteAll(doctors);
 
             return doctor;
         }
       
-        public static Doctor GetDoctor(int id)
+        public static Doctor Get(int id)
         {
-            List<Doctor> doctors = GetAllDoctor();
+            List<Doctor> doctors = GetAll();
 
             foreach (Doctor doctor in doctors)
             {
@@ -41,31 +41,31 @@ namespace Repository
             return null;
         }
       
-        public static Doctor RemoveDoctor(int id)
+        public static Doctor Remove(int id)
         {
-            List<Doctor> doctors = GetAllDoctor();
+            List<Doctor> doctors = GetAll();
 
             Doctor doctorToRemove = doctors.SingleOrDefault(r => r.Id == id);
 
             if (doctorToRemove != null)
             {
                 doctors.Remove(doctorToRemove);
-                WriteAllDoctor(doctors);
+                WriteAll(doctors);
             }
 
             return doctorToRemove;
         }
       
-        public static Doctor AddDoctor(Doctor doctor)
+        public static Doctor Add(Doctor doctor)
         {
-            List<Doctor> doctors = GetAllDoctor();
+            List<Doctor> doctors = GetAll();
             doctors.Add(doctor);
-            WriteAllDoctor(doctors);
+            WriteAll(doctors);
 
             return doctor;
         }
       
-        public static List<Doctor> GetAllDoctor()
+        public static List<Doctor> GetAll()
         {
             string doctorsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DoctorData.txt"); //doctorPath
 
@@ -75,7 +75,7 @@ namespace Repository
         }
     
 
-        public static void WriteAllDoctor(List<Doctor> doctors)
+        public static void WriteAll(List<Doctor> doctors)
         {
             string doctorsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(doctors);
 
