@@ -58,11 +58,15 @@ namespace Repository
 
         public static Notification Add(Notification notification)
         {
-            List<Notification> notifications = GetAll();
-            notifications.Add(notification);
-            WriteAll(notifications);
+            if (Get(notification.Id) == null)
+            {
+                List<Notification> notifications = GetAll();
+                notifications.Add(notification);
+                WriteAll(notifications);
 
-            return notification;
+                return notification;
+            }
+            return null;
         }
 
         public static List<Notification> GetAll()

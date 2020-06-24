@@ -63,10 +63,8 @@ namespace Repository
                 List<Doctor> doctors = GetAll();
                 doctors.Add(doctor);
                 WriteAll(doctors);
-
                 return doctor;
             }
-
             return null;
         }
       

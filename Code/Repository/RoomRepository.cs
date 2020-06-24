@@ -45,11 +45,15 @@ namespace Repository
       
       public static Room Add(Room room)
       {
-            List<Room> rooms = GetAll();
-            rooms.Add(room);
-            WriteAll(rooms);
+            if (Get(room.Id) == null)
+            {
+                List<Room> rooms = GetAll();
+                rooms.Add(room);
+                WriteAll(rooms);
 
-            return room;
+                return room;
+            }
+            return null;
       }
       
       public static Room Get(int id)

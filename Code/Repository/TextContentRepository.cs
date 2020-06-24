@@ -64,11 +64,15 @@ namespace Repository
 
         public static TextContent Add(TextContent textContent)
         {
-            List<TextContent> textContents = GetAll();
-            textContents.Add(textContent);
-            WriteAll(textContents);
+            if (Get(textContent.Id) == null)
+            {
+                List<TextContent> textContents = GetAll();
+                textContents.Add(textContent);
+                WriteAll(textContents);
 
-            return textContent;
+                return textContent;
+            }
+            return null;
         }
 
         public static List<TextContent> GetAll()

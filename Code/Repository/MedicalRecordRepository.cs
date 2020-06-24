@@ -46,11 +46,15 @@ namespace Repository
 
         public static MedicalRecord Add(MedicalRecord medicalRecord)
         {
-            List<MedicalRecord> medicalRecords = GetAll();
-            medicalRecords.Add(medicalRecord);
-            WriteAll(medicalRecords);
+            if (Get(medicalRecord.Id) == null)
+            {
+                List<MedicalRecord> medicalRecords = GetAll();
+                medicalRecords.Add(medicalRecord);
+                WriteAll(medicalRecords);
 
-            return medicalRecord;
+                return medicalRecord;
+            }
+            return null;
         }
 
         public static MedicalRecord Get(int id)
