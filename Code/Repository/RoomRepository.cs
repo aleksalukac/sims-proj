@@ -9,8 +9,9 @@ using System.Linq;
 namespace Repository
 {
    public class RoomRepository
-   {
-      public  Room Remove(int id)
+    {
+        private const string ROOM_FILE = @"..\..\Data\RoomData.txt";
+        public  Room Remove(int id)
       {
             List<Room> rooms = GetAll();
 
@@ -73,12 +74,12 @@ namespace Repository
       {
             string roomsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(rooms);
 
-            System.IO.File.WriteAllText(@"..\..\Data\RoomData.txt", roomsSerialized);
+            System.IO.File.WriteAllText(ROOM_FILE, roomsSerialized);
       }
       
       public  List<Room> GetAll()
       {
-            string roomsSerialized = System.IO.File.ReadAllText(@"..\..\Data\RoomData.txt"); //roomPath
+            string roomsSerialized = System.IO.File.ReadAllText(ROOM_FILE); //roomPath
 
             List<Room> rooms = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Room>>(roomsSerialized);
 

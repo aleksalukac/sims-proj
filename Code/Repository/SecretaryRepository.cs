@@ -9,7 +9,8 @@ using System.IO;
 namespace Repository
 {
    public class SecretaryRepository
-   {
+    {
+        private const string SECRETARY_FILE = @"..\..\Data\SecretaryData.txt";
         public  Secretary Update(Secretary secretary)
         {
             if (Get().Id != secretary.Id)
@@ -19,14 +20,14 @@ namespace Repository
 
             string secretarySerialized = Newtonsoft.Json.JsonConvert.SerializeObject(secretary);
 
-            System.IO.File.WriteAllText(@"..\..\Data\SecretaryData.txt", secretarySerialized);
+            System.IO.File.WriteAllText(SECRETARY_FILE, secretarySerialized);
 
             return Get();
         }
 
         public  Secretary Get()
         {
-            string secretarySerialized = System.IO.File.ReadAllText(@"..\..\Data\SecretaryData.txt"); 
+            string secretarySerialized = System.IO.File.ReadAllText(SECRETARY_FILE); 
 
             Secretary secretary = Newtonsoft.Json.JsonConvert.DeserializeObject<Secretary>(secretarySerialized);
 
@@ -35,11 +36,11 @@ namespace Repository
 
         public  Secretary Add(Secretary secretary)
         {
-            if (!File.Exists(@"..\..\Data\SecretaryData.txt") || Get() == null)
+            if (!File.Exists(SECRETARY_FILE) || Get() == null)
             {
                 string secretarySerialized = Newtonsoft.Json.JsonConvert.SerializeObject(secretary);
 
-                System.IO.File.WriteAllText(@"..\..\Data\SecretaryData.txt", secretarySerialized);
+                System.IO.File.WriteAllText(SECRETARY_FILE, secretarySerialized);
             }
 
             return Get();

@@ -9,7 +9,8 @@ using System.Linq;
 namespace Repository
 {
    public class MedicalSupplyRespository
-   {
+    {
+        private const string MEDICAL_SUPPLY_FILE = @"..\..\Data\MedicalSupplyData.txt";
         public MedicalSupply Update(MedicalSupply medicalSupply)
         {
             List<MedicalSupply> medicalSupplies = GetAll();
@@ -73,11 +74,11 @@ namespace Repository
         {
             string medicalSuppliesSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalSupplies);
 
-            System.IO.File.WriteAllText(@"..\..\Data\MedicalSupplyData.txt", medicalSuppliesSerialized);
+            System.IO.File.WriteAllText(MEDICAL_SUPPLY_FILE, medicalSuppliesSerialized);
         }
         public  List<MedicalSupply> GetAll()
         {
-            string medicalSuppliesSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalSupplyData.txt");
+            string medicalSuppliesSerialized = System.IO.File.ReadAllText(MEDICAL_SUPPLY_FILE);
 
             List<MedicalSupply> medicalSupplies = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MedicalSupply>>(medicalSuppliesSerialized);
 

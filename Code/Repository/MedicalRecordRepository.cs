@@ -10,6 +10,8 @@ namespace Repository
 {
    public class MedicalRecordRepository
    {
+        private const string MEDICAL_RECORD_FILE = @"..\..\Data\MedicalRecordData.txt";
+
         public  MedicalRecord Remove(int id)
         {
             List<MedicalRecord> medicalRecords = GetAll();
@@ -75,12 +77,12 @@ namespace Repository
         {
             string medicalRecordsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalRecords);
 
-            System.IO.File.WriteAllText(@"..\..\Data\MedicalRecordData.txt", medicalRecordsSerialized);
+            System.IO.File.WriteAllText(MEDICAL_RECORD_FILE, medicalRecordsSerialized);
         }
 
         public  List<MedicalRecord> GetAll()
         {
-            string medicalRecordsSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalRecordData.txt");
+            string medicalRecordsSerialized = System.IO.File.ReadAllText(MEDICAL_RECORD_FILE);
 
             List<MedicalRecord> medicalRecords = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MedicalRecord>>(medicalRecordsSerialized);
 

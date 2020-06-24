@@ -9,7 +9,8 @@ using System.Linq;
 namespace Repository
 {
    public class TextContentRepository
-   {
+    {
+        private const string TEXT_CONTENT_FILE = @"..\..\Data\TextContentData.txt";
         public  TextContent Update(TextContent textContent)
         {
             List<TextContent> textContents = GetAll();
@@ -59,7 +60,7 @@ namespace Repository
         {
             string textContentsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(textContents);
 
-            System.IO.File.WriteAllText(@"..\..\Data\TextContentData.txt", textContentsSerialized);
+            System.IO.File.WriteAllText(TEXT_CONTENT_FILE, textContentsSerialized);
         }
 
         public  TextContent Add(TextContent textContent)
@@ -77,7 +78,7 @@ namespace Repository
 
         public  List<TextContent> GetAll()
         {
-            string textContentsSerialized = System.IO.File.ReadAllText(@"..\..\Data\TextContentData.txt");
+            string textContentsSerialized = System.IO.File.ReadAllText(TEXT_CONTENT_FILE);
 
             List<TextContent> textContents = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TextContent>>(textContentsSerialized);
 

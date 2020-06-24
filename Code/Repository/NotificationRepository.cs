@@ -9,7 +9,8 @@ using System.Linq;
 namespace Repository
 {
    public class NotificationRepository
-   {
+    {
+        private const string NOTIFICATION_FILE = @"..\..\Data\NotificationData.txt";
         public  Notification Update(Notification notification)
         {
             List<Notification> notifications = GetAll();
@@ -71,7 +72,7 @@ namespace Repository
 
         public  List<Notification> GetAll()
         {
-            string notificationsSerialized = System.IO.File.ReadAllText(@"..\..\Data\NotificationData.txt"); //notificationPath
+            string notificationsSerialized = System.IO.File.ReadAllText(NOTIFICATION_FILE); //notificationPath
 
             List<Notification> notifications = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Notification>>(notificationsSerialized);
 
@@ -83,7 +84,7 @@ namespace Repository
         {
             string notificationsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(notifications);
 
-            System.IO.File.WriteAllText(@"..\..\Data\NotificationData.txt", notificationsSerialized);
+            System.IO.File.WriteAllText(NOTIFICATION_FILE, notificationsSerialized);
         }
 
     }

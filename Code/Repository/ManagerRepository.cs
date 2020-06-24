@@ -10,6 +10,8 @@ namespace Repository
 {
    public class ManagerRepository
    {
+        private const string MANAGER_FILE = @"..\..\Data\ManagerData.txt";
+
         public  Manager Update(Manager manager)
         {
             if(Get().Id != manager.Id)
@@ -19,14 +21,14 @@ namespace Repository
 
             string managerSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(manager);
 
-            System.IO.File.WriteAllText(@"..\..\Data\ManagerData.txt", managerSerialized);
+            System.IO.File.WriteAllText(MANAGER_FILE, managerSerialized);
 
             return Get();
         }
       
         public  Manager Get()
         {
-            string managerSerialized = System.IO.File.ReadAllText(@"..\..\Data\ManagerData.txt"); 
+            string managerSerialized = System.IO.File.ReadAllText(MANAGER_FILE); 
 
             Manager manager = Newtonsoft.Json.JsonConvert.DeserializeObject<Manager>(managerSerialized);
 
@@ -36,11 +38,11 @@ namespace Repository
         public  Manager Add(Manager manager)
         {
 
-            if (!File.Exists(@"..\..\Data\ManagerData.txt") || Get() == null)
+            if (!File.Exists(MANAGER_FILE) || Get() == null)
             {
                 string managerSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(manager);
 
-                System.IO.File.WriteAllText(@"..\..\Data\ManagerData.txt", managerSerialized);
+                System.IO.File.WriteAllText(MANAGER_FILE, managerSerialized);
             }
 
             return Get();
