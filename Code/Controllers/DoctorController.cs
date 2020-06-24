@@ -49,5 +49,10 @@ namespace Controllers
         {
             _doctorService.Update(doctor);
         }
+
+        public Doctor Remove(int id)
+        {
+            return _doctorService.Remove(GetDoctor(id));
+        }
     }
 }

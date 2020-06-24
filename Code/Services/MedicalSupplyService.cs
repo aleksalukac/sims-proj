@@ -22,5 +22,20 @@ namespace Services
         {
             this._medicalSupplyRepository = medicalSupplyRepository;
         }
+
+        internal List<MedicalSupply> GetAll()
+            => _medicalSupplyRepository.GetAll();
+
+        internal MedicalSupply Get(int id)
+            => _medicalSupplyRepository.Get(id);
+
+        internal MedicalSupply Update(MedicalSupply medicalSupply)
+            => _medicalSupplyRepository.Update(medicalSupply);
+
+        internal MedicalSupply Add(MedicalSupply medicalSupply)
+            => _medicalSupplyRepository.Add(medicalSupply);
+
+        internal MedicalSupply Remove(int id)
+            => _medicalSupplyRepository.Remove(id);
     }
 }

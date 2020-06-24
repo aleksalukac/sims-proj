@@ -13,7 +13,7 @@ namespace Model
         private const string ID_PATH = @"..\..\Data\ResourceId.txt";
         public Resource() : base(ID_PATH)
         {
-
+            ResourceType = new ResourceType();
         }
 
         public ResourceType ResourceType { get; set; }

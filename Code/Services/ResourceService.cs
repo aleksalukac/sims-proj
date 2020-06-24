@@ -27,5 +27,20 @@ namespace Services
         {
             this._resourceRepository = resourceRepository1;
         }
+
+        internal List<Resource> GetAll()
+            => _resourceRepository.GetAll();
+
+        internal Resource Update(Resource resource)
+            => _resourceRepository.Update(resource);
+
+        internal Resource Add(Resource resource)
+            => _resourceRepository.Add(resource);
+
+        internal Resource Get(int id)
+            => _resourceRepository.Get(id);
+
+        internal Resource Remove(int id)
+            => _resourceRepository.Remove(id);
     }
 }

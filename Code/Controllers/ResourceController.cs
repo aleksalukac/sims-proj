@@ -27,5 +27,30 @@ namespace Controllers
         {
             this._resourceService = resourceService1;
         }
+
+        public List<Resource> GetAll()
+        {
+            return _resourceService.GetAll();
+        }
+
+        public Resource Update(Resource resource)
+        {
+            return _resourceService.Update(resource);
+        }
+
+        public Resource Add(Resource resource)
+        {
+            return _resourceService.Add(resource);
+        }
+
+        public Resource Get(int id)
+        {
+            return _resourceService.Get(id);
+        }
+
+        public Resource Remove(Resource resource)
+        {
+            return _resourceService.Remove(resource.Id);
+        }
     }
 }
