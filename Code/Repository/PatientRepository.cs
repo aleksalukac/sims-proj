@@ -10,9 +10,9 @@ namespace Repository
 {
    public class PatientRepository
    {
-        public static Patient SetPatient(Patient patient)
+        public static Patient Update(Patient patient)
         {
-            List<Patient> patients = GetAllPatient();
+            List<Patient> patients = GetAll();
 
             for (int i = 0; i < patients.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllPatient(patients);
+            WriteAll(patients);
 
             return patient;
         }
 
-        public static Patient GetPatient(int id)
+        public static Patient Get(int id)
         {
-            List<Patient> patients = GetAllPatient();
+            List<Patient> patients = GetAll();
 
             foreach (Patient patient in patients)
             {
@@ -41,31 +41,31 @@ namespace Repository
             return null;
         }
 
-        public static Patient RemovePatient(int id)
+        public static Patient Remove(int id)
         {
-            List<Patient> patients = GetAllPatient();
+            List<Patient> patients = GetAll();
 
             Patient patientToRemove = patients.SingleOrDefault(r => r.Id == id);
 
             if (patientToRemove != null)
             {
                 patients.Remove(patientToRemove);
-                WriteAllPatient(patients);
+                WriteAll(patients);
             }
 
             return patientToRemove;
         }
 
-        public static Patient AddPatient(Patient patient)
+        public static Patient Add(Patient patient)
         {
-            List<Patient> patients = GetAllPatient();
+            List<Patient> patients = GetAll();
             patients.Add(patient);
-            WriteAllPatient(patients);
+            WriteAll(patients);
 
             return patient;
         }
 
-        public static List<Patient> GetAllPatient()
+        public static List<Patient> GetAll()
         {
             string patientsSerialized = System.IO.File.ReadAllText(@"..\..\Data\PatientData.txt"); //patientPath
 
@@ -75,7 +75,7 @@ namespace Repository
         }
 
 
-        public static void WriteAllPatient(List<Patient> patients)
+        public static void WriteAll(List<Patient> patients)
         {
             string patientsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(patients);
 

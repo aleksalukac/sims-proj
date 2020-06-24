@@ -10,9 +10,9 @@ namespace Repository
 {
    public class MedicalSupplyRespository
    {
-        public MedicalSupply SetMedicalSupply(MedicalSupply medicalSupply)
+        public MedicalSupply Update(MedicalSupply medicalSupply)
         {
-            List<MedicalSupply> medicalSupplies = GetAllMedicalSupply();
+            List<MedicalSupply> medicalSupplies = GetAll();
 
             for (int i = 0; i < medicalSupplies.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllMedicalSupply(medicalSupplies);
+            WriteAll(medicalSupplies);
 
             return medicalSupply;
         }
 
-        public MedicalSupply GetMedicalSupply(int id)
+        public MedicalSupply Get(int id)
         {
-            List<MedicalSupply> medicalSupplies = GetAllMedicalSupply();
+            List<MedicalSupply> medicalSupplies = GetAll();
 
             foreach (MedicalSupply medicalSupply in medicalSupplies)
             {
@@ -41,37 +41,37 @@ namespace Repository
             return null;
         }
 
-        public MedicalSupply AddMedicalSupply(MedicalSupply medicalSupply)
+        public MedicalSupply Add(MedicalSupply medicalSupply)
         {
-            List<MedicalSupply> medicalSupplies = GetAllMedicalSupply();
+            List<MedicalSupply> medicalSupplies = GetAll();
             medicalSupplies.Add(medicalSupply);
-            WriteAllMedicalSupply(medicalSupplies);
+            WriteAll(medicalSupplies);
 
             return medicalSupply;
         }
 
-        public static MedicalSupply RemoveMedicalSupply(int id)
+        public static MedicalSupply Remove(int id)
         {
-            List<MedicalSupply> medicalSupplies = GetAllMedicalSupply();
+            List<MedicalSupply> medicalSupplies = GetAll();
 
             MedicalSupply medicalSupplyToRemove = medicalSupplies.SingleOrDefault(r => r.Id == id);
 
             if (medicalSupplyToRemove != null)
             {
                 medicalSupplies.Remove(medicalSupplyToRemove);
-                WriteAllMedicalSupply(medicalSupplies);
+                WriteAll(medicalSupplies);
             }
 
             return medicalSupplyToRemove;
         }
 
-        public static void WriteAllMedicalSupply(List<MedicalSupply> medicalSupplies)
+        public static void WriteAll(List<MedicalSupply> medicalSupplies)
         {
             string medicalSuppliesSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalSupplies);
 
             System.IO.File.WriteAllText(@"..\..\Data\MedicalSupplyData.txt", medicalSuppliesSerialized);
         }
-        public static List<MedicalSupply> GetAllMedicalSupply()
+        public static List<MedicalSupply> GetAll()
         {
             string medicalSuppliesSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalSupplyData.txt");
 

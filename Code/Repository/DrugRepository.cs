@@ -10,9 +10,9 @@ namespace Repository
 {
    public class DrugRepository
    {
-        public static Drug SetDrug(Drug drug)
+        public static Drug Update(Drug drug)
         {
-            List<Drug> drugs = GetAllDrug();
+            List<Drug> drugs = GetAll();
 
             for (int i = 0; i < drugs.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllDrug(drugs);
+            WriteAll(drugs);
 
             return drug;
         }
 
-        public static Drug GetDrug(int id)
+        public static Drug Get(int id)
         {
-            List<Drug> drugs = GetAllDrug();
+            List<Drug> drugs = GetAll();
 
             foreach (Drug drug in drugs)
             {
@@ -41,31 +41,31 @@ namespace Repository
             return null;
         }
 
-        public static Drug RemoveDrug(int id)
+        public static Drug Remove(int id)
         {
-            List<Drug> drugs = GetAllDrug();
+            List<Drug> drugs = GetAll();
 
             Drug drugToRemove = drugs.SingleOrDefault(r => r.Id == id);
 
             if (drugToRemove != null)
             {
                 drugs.Remove(drugToRemove);
-                WriteAllDrug(drugs);
+                WriteAll(drugs);
             }
 
             return drugToRemove;
         }
 
-        public static Drug AddDrug(Drug drug)
+        public static Drug Add(Drug drug)
         {
-            List<Drug> drugs = GetAllDrug();
+            List<Drug> drugs = GetAll();
             drugs.Add(drug);
-            WriteAllDrug(drugs);
+            WriteAll(drugs);
 
             return drug;
         }
 
-        public static List<Drug> GetAllDrug()
+        public static List<Drug> GetAll()
         {
             string drugsSerialized = System.IO.File.ReadAllText(@"..\..\Data\DrugData.txt"); //drugPath
 
@@ -75,7 +75,7 @@ namespace Repository
         }
 
 
-        public static void WriteAllDrug(List<Drug> drugs)
+        public static void WriteAll(List<Drug> drugs)
         {
             string drugsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(drugs);
 

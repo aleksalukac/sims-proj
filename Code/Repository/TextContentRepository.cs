@@ -10,9 +10,9 @@ namespace Repository
 {
    public class TextContentRepository
    {
-        public static TextContent SetTextContent(TextContent textContent)
+        public static TextContent Update(TextContent textContent)
         {
-            List<TextContent> textContents = GetAllTextContent();
+            List<TextContent> textContents = GetAll();
 
             for (int i = 0; i < textContents.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllTextContent(textContents);
+            WriteAll(textContents);
 
             return textContent;
         }
 
-        public static TextContent GetTextContent(int id)
+        public static TextContent Get(int id)
         {
-            List<TextContent> textContents = GetAllTextContent();
+            List<TextContent> textContents = GetAll();
 
             foreach (TextContent textContent in textContents)
             {
@@ -41,37 +41,37 @@ namespace Repository
             return null;
         }
 
-        public static TextContent RemoveTextContent(int id)
+        public static TextContent Remove(int id)
         {
-            List<TextContent> textContents = GetAllTextContent();
+            List<TextContent> textContents = GetAll();
 
             TextContent textContentToRemove = textContents.SingleOrDefault(r => r.Id == id);
 
             if (textContentToRemove != null)
             {
                 textContents.Remove(textContentToRemove);
-                WriteAllTextContent(textContents);
+                WriteAll(textContents);
             }
 
             return textContentToRemove;
         }
-        public static void WriteAllTextContent(List<TextContent> textContents)
+        public static void WriteAll(List<TextContent> textContents)
         {
             string textContentsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(textContents);
 
             System.IO.File.WriteAllText(@"..\..\Data\TextContentData.txt", textContentsSerialized);
         }
 
-        public static TextContent AddFTextContent(TextContent textContent)
+        public static TextContent Add(TextContent textContent)
         {
-            List<TextContent> textContents = GetAllTextContent();
+            List<TextContent> textContents = GetAll();
             textContents.Add(textContent);
-            WriteAllTextContent(textContents);
+            WriteAll(textContents);
 
             return textContent;
         }
 
-        public static List<TextContent> GetAllTextContent()
+        public static List<TextContent> GetAll()
         {
             string textContentsSerialized = System.IO.File.ReadAllText(@"..\..\Data\TextContentData.txt");
 

@@ -10,25 +10,25 @@ namespace Repository
 {
    public class MedicalRecordRepository
    {
-        public static MedicalRecord RemoveMedicalRecord(int id)
+        public static MedicalRecord Remove(int id)
         {
-            List<MedicalRecord> medicalRecords = GetAllMedicalRecord();
+            List<MedicalRecord> medicalRecords = GetAll();
 
             MedicalRecord medicalRecordToRemove = medicalRecords.SingleOrDefault(r => r.Id == id);
 
             if (medicalRecordToRemove != null)
             {
                 medicalRecords.Remove(medicalRecordToRemove);
-                WriteAllMedicalRecord(medicalRecords);
+                WriteAll(medicalRecords);
             }
 
             return medicalRecordToRemove;
         }
 
-        public static MedicalRecord SetMedicalRecord(MedicalRecord medicalRecord)
+        public static MedicalRecord Update(MedicalRecord medicalRecord)
         {
 
-            List<MedicalRecord> medicalRecords = GetAllMedicalRecord();
+            List<MedicalRecord> medicalRecords = GetAll();
 
             for (int i = 0; i < medicalRecords.Count; i++)
             {
@@ -39,23 +39,23 @@ namespace Repository
                 }
             }
 
-            WriteAllMedicalRecord(medicalRecords);
+            WriteAll(medicalRecords);
 
             return medicalRecord;
         }
 
-        public static MedicalRecord AddMedicalRecord(MedicalRecord medicalRecord)
+        public static MedicalRecord Add(MedicalRecord medicalRecord)
         {
-            List<MedicalRecord> medicalRecords = GetAllMedicalRecord();
+            List<MedicalRecord> medicalRecords = GetAll();
             medicalRecords.Add(medicalRecord);
-            WriteAllMedicalRecord(medicalRecords);
+            WriteAll(medicalRecords);
 
             return medicalRecord;
         }
 
-        public static MedicalRecord GetMedicalRecord(int id)
+        public static MedicalRecord Get(int id)
         {
-            List<MedicalRecord> medicalRecords = GetAllMedicalRecord();
+            List<MedicalRecord> medicalRecords = GetAll();
 
             foreach (MedicalRecord medicalRecord in medicalRecords)
             {
@@ -67,14 +67,14 @@ namespace Repository
 
         }
 
-        public static void WriteAllMedicalRecord(List<MedicalRecord> medicalRecords)
+        public static void WriteAll(List<MedicalRecord> medicalRecords)
         {
             string medicalRecordsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalRecords);
 
             System.IO.File.WriteAllText(@"..\..\Data\MedicalRecordData.txt", medicalRecordsSerialized);
         }
 
-        public static List<MedicalRecord> GetAllMedicalRecord()
+        public static List<MedicalRecord> GetAll()
         {
             string medicalRecordsSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalRecordData.txt");
 

@@ -10,9 +10,9 @@ namespace Repository
 {
    public class NotificationRepository
    {
-        public static Notification SetNotification(Notification notification)
+        public static Notification Update(Notification notification)
         {
-            List<Notification> notifications = GetAllNotification();
+            List<Notification> notifications = GetAll();
 
             for (int i = 0; i < notifications.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllNotification(notifications);
+            WriteAll(notifications);
 
             return notification;
         }
 
-        public static Notification GetNotification(int id)
+        public static Notification Get(int id)
         {
-            List<Notification> notifications = GetAllNotification();
+            List<Notification> notifications = GetAll();
 
             foreach (Notification notification in notifications)
             {
@@ -41,31 +41,31 @@ namespace Repository
             return null;
         }
 
-        public static Notification RemoveNotification(int id)
+        public static Notification Remove(int id)
         {
-            List<Notification> notifications = GetAllNotification();
+            List<Notification> notifications = GetAll();
 
             Notification notificationToRemove = notifications.SingleOrDefault(r => r.Id == id);
 
             if (notificationToRemove != null)
             {
                 notifications.Remove(notificationToRemove);
-                WriteAllNotification(notifications);
+                WriteAll(notifications);
             }
 
             return notificationToRemove;
         }
 
-        public static Notification AddNotification(Notification notification)
+        public static Notification Add(Notification notification)
         {
-            List<Notification> notifications = GetAllNotification();
+            List<Notification> notifications = GetAll();
             notifications.Add(notification);
-            WriteAllNotification(notifications);
+            WriteAll(notifications);
 
             return notification;
         }
 
-        public static List<Notification> GetAllNotification()
+        public static List<Notification> GetAll()
         {
             string notificationsSerialized = System.IO.File.ReadAllText(@"..\..\Data\NotificationData.txt"); //notificationPath
 
@@ -75,7 +75,7 @@ namespace Repository
         }
 
 
-        public static void WriteAllNotification(List<Notification> notifications)
+        public static void WriteAll(List<Notification> notifications)
         {
             string notificationsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(notifications);
 

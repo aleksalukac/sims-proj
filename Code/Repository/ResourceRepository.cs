@@ -10,25 +10,25 @@ namespace Repository
 {
    public class ResourceRepository
    {
-        public static Resource RemoveResource(int id)
+        public static Resource Remove(int id)
         {
-            List<Resource> resources = GetAllResource();
+            List<Resource> resources = GetAll();
 
             Resource resourceToRemove = resources.SingleOrDefault(r => r.Id == id);
 
             if (resourceToRemove != null)
             {
                 resources.Remove(resourceToRemove);
-                WriteAllResource(resources);
+                WriteAll(resources);
             }
 
             return resourceToRemove;
         }
 
-        public static Resource SetResource(Resource resource)
+        public static Resource Update(Resource resource)
         {
 
-            List<Resource> resources = GetAllResource();
+            List<Resource> resources = GetAll();
 
             for (int i = 0; i < resources.Count; i++)
             {
@@ -39,23 +39,23 @@ namespace Repository
                 }
             }
 
-            WriteAllResource(resources);
+            WriteAll(resources);
 
             return resource;
         }
 
-        public static Resource AddResource(Resource resource)
+        public static Resource Add(Resource resource)
         {
-            List<Resource> resources = GetAllResource();
+            List<Resource> resources = GetAll();
             resources.Add(resource);
-            WriteAllResource(resources);
+            WriteAll(resources);
 
             return resource;
         }
 
-        public static Resource GetResource(int id)
+        public static Resource Get(int id)
         {
-            List<Resource> resources = GetAllResource();
+            List<Resource> resources = GetAll();
 
             foreach (Resource resource in resources)
             {
@@ -67,14 +67,14 @@ namespace Repository
 
         }
 
-        public static void WriteAllResource(List<Resource> resources)
+        public static void WriteAll(List<Resource> resources)
         {
             string resourcesSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(resources);
 
             System.IO.File.WriteAllText(@"..\..\Data\ResourceData.txt", resourcesSerialized);
         }
 
-        public static List<Resource> GetAllResource()
+        public static List<Resource> GetAll()
         {
             string resourcesSerialized = System.IO.File.ReadAllText(@"..\..\Data\ResourceData.txt");
 

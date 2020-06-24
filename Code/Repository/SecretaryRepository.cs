@@ -10,9 +10,9 @@ namespace Repository
 {
    public class SecretaryRepository
    {
-        public static Secretary SetSecretary(Secretary secretary)
+        public static Secretary Update(Secretary secretary)
         {
-            if (GetSecretary().Id != secretary.Id)
+            if (Get().Id != secretary.Id)
             {
                 return null;
             }
@@ -21,10 +21,10 @@ namespace Repository
 
             System.IO.File.WriteAllText(@"..\..\Data\SecretaryData.txt", secretarySerialized);
 
-            return GetSecretary();
+            return Get();
         }
 
-        public static Secretary GetSecretary()
+        public static Secretary Get()
         {
             string secretarySerialized = System.IO.File.ReadAllText(@"..\..\Data\SecretaryData.txt"); //doctorPath
 
@@ -33,16 +33,16 @@ namespace Repository
             return secretary;
         }
 
-        public static Secretary AddSecretary(Secretary secretary)
+        public static Secretary Add(Secretary secretary)
         {
-            if (!File.Exists(@"..\..\Data\SecretaryData.txt") || GetSecretary() == null)
+            if (!File.Exists(@"..\..\Data\SecretaryData.txt") || Get() == null)
             {
                 string secretarySerialized = Newtonsoft.Json.JsonConvert.SerializeObject(secretary);
 
                 System.IO.File.WriteAllText(@"..\..\Data\SecretaryData.txt", secretarySerialized);
             }
 
-            return GetSecretary();
+            return Get();
         }
 
     }

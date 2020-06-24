@@ -10,9 +10,9 @@ namespace Repository
 {
    public class MedicalExamRepository
    {
-        public static MedicalExam SetMedicalExam(MedicalExam medicalExam)
+        public static MedicalExam Update(MedicalExam medicalExam)
         {
-            List<MedicalExam> medicalExams = GetAllMedicalExam();
+            List<MedicalExam> medicalExams = GetAll();
 
             for (int i = 0; i < medicalExams.Count; i++)
             {
@@ -23,14 +23,14 @@ namespace Repository
                 }
             }
 
-            WriteAllMedicalExam(medicalExams);
+            WriteAll(medicalExams);
 
             return medicalExam;
         }
 
-        public static MedicalExam GetMedicalExam(int id)
+        public static MedicalExam Get(int id)
         {
-            List<MedicalExam> medicalExams = GetAllMedicalExam();
+            List<MedicalExam> medicalExams = GetAll();
 
             foreach (MedicalExam medicalExam in medicalExams)
             {
@@ -41,31 +41,31 @@ namespace Repository
             return null;
         }
 
-        public static MedicalExam RemoveMedicalExam(int id)
+        public static MedicalExam Remove(int id)
         {
-            List<MedicalExam> medicalExams = GetAllMedicalExam();
+            List<MedicalExam> medicalExams = GetAll();
 
             MedicalExam medicalExamToRemove = medicalExams.SingleOrDefault(r => r.Id == id);
 
             if (medicalExamToRemove != null)
             {
                 medicalExams.Remove(medicalExamToRemove);
-                WriteAllMedicalExam(medicalExams);
+                WriteAll(medicalExams);
             }
 
             return medicalExamToRemove;
         }
 
-        public static MedicalExam AddMedicalExam(MedicalExam medicalExam)
+        public static MedicalExam Add(MedicalExam medicalExam)
         {
-            List<MedicalExam> medicalExams = GetAllMedicalExam();
+            List<MedicalExam> medicalExams = GetAll();
             medicalExams.Add(medicalExam);
-            WriteAllMedicalExam(medicalExams);
+            WriteAll(medicalExams);
 
             return medicalExam;
         }
 
-        public static List<MedicalExam> GetAllMedicalExam()
+        public static List<MedicalExam> GetAll()
         {
             string medicalExamsSerialized = System.IO.File.ReadAllText(@"..\..\Data\MedicalExamData.txt"); //medicalExamPath
 
@@ -75,7 +75,7 @@ namespace Repository
         }
 
 
-        public static void WriteAllMedicalExam(List<MedicalExam> medicalExams)
+        public static void WriteAll(List<MedicalExam> medicalExams)
         {
             string medicalExamsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(medicalExams);
 
