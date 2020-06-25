@@ -16,8 +16,7 @@ namespace Model
 
         }
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime Date { get; set; }
         public RenovationType RenovationType { get; set; }
 
     }

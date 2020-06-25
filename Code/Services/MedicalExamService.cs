@@ -79,6 +79,9 @@ namespace Services
       public ScheduleMedicalExam scheduleMedicalExam;
         private MedicalExamRepository _medicalExamRepository;
 
+        internal MedicalExam Get(int id)
+            => _medicalExamRepository.Get(id);
+
         public MedicalExamService(MedicalExamRepository medicalExamRepository1)
         {
             this._medicalExamRepository = medicalExamRepository1;

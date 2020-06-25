@@ -13,7 +13,10 @@ namespace Model
         private const string ID_PATH = @"../../RoomId.txt";
         public Room() : base(ID_PATH)
         {
-
+            Renovation = new List<int>();
+            Patient = new List<int>();
+            MedicalExam = new List<int>();
+            Resource = new List<int>();
         }
 
         public RoomType RoomType { get; set; }

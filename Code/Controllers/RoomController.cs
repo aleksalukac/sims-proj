@@ -25,17 +25,62 @@ namespace Controllers
       {
          throw new NotImplementedException();
       }
-      
-      public List<Room> GetOccupiedRoom(DateTime dateTime)
-      {
-         throw new NotImplementedException();
-      }
+
+        public Renovation GetFutureRenovation(int id)
+        {
+            return _roomService.GetFutureRenovation(id);
+        }
+
+        public List<Room> GetOccupiedRoom(DateTime dateTime)
+        {
+            throw new NotImplementedException();
+        }
       
         private RoomService _roomService;
 
         public RoomController(RoomService roomService1)
         {
             this._roomService = roomService1;
+        }
+
+        public List<Room> GetAll()
+        {
+            return _roomService.GetAll();
+        }
+
+        public Room Update(Room room)
+        {
+            return _roomService.Update(room);
+        }
+
+        public Room Add(Room room)
+        {
+            return _roomService.Add(room);
+        }
+
+        public Room Remove(int id)
+        {
+            return _roomService.Remove(id);
+        }
+
+        public Room Merge(int id1, int id2)
+        {
+            return _roomService.Merge(id1, id2);
+        }
+
+        public bool CanRenovate(int id, DateTime renovationDateTime)
+        {
+            return _roomService.CanRenovate(id, renovationDateTime);
+        }
+
+        public Renovation AddRenovation(Renovation renovation)
+        {
+            return _roomService.AddRenovation(renovation);
+        }
+
+        public Room Get(int id)
+        {
+            return _roomService.Get(id);
         }
     }
 }
