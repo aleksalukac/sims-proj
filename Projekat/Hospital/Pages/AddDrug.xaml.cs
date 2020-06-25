@@ -1,4 +1,4 @@
-﻿using Hospital.Model;
+﻿using Hospital.ViewModel;
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -1,8 +1,11 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,10 +24,12 @@ namespace Hospital.Pages
     /// </summary>
     public partial class AddDoctorPage : Page
     {
+        private DoctorController _controller;
+
         public AddDoctorPage(int id)
         {
+            _controller = (Application.Current as App).DoctorController;
             InitializeComponent();
-            idLabel.Content = (id).ToString();
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
@@ -33,14 +38,24 @@ namespace Hospital.Pages
             lekar.Name = this.imeTextBox.Text;
             lekar.Surname = this.prezimeTextBox.Text;
             lekar.Specialisation = this.specijalizacijaTextBox.Text;
+
+
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            var emailName = rgx.Replace(lekar.Name, "");
+            var emailSurname = rgx.Replace(lekar.Surname, "");
+            lekar.Email = emailName.ToLower() + "." + emailSurname.ToLower() + "@clinic.com";
+
             if (lekar.Name.Length == 0 || lekar.Surname.Length == 0)
             {
                 System.Windows.MessageBox.Show("Niste uneli adekvatno ime lekara.");
                 return;
             }
 
+            Doctor doctor = lekar.Convert();
+            _controller.Add(doctor);
 
-                ZaposleniPage.AddDoctor(lekar);
+            lekar.Id = (uint)doctor.Id;
+            ZaposleniPage.AddDoctor(lekar);
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
 
             NavigationService.Navigate(new Page());

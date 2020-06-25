@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +23,11 @@ namespace Hospital.Pages
     /// </summary>
     public partial class SecretaryProfilePage : Page
     {
+        private EmployeeController _employeeController;
+
         public SecretaryProfilePage(EmployeeView secretary)
         {
+            _employeeController = (Application.Current as App).EmployeeController;
             InitializeComponent();
             imeTextBox.Text = secretary.Name;
             prezimeTextBox.Text = secretary.Surname;
@@ -66,14 +70,13 @@ namespace Hospital.Pages
                     x = int.Parse(workEndTextBox.Text) % 24;
                 }
                 secretary.EndWorkingHours = (uint)x;
-                // x = -100
             }
 
             secretary.Name = imeTextBox.Text;
             secretary.Surname = prezimeTextBox.Text;
             secretary.Email = emailTextBox.Text;
-            
 
+            _employeeController.Update(secretary.Convert());
             ZaposleniPage.SecretaryList.Add(secretary);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");

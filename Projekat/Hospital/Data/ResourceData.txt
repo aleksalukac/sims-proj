@@ -1,0 +1,1 @@
+[{"ResourceType":{"Name":"prozor"},"Room":3,"Id":11},{"ResourceType":{"Name":"sto"},"Room":7,"Id":35}]

@@ -17,7 +17,5 @@
         <Label x:Name="label" Content="Ime" HorizontalAlignment="Left" Margin="17,9,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Prezime" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="Specijalizacija" HorizontalAlignment="Left" Margin="17,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="17,199,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="45,199,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

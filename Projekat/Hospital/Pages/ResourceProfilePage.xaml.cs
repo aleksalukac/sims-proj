@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,12 +24,19 @@ namespace Hospital.Pages
     /// </summary>
     public partial class ResourceProfilePage : Page
     {
-        public ResourceProfilePage(ResourceView resource)
+        private ResourceController _resourceController;
+
+        private bool isNewResource = false;
+
+        public ResourceProfilePage(ResourceView resource, bool isPrivate = false)
         {
+            isNewResource = isPrivate;
+            _resourceController = (Application.Current as App).ResourceController;
             InitializeComponent();
 
             nameTextBox.Text = resource.Type;
-            idLabel.Content = resource.Id;
+            if(!isNewResource)
+                idLabel.Content = resource.Id;
             var rm = new RoomPage();
             roomsComboBox.ItemsSource = RoomPage.RoomList;
 
@@ -43,30 +52,44 @@ namespace Hospital.Pages
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
-            ResourceView newResource = null;
-            foreach(var resource in ResourcePage.ResourceList)
-            {
-                if(resource.Id == Int32.Parse(idLabel.Content.ToString()))
+            ResourceView newResource = new ResourceView();
+            Resource resource = new Resource();
+
+            if (!isNewResource)
+                foreach (var _resource in ResourcePage.ResourceList)
                 {
-                    newResource = resource;
-                    break;
+                    if(_resource.Id == Int32.Parse(idLabel.Content.ToString()))
+                    {
+                        newResource = _resource;
+                        break;
+                    }
                 }
-            }
-            if(nameTextBox.Text.Length == 0)
+            else
+                newResource.Id = resource.Id;
+
+            if (nameTextBox.Text.Length == 0)
             {
-                //ResourcePage.SupplyList.Remove(newSupply);
-                //newSupply.Type = nameTextBox.Text;
                 System.Windows.MessageBox.Show("Unesite pravilno ime materijala.");
-                //NavigationService.Navigate(new Page());
                 return;
             }
             var s = roomsComboBox.SelectedItem as RoomView;
 
-            ResourcePage.ResourceList.Remove(newResource);
+            if(!isNewResource)
+                ResourcePage.ResourceList.Remove(newResource);
 
             newResource.RoomId = (int)s.Id;
             newResource.Type = nameTextBox.Text;
 
+            resource = newResource.Convert();
+
+            if (!isNewResource)
+            {
+                _resourceController.Update(resource);
+            }
+            else
+            {
+                _resourceController.Add(resource);
+            }
             ResourcePage.ResourceList.Add(newResource);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
@@ -93,6 +116,10 @@ namespace Hospital.Pages
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da izbrišete ovaj resurs?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
+                if (_resourceController.Get(newResource.Id) != null)
+                {
+                    _resourceController.Remove(newResource.Convert());
+                }
                 ResourcePage.ResourceList.Remove(newResource);
                 System.Windows.MessageBox.Show("Promene uspešno sačuvane");
                 NavigationService.Navigate(new Page());

@@ -1,5 +1,7 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
 using Hospital.Windows;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,26 +25,36 @@ namespace Hospital.Pages
     /// </summary>
     public partial class ResourcePage : Page
     {
+        private ResourceController _resourceController;
+        private MedicalSupplyController _medicalSupplyController;
+
         public static ObservableCollection<ResourceView> ResourceList = new ObservableCollection<ResourceView>();
         public static ObservableCollection<SupplyView> SupplyList = new ObservableCollection<SupplyView>();
 
         public ResourcePage()
         {
+            _resourceController = (Application.Current as App).ResourceController;
+            _medicalSupplyController = (Application.Current as App).MedicalSupplyController;
+
             InitializeComponent();
 
             if(ResourceList.Count == 0)
             {
-                for(var i = 0; i <= 10; i++)
+                List<Resource> resources = _resourceController.GetAll();
+
+                for(var i = 0; i < resources.Count; i++)
                 {
-                    ResourceList.Add(RandomData.GetRandomResource());
+                    ResourceList.Add(new ResourceView(resources[i]));
                 }
             }
 
             if (SupplyList.Count == 0)
             {
-                for (var i = 0; i < 4; i++)
+                List<MedicalSupply> supplies = _medicalSupplyController.GetAll();
+
+                for (var i = 0; i < supplies.Count; i++)
                 {
-                    SupplyList.Add(RandomData.GetRandomSupply());
+                    SupplyList.Add(new SupplyView(supplies[i]));
                 }
             }
 
@@ -53,23 +65,19 @@ namespace Hospital.Pages
 
         private void addSupply_Click(object sender, RoutedEventArgs e)
         {
-            //var data = (DataGrid)sender;
-
             SupplyView supply = new SupplyView();
-            SupplyList.Add(supply);
+            //SupplyList.Add(supply);
 
-            var openPage = new SupplyProfilePage(supply);
+            var openPage = new SupplyProfilePage(supply, true);
             frame.Navigate(openPage);
         }
 
         private void addResource_Click(object sender, RoutedEventArgs e)
         {
-            //var data = (DataGrid)sender;
-
             ResourceView resource = new ResourceView();
-            ResourceList.Add(resource);
+            //ResourceList.Add(resource);
 
-            var openPage = new ResourceProfilePage(resource);
+            var openPage = new ResourceProfilePage(resource, true);
             frame.Navigate(openPage);
         }
 

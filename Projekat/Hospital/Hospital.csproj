@@ -79,25 +79,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Crypt.cs" />
-    <Compile Include="Model\DoctorView.cs" />
-    <Compile Include="Model\DrugView.cs" />
-    <Compile Include="Model\ViewChart.cs" />
-    <Compile Include="Model\EmployeeView.cs" />
-    <Compile Include="Model\ManagerView.cs" />
-    <Compile Include="Model\RandomData.cs" />
-    <Compile Include="Model\RenovationView.cs" />
-    <Compile Include="Model\ResourceView.cs" />
-    <Compile Include="Model\ResourceViewChart.cs" />
-    <Compile Include="Model\RoomType.cs" />
-    <Compile Include="Model\RoomView.cs" />
-    <Compile Include="Model\SupplyView.cs" />
-    <Compile Include="Model\ViewModelDrug.cs" />
-    <Compile Include="Model\ViewModelResource.cs" />
-    <Compile Include="Model\ViewModelRoom.cs" />
-    <Compile Include="Pages\AddDoctor.xaml.cs">
-      <DependentUpon>AddDoctor.xaml</DependentUpon>
+    <Compile Include="Pages\ReportPage.xaml.cs">
+      <DependentUpon>ReportPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UserAccountLogged.xaml.cs">
+      <DependentUpon>UserAccountLogged.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\DoctorView.cs" />
+    <Compile Include="ViewModel\DrugView.cs" />
+    <Compile Include="ViewModel\ViewChart.cs" />
+    <Compile Include="ViewModel\EmployeeView.cs" />
+    <Compile Include="ViewModel\ManagerView.cs" />
+    <Compile Include="ViewModel\RandomData.cs" />
+    <Compile Include="ViewModel\RenovationView.cs" />
+    <Compile Include="ViewModel\ResourceView.cs" />
+    <Compile Include="ViewModel\ResourceViewChart.cs" />
+    <Compile Include="ViewModel\RoomType.cs" />
+    <Compile Include="ViewModel\RoomView.cs" />
+    <Compile Include="ViewModel\SupplyView.cs" />
+    <Compile Include="ViewModel\ViewModelDrug.cs" />
+    <Compile Include="ViewModel\ViewModelResource.cs" />
+    <Compile Include="ViewModel\ViewModelRoom.cs" />
     <Compile Include="Pages\AddDoctorPage.xaml.cs">
       <DependentUpon>AddDoctorPage.xaml</DependentUpon>
     </Compile>
@@ -128,12 +130,6 @@
     </Compile>
     <Compile Include="Pages\RenoviranjePage.xaml.cs">
       <DependentUpon>RenoviranjePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ReportPage.xaml.cs">
-      <DependentUpon>ReportPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ReportsPage.xaml.cs">
-      <DependentUpon>ReportsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ResourceChartPage.xaml.cs">
       <DependentUpon>ResourceChartPage.xaml</DependentUpon>
@@ -186,10 +182,6 @@
       <DependentUpon>mainwindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AddDoctor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\AddDoctorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -234,10 +226,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ReportsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\ResourceChartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UserAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserAccountLogged.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -329,11 +321,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\RandomDrugNames.txt" />
+    <Resource Include="Data\RoomData.txt" />
     <Resource Include="Data\search.png" />
     <Resource Include="Data\SupplyNames.txt" />
     <Resource Include="Data\ResourceNames.txt" />
     <Resource Include="Data\UserData.txt" />
     <Resource Include="Pages\profilePic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Documents\GitHub\sims-proj\Code\Hospital_class_diagram.csproj">
+      <Project>{e99c9f0d-9abb-437e-a494-3c3ebb9bf9d7}</Project>
+      <Name>Hospital_class_diagram</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

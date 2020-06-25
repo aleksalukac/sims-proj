@@ -1,6 +1,6 @@
 ﻿using Hospital.Pages;
 using Hospital.Windows;
-using Hospital.Model;
+using Hospital.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
+using Repository;
+using Controllers;
 
 namespace Hospital
 {
@@ -23,8 +26,11 @@ namespace Hospital
     /// </summary>
     public partial class MainWindow : Window
     {
+        private UserController _userController;
+
         public MainWindow()
         {
+            _userController = (Application.Current as App).UserController;
             InitializeComponent();
         }
 
@@ -42,19 +48,28 @@ namespace Hospital
 
         private void login_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            string password = ManagerView.getInstance().Password;
-            
+            string passwordText = passwordBox.Password; //Crypt.Encrypt()
+            string emailText = emailBox.Text;
 
-            if(ManagerView.getInstance().Email.Equals(emailBox.Text) && ManagerView.getInstance().Password.Equals(Crypt.Encrypt(passwordBox.Password)))
-            {
-                var nextPage = new DefaultPage();
-                this.Content = nextPage;
-            }
-            else
+            User loggedUser = _userController.Login(emailText, passwordText);
+
+            if (loggedUser == null)
             {
                 MessageBox.Show("Email i sifra nisu prepoznati", "Greska");
             }
-
+            else
+            {
+                if (loggedUser.GetType().Name.Equals("Manager"))
+                {
+                    var nextPage = new DefaultPage();
+                    this.Content = nextPage;
+                }
+                else
+                {
+                    var nextPage = new UserAccountLogged();
+                    this.Content = nextPage;
+                }
+            }
         }
 
         private void passwordsBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -66,6 +81,48 @@ namespace Hospital
         {
             var nextWindow = new ResetPasswordWindow();
             nextWindow.Show();
+        }
+
+        private void managerRepositoryTest()
+        {
+            var _managerRepository = new ManagerRepository();
+            Manager manager = new Manager();
+            manager.Name = "Nolo";
+            manager.Surname = "Djokovic";
+            manager.Email = "nole@clinic.com";
+            var a = _managerRepository.Add(manager);
+            var b = _managerRepository.Add(manager);
+
+            var man = _managerRepository.Get();
+
+            man.Name = "Novak";
+
+            man = _managerRepository.Update(man);
+        }
+
+        private void roomRepositoryTest()
+        {
+            var _roomRepository = new RoomRepository();
+            List<Room> rooms = new List<Room>();
+            _roomRepository.WriteAll(rooms);
+
+            Room r = new Room();
+            r.RoomType = Model.RoomType.examinationRoom;
+            _roomRepository.Add(r);
+
+            r = new Room();
+            r.RoomType = Model.RoomType.operationRoom;
+            _roomRepository.Add(r);
+
+            rooms = _roomRepository.GetAll();
+
+            _roomRepository.Update(r);
+
+            rooms = _roomRepository.GetAll();
+
+            _roomRepository.Remove(0);
+
+            rooms = _roomRepository.GetAll();
         }
     }
 }

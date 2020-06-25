@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,38 +24,47 @@ namespace Hospital.Pages
     /// </summary>
     public partial class SupplyProfilePage : Page
     {
-        public SupplyProfilePage(SupplyView supply)
+        private MedicalSupplyController _medicalSupplyController;
+
+        private bool isNewSupply = false;
+
+        public SupplyProfilePage(SupplyView supply, bool isPrivate = false)
         {
+            isNewSupply = isPrivate;
+            _medicalSupplyController = (Application.Current as App).MedicalSupplyController;
             InitializeComponent();
 
             nameTextBox.Text = supply.Type;
-            idLabel.Content = supply.Id;
+            if(!isNewSupply)
+                idLabel.Content = supply.Id;
             countTextBox.Text = supply.Count.ToString();
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
-            SupplyView newSupply = null;
-            foreach (var supply in ResourcePage.SupplyList)
-            {
-                if (supply.Id == Int32.Parse(idLabel.Content.ToString()))
+            SupplyView newSupply = new SupplyView();
+            MedicalSupply medicalSupply = new MedicalSupply();
+
+            if (!isNewSupply)
+                foreach (var supply in ResourcePage.SupplyList)
                 {
-                    newSupply = supply;
-                    break;
+                    if (supply.Id == Int32.Parse(idLabel.Content.ToString()))
+                    {
+                        newSupply = supply;
+                        break;
+                    }
                 }
-            }
+            else
+                newSupply.Id = medicalSupply.Id;
 
             if(nameTextBox.Text.Length == 0)
             {
-                //ResourcePage.SupplyList.Remove(newSupply);
-                //newSupply.Type = nameTextBox.Text;
                 System.Windows.MessageBox.Show("Unesite pravilno ime materijala.");
-                //NavigationService.Navigate(new Page());
                 return;
             }
 
-            ResourcePage.SupplyList.Remove(newSupply);
-
+            if(!isNewSupply)
+                ResourcePage.SupplyList.Remove(newSupply);
 
             newSupply.Type = nameTextBox.Text;
 
@@ -66,7 +77,16 @@ namespace Hospital.Pages
             }
             newSupply.Count = x;
 
+            medicalSupply = newSupply.Convert();
 
+            if(!isNewSupply)
+            {
+                _medicalSupplyController.Update(medicalSupply);
+            }
+            else
+            {
+                _medicalSupplyController.Add(medicalSupply);
+            }
             ResourcePage.SupplyList.Add(newSupply);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
@@ -92,6 +112,11 @@ namespace Hospital.Pages
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da izbrišete ovaj materijal?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
+                if (_medicalSupplyController.Get(newSupply.Id) != null)
+                {
+                    _medicalSupplyController.Remove(newSupply.Convert());
+                }
+
                 ResourcePage.SupplyList.Remove(newSupply);
                 System.Windows.MessageBox.Show("Promene uspešno sačuvane");
                 NavigationService.Navigate(new Page());

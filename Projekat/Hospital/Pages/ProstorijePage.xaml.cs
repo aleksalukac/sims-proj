@@ -1,4 +1,4 @@
-﻿using Hospital.Model;
+﻿using Hospital.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -69,7 +69,7 @@ namespace Hospital.Pages
         {
             var data = (DataGrid)sender;
 
-            var OpenPage = new RenoviranjePage((Model.RoomView)data.SelectedValue);
+            var OpenPage = new RenoviranjePage((ViewModel.RoomView)data.SelectedValue);
             frame.Navigate(OpenPage);
         }
 
@@ -82,7 +82,7 @@ namespace Hospital.Pages
         {
             if(dataGrid.SelectedItem != null)
             {
-                var OpenPage = new RenoviranjePage((Model.RoomView)dataGrid.SelectedItem);
+                var OpenPage = new RenoviranjePage((ViewModel.RoomView)dataGrid.SelectedItem);
                 frame.Navigate(OpenPage);
             }
         }

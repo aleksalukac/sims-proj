@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Hospital.Model"
+      xmlns:local="clr-namespace:Hospital.ViewModel"
       xmlns:chart="http://schemas.syncfusion.com/wpf" x:Class="Hospital.Pages.DrugChartPage"
       mc:Ignorable="d"
       Title="DrugChartPage" Height="180" Width="265">

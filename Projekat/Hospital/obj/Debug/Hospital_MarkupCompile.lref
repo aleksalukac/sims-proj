@@ -1,7 +1,6 @@
-﻿
+﻿C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\mainwindow.xaml;;
-FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\AddDoctor.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\AddDoctorPage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\AddDrug.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\AddResourcePage.xaml;;
@@ -13,7 +12,6 @@ FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\DrugProfilePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ProstorijePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\RenoviranjePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ReportPage.xaml;;
-FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ReportsPage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ResourceChartPage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ResourcePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ResourceProfilePage.xaml;;
@@ -22,6 +20,7 @@ FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\RoomProfilePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\SecretaryProfilePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\SupplyProfilePage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\UserAccount.xaml;;
+FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\UserAccountLogged.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Pages\ZaposleniPage.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Windows\AlertWindow.xaml;;
 FC:\Users\Aleksa\source\repos\Hospital\Hospital\Windows\ChartWindow.xaml;;

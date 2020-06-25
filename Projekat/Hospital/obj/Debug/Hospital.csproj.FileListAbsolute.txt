@@ -13,9 +13,7 @@ C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Hospital.exe
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Hospital.pdb
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\mainwindow.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\mainwindow.baml
-C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\ReportsPage.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Windows\ProblemReportWindow.g.cs
-C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\ReportsPage.baml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Windows\ProblemReportWindow.baml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\DefaultPage.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\DefaultPage.baml
@@ -32,9 +30,7 @@ C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\DoctorProfilePage
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RenoviranjePage.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RenoviranjePage.baml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\AddDoctorPage.g.cs
-C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\AddDoctor.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\AddDoctorPage.baml
-C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\AddDoctor.baml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\UserAccount.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\UserAccount.baml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\DrugPage.g.cs
@@ -79,3 +75,7 @@ C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RoomProfilePage.g
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RoomProfilePage.baml
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RoomChartPage.g.cs
 C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\RoomChartPage.baml
+C:\Users\Aleksa\source\repos\Hospital\Hospital\bin\Debug\Hospital_class_diagram.dll
+C:\Users\Aleksa\source\repos\Hospital\Hospital\bin\Debug\Hospital_class_diagram.pdb
+C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\UserAccountLogged.g.cs
+C:\Users\Aleksa\source\repos\Hospital\Hospital\obj\Debug\Pages\UserAccountLogged.baml

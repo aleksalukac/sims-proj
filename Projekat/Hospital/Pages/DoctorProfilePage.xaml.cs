@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
 using Hospital.Windows;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,12 @@ namespace Hospital.Pages
     /// </summary>
     public partial class DoctorProfilePage : Page
     {
+        private DoctorController _controller;
+
         public DoctorProfilePage(DoctorView doctor)
         {
+
+            _controller = (Application.Current as App).DoctorController;
             InitializeComponent();
             imeTextBox.Text = doctor.Name;
             prezimeTextBox.Text = doctor.Surname;
@@ -40,6 +45,7 @@ namespace Hospital.Pages
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da date otkaz ovom lekaru?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
+                _controller.Remove(Int32.Parse(idLabel.Content.ToString()));
                 deleteDoctor((uint)Int32.Parse(idLabel.Content.ToString()));
                 var page = new Page();
                 NavigationService.Navigate(page);
@@ -97,7 +103,9 @@ namespace Hospital.Pages
             }
             doctor.Specialisation = specijalizacijaTextBox.Text;
 
-            ZaposleniPage.DoctorList.Add(doctor); 
+            ZaposleniPage.DoctorList.Add(doctor);
+
+            _controller.Update(doctor.Convert());
             //AutoClosingMessageBox.Show("Uspešno ste sačuvali informacije.", "", 10);
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());

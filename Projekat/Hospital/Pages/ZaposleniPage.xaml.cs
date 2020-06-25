@@ -1,5 +1,7 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
 using Hospital.Windows;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,6 +25,8 @@ namespace Hospital.Pages
     /// </summary>
     public partial class ZaposleniPage : Page
     {
+        private DoctorController _doctorController;
+        private EmployeeController _employeeController;
         public static ObservableCollection<DoctorView> DoctorList = new ObservableCollection<DoctorView>();
         public static ObservableCollection<EmployeeView> SecretaryList = new ObservableCollection<EmployeeView>();
 
@@ -51,14 +55,20 @@ namespace Hospital.Pages
 
         public ZaposleniPage()
         {
+            _doctorController = (Application.Current as App).DoctorController;
+            _employeeController = (Application.Current as App).EmployeeController;
+
             InitializeComponent();
             this.DataContext = this;
             var name = RandomData.GetRandomName();
             if(DoctorList.Count == 0)
             {
-                for(int i = 0; i < 10; i++)
+                List<Doctor> doctors = new List<Doctor>();
+                doctors = _doctorController.GetAllDoctor();
+
+                for(int i = 0; i < doctors.Count; i++)
                 {
-                    DoctorList.Add(new DoctorView(random: true));
+                    DoctorList.Add(new DoctorView(doctors[i]));
                 }
 
             }
@@ -66,7 +76,7 @@ namespace Hospital.Pages
 
             if(SecretaryList.Count == 0)
             {
-                SecretaryList.Add(new EmployeeView(random: true));
+                SecretaryList.Add(new EmployeeView((Employee)_employeeController.Get()));
             }    
             dataGrid2.ItemsSource = SecretaryList;
             

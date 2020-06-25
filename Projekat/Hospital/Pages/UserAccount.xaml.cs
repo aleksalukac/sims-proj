@@ -1,4 +1,7 @@
-﻿using Hospital.Model;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Hospital_class_diagram.Crypt;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,20 +27,26 @@ namespace Hospital.Pages
     /// </summary>
     public partial class UserAccount : Page
     {
+        private UserController _userController;
 
         public UserAccount()
         {
+            _userController = (Application.Current as App).UserController;
             InitializeComponent();
-            ManagerView manager = ManagerView.getInstance();
-            nameTextBox.Text = manager.Name;
-            surnameTextBox.Text = manager.Surname;
-            emailTextBox.Text = manager.Email;
-            idLabel.Content = manager.Id.ToString();
+
+            User user = _userController.GetLoggedUser();
+
+            nameTextBox.Text = user.Name;
+            surnameTextBox.Text = user.Surname;
+            emailTextBox.Text = user.Email;
+            idLabel.Content = user.Id.ToString();
+
+            userTypeLabel.Content = user.GetType().Name;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ManagerView manager = ManagerView.getInstance();
+            User user = _userController.GetLoggedUser();
 
             if (!passwordBox.Password.Equals(confirmedPasswordBox.Password))
             {
@@ -51,10 +60,10 @@ namespace Hospital.Pages
                     MessageBox.Show("Sifra je prekratka", "Greska");
                     return;
                 }
-                manager.Password = Crypt.Encrypt(confirmedPasswordBox.Password);
+                user.Password = confirmedPasswordBox.Password;
             }
-            manager.Name = nameTextBox.Text;
-            manager.Surname = surnameTextBox.Text;
+            user.Name = nameTextBox.Text;
+            user.Surname = surnameTextBox.Text;
 
             if (!IsValid(emailTextBox.Text))
             {
@@ -62,9 +71,11 @@ namespace Hospital.Pages
                 return;
             }
 
-            manager.Email = emailTextBox.Text;
-            manager.Name = nameTextBox.Text;
-            ManagerView.saveManager();
+            user.Email = emailTextBox.Text;
+            user.Name = nameTextBox.Text;
+            //ManagerView.saveManager();
+
+            _userController.Update(user);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());
