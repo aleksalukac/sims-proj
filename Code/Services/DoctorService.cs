@@ -52,5 +52,34 @@ namespace Services
 
             return null;
         }
+
+        internal Employee Update(Employee employee)
+        {
+            Doctor doctor = _doctorRepository.Get(employee.Id);
+
+            if (doctor == null)
+                return null;
+
+            Doctor newDoctor = new Doctor(employee);
+            newDoctor.specialisationType = doctor.specialisationType;
+            newDoctor.medicalExam = doctor.medicalExam;
+
+            return _doctorRepository.Update(newDoctor);
+        }
+
+        internal Employee Update(User user)
+        {
+            if(_doctorRepository.Get(user.Id) != null)
+            {
+                Doctor doctor = _doctorRepository.Get(user.Id);
+                doctor.Email = user.Email;
+                doctor.DateOfBirth = user.DateOfBirth;
+                doctor.Name = user.Name;
+                doctor.Password = user.Password;
+                doctor.TextContent = user.TextContent;
+                return _doctorRepository.Update(doctor);
+            }
+            return null;
+        }
     }
 }

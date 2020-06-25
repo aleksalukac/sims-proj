@@ -9,6 +9,16 @@ namespace Model
 {
    public class Manager : Employee
    {
+        public Manager()
+        {
+
+        }
+
+        public Manager(Employee employee) : base(employee)
+        {
+
+        }
+
         public List<Report> Report { get; set; }
         
    }

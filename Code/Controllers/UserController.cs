@@ -57,5 +57,10 @@ namespace Controllers
         {
             return _userService.GetLoggedUser();
         }
+
+        public User Update(User user)
+        {
+            return _userService.Update(user);
+        }
     }
 }

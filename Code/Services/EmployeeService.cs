@@ -46,7 +46,50 @@ namespace Services
         }
 
         internal Employee Update(Employee employee)
-            => _secretaryRepository.Update((Secretary)employee);
+        {
+            if(_secretaryRepository.Get(employee.Id) != null)
+                return _secretaryRepository.Update((Secretary)employee);
+            if (_managerRepository.Get(employee.Id) != null)
+            {
+                var manager = _managerRepository.Get();
+                Manager newManager = new Manager(employee);
+                newManager.Id = manager.Id;
+                newManager.Report = manager.Report;
+
+                return _managerRepository.Update(newManager);
+            }
+
+            return _doctorService.Update(employee);
+        }
+
+        internal Employee Update(User user)
+        {
+            if (_secretaryRepository.Get(user.Id) != null)
+            {
+                Secretary secretary = _secretaryRepository.Get();
+                secretary.Email = user.Email;
+                secretary.DateOfBirth = user.DateOfBirth;
+                secretary.Name = user.Name;
+                secretary.Password = user.Password;
+                secretary.TextContent = user.TextContent;
+
+                return _secretaryRepository.Update((Secretary)secretary);
+            }
+
+            if (_managerRepository.Get(user.Id) != null)
+            {
+                Manager manager = _managerRepository.Get();
+                manager.Email = user.Email;
+                manager.DateOfBirth = user.DateOfBirth;
+                manager.Name = user.Name;
+                manager.Password = user.Password;
+                manager.TextContent = user.TextContent;
+
+                return _managerRepository.Update(manager);
+            }
+
+            return _doctorService.Update(user);
+        }
 
         internal Employee Get()
             => _secretaryRepository.Get();

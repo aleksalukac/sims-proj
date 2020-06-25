@@ -62,6 +62,17 @@ namespace Services
             return null;
         }
 
+        internal User Update(User user)
+        {
+            user.Password = Crypt.Encrypt(user.Password);
+            User returnValue = _employeeService.Update(user);
+
+            if (returnValue == null)
+                returnValue = _patientService.Update(user);
+
+            return returnValue;
+        }
+
         internal User GetLoggedUser()
         {
             using (StreamReader sr = File.OpenText(LOGGED_FILE_PATH))
@@ -74,31 +85,26 @@ namespace Services
                 return Get(parsedId);
             }
         }
-
-        public Boolean Logout()
-      {
-         throw new NotImplementedException();
-      }
       
-      public Boolean ChangePassword(Model.User user, string newPassword)
-      {
-         throw new NotImplementedException();
-      }
+        public Boolean ChangePassword(Model.User user, string newPassword)
+        {
+            throw new NotImplementedException();
+        }
       
-      public List<Notification> GetNotifications(Model.User user)
-      {
-         throw new NotImplementedException();
-      }
+        public List<Notification> GetNotifications(Model.User user)
+        {
+            throw new NotImplementedException();
+        }
       
-      public TextContent CreateFeedback(Model.User user, TextContent feedback)
-      {
-         throw new NotImplementedException();
-      }
+        public TextContent CreateFeedback(Model.User user, TextContent feedback)
+        {
+            throw new NotImplementedException();
+        }
       
-      public TextContent CreateQuestion(Model.User user, TextContent question)
-      {
-         throw new NotImplementedException();
-      }
+        public TextContent CreateQuestion(Model.User user, TextContent question)
+        {
+            throw new NotImplementedException();
+        }
    
    }
 }

@@ -36,7 +36,7 @@ namespace Services
          throw new NotImplementedException();
       }
 
-        internal User Get(int id)
+        internal Patient Get(int id)
             => this._patientRepository.Get(id);
 
         private PatientRepository _patientRepository;
@@ -54,6 +54,22 @@ namespace Services
             {
                 if (patient.Email.Equals(email))
                     return patient;
+            }
+            return null;
+        }
+
+        internal Patient Update(User user)
+        {
+            if(Get(user.Id) != null)
+            {
+                Patient patient = _patientRepository.Get(user.Id);
+                patient.Email = user.Email;
+                patient.DateOfBirth = user.DateOfBirth;
+                patient.Name = user.Name;
+                patient.Password = user.Password;
+                patient.TextContent = user.TextContent;
+
+                return _patientRepository.Update(patient);
             }
             return null;
         }

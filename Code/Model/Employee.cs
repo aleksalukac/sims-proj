@@ -15,6 +15,19 @@ namespace Model
             this.Vacation = new Vacation();
         }
 
+        public Employee(Employee employee)
+        {
+            this.WorkingHours = employee.WorkingHours;
+            this.Vacation = employee.Vacation;
+            this.Name = employee.Name;
+            this.Notification = employee.Notification;
+            this.Password = employee.Password;
+            this.Surname = employee.Surname;
+            this.TextContent = employee.TextContent;
+            this.DateOfBirth = employee.DateOfBirth;
+            this.Email = employee.Email;
+        }
+
         public WorkingHours WorkingHours { get; set; }
         public Vacation Vacation { get; set; }
    
