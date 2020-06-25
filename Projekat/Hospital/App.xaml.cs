@@ -1,4 +1,5 @@
 ﻿using Controllers;
+using Hospital_class_diagram.Repository;
 using Model;
 using Repository;
 using Services;
@@ -32,6 +33,7 @@ namespace Hospital
             var roomRepository = new RoomRepository();
             var secretaryRepository = new SecretaryRepository();
             var textContentRepository = new TextContentRepository();
+            var renovationRepository = new RenovationRepository();
 
             var doctorService = new DoctorService(doctorRepository);
             var doctorReviewService = new DoctorReviewService(medicalExamRepository);
@@ -45,7 +47,7 @@ namespace Hospital
             var questionService = new QuestionService(textContentRepository);
             var reportService = new ReportService(reportRepository);
             var resourceService = new ResourceService(resourceRepository);
-            var roomService = new RoomService(roomRepository);
+            var roomService = new RoomService(roomRepository, renovationRepository, medicalExamService);
             var userService = new UserService(employeeService, patientService);
 
             DoctorController = new DoctorController(doctorService);

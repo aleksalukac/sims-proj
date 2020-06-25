@@ -1,4 +1,6 @@
-﻿using Hospital.ViewModel;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,29 +23,58 @@ namespace Hospital.Pages
     /// </summary>
     public partial class RoomProfilePage : Page
     {
-        public static List<String> roomTypes = Enum.GetNames(typeof(RoomType)).ToList();
+        public static List<String> roomTypes = Enum.GetNames(typeof(Model.RoomType)).ToList();
 
-        public RoomProfilePage(RoomView room)
+        private RoomController _roomController;
+
+        private bool isNewResource = false;
+
+        public RoomProfilePage(RoomView room, bool isPrivate = false)
         {
+            isNewResource = isPrivate;
+            _roomController = (Application.Current as App).RoomController;
+
             InitializeComponent();
-            idLabel.Content = room.Id;
-            roomComboBox.ItemsSource = Enum.GetNames(typeof(RoomType));
+            if (!isNewResource)
+                idLabel.Content = room.Id;
+
+            roomComboBox.ItemsSource = Enum.GetNames(typeof(Model.RoomType));
             if(room.RoomType != null) roomComboBox.SelectedItem = room.RoomType.ToString();
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
-            RoomView newRoom = null;
-            foreach(var room in RoomPage.RoomList)
-            {
-                if(room.Id == Int32.Parse(idLabel.Content.ToString()))
+            RoomView newRoom = new RoomView();
+            Room room = new Room();
+
+            if (!isNewResource)
+                foreach (var _room in RoomPage.RoomList)
                 {
-                    newRoom = room;
-                    break;
+                    if(_room.Id == Int32.Parse(idLabel.Content.ToString()))
+                    {
+                        newRoom = _room;
+                        break;
+                    }
                 }
-            }
-            RoomPage.RoomList.Remove(newRoom);
+            else
+                newRoom.Id = (uint)room.Id;
+
+            if (!isNewResource)
+                RoomPage.RoomList.Remove(newRoom);
             newRoom.RoomType = roomComboBox.SelectedItem.ToString();
+
+            room = newRoom.Convert();
+            room.Id = (int)newRoom.Id;
+
+            if (!isNewResource)
+            {
+                _roomController.Update(room);
+            }
+            else
+            {
+                _roomController.Add(room);
+            }
+
             RoomPage.RoomList.Add(newRoom);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
@@ -64,7 +95,11 @@ namespace Hospital.Pages
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Da li ste sigurni da zelite da obrisete sobu?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                RoomPage.RoomList.Remove(newRoom);
+                if(newRoom != null)
+                {
+                    RoomPage.RoomList.Remove(newRoom);
+                    _roomController.Remove((int)newRoom.Id);
+                }
                 System.Windows.MessageBox.Show("Uspešno ste obrisali sobu.");
                 NavigationService.Navigate(new Page());
             }

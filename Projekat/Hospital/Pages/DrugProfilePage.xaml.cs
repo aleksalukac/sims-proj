@@ -40,7 +40,7 @@ namespace Hospital.Pages
             alternativeListBox.ItemsSource = alternativeDrugs;
 
             List<DoctorView> approvedDoctors = new List<DoctorView>();
-            foreach(var doctor in ZaposleniPage.DoctorList)
+            foreach(var doctor in EmployeesPage.DoctorList)
             {
                 if(drug.alternativeDrug.Contains((int)doctor.Id))
                 {

@@ -44,9 +44,9 @@ namespace Hospital.Pages
                 MessageBox.Show("Email nije u dobrom formatu", "Greska");
                 return;
             }
-            var secretary = ZaposleniPage.SecretaryList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
+            var secretary = EmployeesPage.SecretaryList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
 
-            ZaposleniPage.SecretaryList.Remove(secretary);
+            EmployeesPage.SecretaryList.Remove(secretary);
 
             if (workBeginTextBox.Text.Length != 0)
             {
@@ -77,7 +77,7 @@ namespace Hospital.Pages
             secretary.Email = emailTextBox.Text;
 
             _employeeController.Update(secretary.Convert());
-            ZaposleniPage.SecretaryList.Add(secretary);
+            EmployeesPage.SecretaryList.Add(secretary);
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());

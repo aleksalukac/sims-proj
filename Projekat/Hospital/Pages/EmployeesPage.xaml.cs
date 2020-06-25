@@ -23,7 +23,7 @@ namespace Hospital.Pages
     /// <summary>
     /// Interaction logic for Zaposleni.xaml
     /// </summary>
-    public partial class ZaposleniPage : Page
+    public partial class EmployeesPage : Page
     {
         private DoctorController _doctorController;
         private EmployeeController _employeeController;
@@ -53,7 +53,7 @@ namespace Hospital.Pages
             DoctorList.Add(doctor);
         }
 
-        public ZaposleniPage()
+        public EmployeesPage()
         {
             _doctorController = (Application.Current as App).DoctorController;
             _employeeController = (Application.Current as App).EmployeeController;

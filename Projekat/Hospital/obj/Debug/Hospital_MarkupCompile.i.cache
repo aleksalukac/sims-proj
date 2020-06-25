@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Aleksa\source\repos\Hospital\Hospital\App.xaml
-26642240718
+261808560377
 1-1863170832
-47-1505118259
+47-1291724253
 231676331728
-mainwindow.xaml;Pages\AddDoctorPage.xaml;Pages\AddDrug.xaml;Pages\AddResourcePage.xaml;Pages\DefaultPage.xaml;Pages\DoctorProfilePage.xaml;Pages\DrugChartPage.xaml;Pages\DrugPage.xaml;Pages\DrugProfilePage.xaml;Pages\ProstorijePage.xaml;Pages\RenoviranjePage.xaml;Pages\ReportPage.xaml;Pages\ResourceChartPage.xaml;Pages\ResourcePage.xaml;Pages\ResourceProfilePage.xaml;Pages\RoomChartPage.xaml;Pages\RoomProfilePage.xaml;Pages\SecretaryProfilePage.xaml;Pages\SupplyProfilePage.xaml;Pages\UserAccount.xaml;Pages\UserAccountLogged.xaml;Pages\ZaposleniPage.xaml;Windows\AlertWindow.xaml;Windows\ChartWindow.xaml;Windows\ProblemReportWindow.xaml;Windows\ResetPasswordWindow.xaml;
+mainwindow.xaml;Pages\AddDoctorPage.xaml;Pages\AddDrug.xaml;Pages\AddResourcePage.xaml;Pages\DefaultPage.xaml;Pages\DoctorProfilePage.xaml;Pages\DrugChartPage.xaml;Pages\DrugPage.xaml;Pages\DrugProfilePage.xaml;Pages\RoomPage.xaml;Pages\RenovationPage.xaml;Pages\ReportPage.xaml;Pages\ResourceChartPage.xaml;Pages\ResourcePage.xaml;Pages\ResourceProfilePage.xaml;Pages\RoomChartPage.xaml;Pages\RoomProfilePage.xaml;Pages\SecretaryProfilePage.xaml;Pages\SupplyProfilePage.xaml;Pages\UserAccount.xaml;Pages\UserAccountLogged.xaml;Pages\EmployeesPage.xaml;Windows\AlertWindow.xaml;Windows\ChartWindow.xaml;Windows\ProblemReportWindow.xaml;Windows\ResetPasswordWindow.xaml;
 
-True
+False
 

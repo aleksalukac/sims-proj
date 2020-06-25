@@ -55,7 +55,7 @@ namespace Hospital.Pages
             _controller.Add(doctor);
 
             lekar.Id = (uint)doctor.Id;
-            ZaposleniPage.AddDoctor(lekar);
+            EmployeesPage.AddDoctor(lekar);
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
 
             NavigationService.Navigate(new Page());

@@ -125,11 +125,11 @@
     <Compile Include="Pages\DrugProfilePage.xaml.cs">
       <DependentUpon>DrugProfilePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProstorijePage.xaml.cs">
-      <DependentUpon>ProstorijePage.xaml</DependentUpon>
+    <Compile Include="Pages\RoomPage.xaml.cs">
+      <DependentUpon>RoomPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RenoviranjePage.xaml.cs">
-      <DependentUpon>RenoviranjePage.xaml</DependentUpon>
+    <Compile Include="Pages\RenovationPage.xaml.cs">
+      <DependentUpon>RenovationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ResourceChartPage.xaml.cs">
       <DependentUpon>ResourceChartPage.xaml</DependentUpon>
@@ -155,8 +155,8 @@
     <Compile Include="Pages\UserAccount.xaml.cs">
       <DependentUpon>UserAccount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ZaposleniPage.xaml.cs">
-      <DependentUpon>ZaposleniPage.xaml</DependentUpon>
+    <Compile Include="Pages\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AlertWindow.xaml.cs">
       <DependentUpon>AlertWindow.xaml</DependentUpon>
@@ -214,11 +214,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ProstorijePage.xaml">
+    <Page Include="Pages\RoomPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RenoviranjePage.xaml">
+    <Page Include="Pages\RenovationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,7 +262,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ZaposleniPage.xaml">
+    <Page Include="Pages\EmployeesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

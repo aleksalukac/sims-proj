@@ -21,7 +21,7 @@
         <Button x:Name="button_Copy" Content="Zakaži renoviranje" HorizontalAlignment="Left" Height="45" Margin="235,425,0,0" VerticalAlignment="Top" Width="175" Click="renoviranjeClick"/>
         <Button x:Name="button_Copy1" Content="Dodaj sobu" HorizontalAlignment="Left" Height="45" Margin="40,490,0,0" VerticalAlignment="Top" Width="175" Click="dodajSobu"/>
         <Button x:Name="button_Copy2" Content="Uredi sobu" HorizontalAlignment="Left" Height="45" Margin="235,490,0,0" VerticalAlignment="Top" Width="175" Click="urediSobu"/>
-        <Button x:Name="button_Copy3" Content="Pogledaj grafikon" HorizontalAlignment="Left" Height="45" Margin="135,10,0,0" VerticalAlignment="Top" Width="175" Click="urediSobu" Grid.Row="1"/>
+        <Button x:Name="button_Copy3" Content="Pogledaj grafikon" HorizontalAlignment="Left" Height="45" Margin="135,10,0,0" VerticalAlignment="Top" Width="175" Click="pogledajGrafikon" Grid.Row="1"/>
 
     </Grid>
 </Page>

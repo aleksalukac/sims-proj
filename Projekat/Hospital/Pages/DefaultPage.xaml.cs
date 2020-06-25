@@ -27,7 +27,7 @@ namespace Hospital.Pages
             var page1 = new RoomPage();
             var page2 = new DrugPage();
             var page3 = new ResourcePage();
-            var page4 = new ZaposleniPage();
+            var page4 = new EmployeesPage();
             //profileFrame.Navigate(new UserAccount());
         }
 
@@ -50,7 +50,7 @@ namespace Hospital.Pages
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var nextPage = new ZaposleniPage();
+            var nextPage = new EmployeesPage();
             frame.Navigate(nextPage);
         }
 

@@ -1,4 +1,6 @@
-﻿using Hospital.ViewModel;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,20 +24,40 @@ namespace Hospital.Pages
     /// </summary>
     public partial class RoomPage : Page
     {
+        private RoomController _roomController;
+
         public static ObservableCollection<RoomView> RoomList = new ObservableCollection<RoomView>();
 
         public RoomPage()
         {
+            _roomController = (Application.Current as App).RoomController;
+
             InitializeComponent();
             this.DataContext = this;
             
             if(RoomList.Count == 0)
             {
-                for (var i = 0; i < 10; i++)
-                    RoomList.Add(RandomData.GetRandomRoom());
+                List<Room> rooms = _roomController.GetAll();
+
+                for (var i = 0; i < rooms.Count; i++)
+                {
+                    RoomList.Add(new RoomView(rooms[i], _roomController));
+                }
             }
 
             dataGrid.ItemsSource = RoomList;
+        }
+
+        public static void DeleteRoom(uint id)
+        {
+            foreach (var room in RoomPage.RoomList)
+            {
+                if (room.Id == id)
+                {
+                    RoomList.Remove(room);
+                    break;
+                }
+            }
         }
 
         internal static void SetRenovation(uint id, DateTime selectedDate)
@@ -69,7 +91,7 @@ namespace Hospital.Pages
         {
             var data = (DataGrid)sender;
 
-            var OpenPage = new RenoviranjePage((ViewModel.RoomView)data.SelectedValue);
+            var OpenPage = new RenovationPage((ViewModel.RoomView)data.SelectedValue);
             frame.Navigate(OpenPage);
         }
 
@@ -82,21 +104,30 @@ namespace Hospital.Pages
         {
             if(dataGrid.SelectedItem != null)
             {
-                var OpenPage = new RenoviranjePage((ViewModel.RoomView)dataGrid.SelectedItem);
+                var OpenPage = new RenovationPage((ViewModel.RoomView)dataGrid.SelectedItem);
                 frame.Navigate(OpenPage);
             }
         }
 
         private void urediSobu(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new RoomChartPage());
+            if (dataGrid.SelectedItem != null)
+            {
+                var openPage = new RoomProfilePage((RoomView)dataGrid.SelectedItem);
+                frame.Navigate(openPage);
+            }
         }
 
         private void dodajSobu(object sender, RoutedEventArgs e)
         {
             var newRoom = new RoomView();
-            RoomPage.RoomList.Add(newRoom);
-            frame.Navigate(new RoomProfilePage(newRoom));
+            //RoomPage.RoomList.Add(newRoom);
+            frame.Navigate(new RoomProfilePage(newRoom, true));
+        }
+
+        private void pogledajGrafikon(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new RoomChartPage());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="Hospital.Pages.RenoviranjePage"
+﻿<Page x:Class="Hospital.Pages.RenovationPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -33,7 +33,12 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="button" Content="Zakaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="61,282,0,0" Click="button_Click"/>
+        <ComboBox x:Name="renovationTypeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="157" Margin="215,102,0,0" SelectionChanged="renovationTypeComboBox_SelectionChanged"/>
+
+        <Button x:Name="button" Content="Zakaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="60,285,0,0" Click="button_Click"/>
+        <Label x:Name="label_Copy" Content="Tip renoviranja" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,60,0,0"/>
+        <ComboBox x:Name="roomComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="157" Margin="215,222,0,0" SelectionChanged="renovationTypeComboBox_SelectionChanged"/>
+        <Label x:Name="roomLabel" Content="Soba za spajanje" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,180,0,0"/>
 
     </Grid>
 </Page>

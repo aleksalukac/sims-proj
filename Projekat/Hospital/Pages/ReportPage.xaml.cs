@@ -75,7 +75,7 @@ namespace Hospital.Pages
 
             oTable.Cell(1, 3).Range.Text = "Datum renoviranja";
 
-            for (r = 2; r <= RoomPage.RoomList.Count + 1; r++)
+            for (r = 2; r <= RoomPage.RoomList.Count + 2; r++)
             {
                 strText = RoomPage.RoomList[r - 2].ToString();
                 oTable.Cell(r, 1).Range.Text = strText;

@@ -55,7 +55,7 @@ namespace Hospital.Pages
 
         public void deleteDoctor(uint id)
         {
-            ZaposleniPage.RemoveDoctor(id);
+            EmployeesPage.RemoveDoctor(id);
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
@@ -70,9 +70,9 @@ namespace Hospital.Pages
                 MessageBox.Show("Email nije u dobrom formatu", "Greska");
                 return;
             }
-            var doctor = ZaposleniPage.DoctorList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
+            var doctor = EmployeesPage.DoctorList.Where(x => x.Id == Int32.Parse(idLabel.Content.ToString())).FirstOrDefault();
 
-            ZaposleniPage.DoctorList.Remove(doctor);
+            EmployeesPage.DoctorList.Remove(doctor);
 
             doctor.Name = imeTextBox.Text;
             doctor.Surname = prezimeTextBox.Text;
@@ -103,7 +103,7 @@ namespace Hospital.Pages
             }
             doctor.Specialisation = specijalizacijaTextBox.Text;
 
-            ZaposleniPage.DoctorList.Add(doctor);
+            EmployeesPage.DoctorList.Add(doctor);
 
             _controller.Update(doctor.Convert());
             //AutoClosingMessageBox.Show("Uspešno ste sačuvali informacije.", "", 10);

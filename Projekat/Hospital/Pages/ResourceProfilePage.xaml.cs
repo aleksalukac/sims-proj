@@ -37,7 +37,7 @@ namespace Hospital.Pages
             nameTextBox.Text = resource.Type;
             if(!isNewResource)
                 idLabel.Content = resource.Id;
-            var rm = new RoomPage();
+
             roomsComboBox.ItemsSource = RoomPage.RoomList;
 
             foreach(var room in RoomPage.RoomList)
