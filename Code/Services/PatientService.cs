@@ -3,6 +3,7 @@
 // Created: Wednesday, May 27, 2020 12:50:23 AM
 // Purpose: Definition of Class PatientService
 
+using Hospital_class_diagram.Crypt;
 using Model;
 using Repository;
 using System; using System.Collections.Generic;
@@ -25,16 +26,17 @@ namespace Services
       {
          throw new NotImplementedException();
       }
-      
-      public List<Patient> GetAllPatient()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Patient GetPatient(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public Patient Add(Patient patient)
+        {
+            patient.Password = Crypt.Encrypt(patient.Password);
+            return _patientRepository.Add(patient);
+        }
+        public List<Patient> GetAllPatient()
+      => _patientRepository.GetAll();
+
+
+        public Patient GetPatient(int id)
+       => _patientRepository.Get(id);
 
         internal Patient Get(int id)
             => this._patientRepository.Get(id);

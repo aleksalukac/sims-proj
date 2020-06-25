@@ -194,6 +194,7 @@ namespace Services
         private MedicalExamService _medicalExamService;
         private PatientService _patientService;
         private ResourceService _resourceService;
+        private RoomRepository roomRepository;
 
         public RoomService(RoomRepository roomRepository, RenovationRepository renovationRepository, MedicalExamService medicalExamService, PatientService patientService, ResourceService resourceService)
         {
@@ -202,6 +203,11 @@ namespace Services
             this._roomRepository = roomRepository;
             this._renovationRepository = renovationRepository;
             this._medicalExamService = medicalExamService;
+        }
+
+        public RoomService(RoomRepository roomRepository)
+        {
+            this.roomRepository = roomRepository;
         }
     }
 }
