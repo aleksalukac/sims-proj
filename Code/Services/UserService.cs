@@ -3,21 +3,25 @@
 // Created: Tuesday, May 26, 2020 7:59:18 PM
 // Purpose: Definition of Class UserService
 
+using Hospital_class_diagram.Crypt;
 using Model;
 using Repository;
 using System; using System.Collections.Generic;
+using System.IO;
 
 namespace Services
 {
    public class UserService
    {
         private EmployeeService _employeeService;
-        private PatientRepository _patientRepository;
+        private PatientService _patientService;
 
-        public UserService(EmployeeService employeeService, PatientRepository patientRepository)
+        private string LOGGED_FILE_PATH = @"..\..\Data\LoggedId.txt";
+
+        public UserService(EmployeeService employeeService, PatientService patientService)
         {
             this._employeeService = employeeService;
-            this._patientRepository = patientRepository;
+            this._patientService = patientService;
         }
 
         internal User Get(int id)
@@ -26,15 +30,52 @@ namespace Services
             if (employee != null)
                 return employee;
 
-            return _patientRepository.Get(id);
+            return _patientService.Get(id);
+        }
+
+        public User FindByEmail(string email)
+        {
+            User user = (User)_employeeService.FindByEmail(email);
+            if (user != null)
+                return user;
+
+            return (User)_patientService.FindByEmail(email);
         }
 
         public Model.User Login(string email, string password)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Boolean Logout()
+        {
+            password = Crypt.Encrypt(password);
+            User user = FindByEmail(email);
+
+            if (user != null)
+            {
+                if (user.Password.Equals(password))
+                {
+                    using (StreamWriter sw = File.CreateText(LOGGED_FILE_PATH))
+                    {
+                        sw.WriteLine(user.Id.ToString());
+                    }
+                    return user;
+                }
+            }
+
+            return null;
+        }
+
+        internal User GetLoggedUser()
+        {
+            using (StreamReader sr = File.OpenText(LOGGED_FILE_PATH))
+            {
+                string loggedIdText = sr.ReadLine();
+
+                int parsedId;
+                Int32.TryParse(loggedIdText, out parsedId);
+
+                return Get(parsedId);
+            }
+        }
+
+        public Boolean Logout()
       {
          throw new NotImplementedException();
       }

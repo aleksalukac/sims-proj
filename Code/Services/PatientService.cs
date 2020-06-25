@@ -35,12 +35,27 @@ namespace Services
       {
          throw new NotImplementedException();
       }
-      
+
+        internal User Get(int id)
+            => this._patientRepository.Get(id);
+
         private PatientRepository _patientRepository;
 
         public PatientService(PatientRepository patientRepository1)
         {
             this._patientRepository = patientRepository1;
+        }
+
+        internal Patient FindByEmail(string email)
+        {
+            List<Patient> patients = _patientRepository.GetAll();
+
+            foreach(var patient in patients)
+            {
+                if (patient.Email.Equals(email))
+                    return patient;
+            }
+            return null;
         }
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crypt\Crypt.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\GuestUser.cs" />
     <Compile Include="Model\User.cs" />

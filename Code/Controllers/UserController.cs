@@ -11,10 +11,10 @@ namespace Controllers
 {
    public class UserController
    {
-      public Model.User Login(string email, string password)
-      {
-         throw new NotImplementedException();
-      }
+        public Model.User Login(string email, string password)
+        {
+            return _userService.Login(email, password);
+        }
 
         public User Get(int id)
         {
@@ -51,6 +51,11 @@ namespace Controllers
         public UserController(UserService userService1)
         {
             this._userService = userService1;
+        }
+
+        public User GetLoggedUser()
+        {
+            return _userService.GetLoggedUser();
         }
     }
 }
