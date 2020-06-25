@@ -7,6 +7,7 @@ using Hospital_class_diagram.Repository;
 using Model;
 using Repository;
 using System; using System.Collections.Generic;
+using System.Linq;
 
 namespace Services
 {
@@ -55,8 +56,32 @@ namespace Services
             return null;
         }
 
+        internal List<Room> GetByType(RoomType roomType)
+            => GetAll().FindAll(room => room.RoomType == roomType);
+
         internal Room Remove(int id)
-            => _roomRepository.Remove(id);
+        {
+            Room room = Get(id);
+            if (room == null)
+                return null;
+
+            var sameTypeRooms = GetByType(room.RoomType);
+            if (sameTypeRooms.Count == 1)
+                return null;
+
+            foreach(var sameTypeRoom in sameTypeRooms)
+            {
+                if (sameTypeRoom.Id == id)
+                    continue;
+
+                var mergeResult = Merge(sameTypeRoom.Id, id);
+
+                if (mergeResult != null)
+                    return mergeResult;
+            }
+
+            return null;
+        }
 
         internal Room Add(Room room)
             => _roomRepository.Add(room);
@@ -71,6 +96,9 @@ namespace Services
                 return null;
             }
 
+            //check if rooms have exams scheduled at the same time
+            //if not, all the exams from room2 will be transfered
+            //to room1
             var medicalExamsRoom1 = GetMedicalExams(id1);
             var medicalExamsRoom2 = GetMedicalExams(id2);
 
@@ -78,16 +106,43 @@ namespace Services
             {
                 foreach(var medicalExam2 in medicalExamsRoom2)
                 {
-                    if (medicalExam1.AppointmentStart == medicalExam2.AppointmentStart)
+                    if (medicalExam1.AppointmentStart.Date > DateTime.Now.Date && medicalExam1.AppointmentStart == medicalExam2.AppointmentStart)
                         return null;
                 }
             }
 
             room1.MedicalExam.AddRange(room2.MedicalExam);
-            Remove(id2);
+
+            //all lying patients from room2 will be
+            //transfered to room1
+            foreach (var patientId in GetPatients(id2))
+            {
+                Patient patient = _patientService.Get(patientId);
+                patient.Room = id1;
+                _patientService.Update(patient);
+
+                room1.Patient.Add(patient.Id);
+            }
+
+            //all resource from room2 till be 
+            //transfered to room1
+            foreach (var resource in _resourceService.GetAll())
+            {
+                if(resource.Room == id2)
+                {
+                    resource.Room = id1;
+                    _resourceService.Update(resource);
+                }
+            }
+
+            _roomRepository.Remove(id2);
 
             return Update(room1);
         }
+
+        private List<int> GetPatients(int id)
+            => Get(id).Patient;
+        
 
         internal Renovation AddRenovation(Renovation renovation)
             => _renovationRepository.Add(renovation);
@@ -137,9 +192,13 @@ namespace Services
         private RoomRepository _roomRepository;
         private RenovationRepository _renovationRepository;
         private MedicalExamService _medicalExamService;
+        private PatientService _patientService;
+        private ResourceService _resourceService;
 
-        public RoomService(RoomRepository roomRepository, RenovationRepository renovationRepository, MedicalExamService medicalExamService)
+        public RoomService(RoomRepository roomRepository, RenovationRepository renovationRepository, MedicalExamService medicalExamService, PatientService patientService, ResourceService resourceService)
         {
+            this._resourceService = resourceService;
+            this._patientService = patientService;
             this._roomRepository = roomRepository;
             this._renovationRepository = renovationRepository;
             this._medicalExamService = medicalExamService;
