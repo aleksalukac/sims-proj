@@ -35,11 +35,11 @@ namespace Services
         internal Employee FindByEmail(string email)
         {
             Employee employee = (Employee)_managerRepository.Get();
-            if (employee.Email.Equals(email))
+            if (employee != null && employee.Email.Equals(email))
                 return employee;
 
             employee = (Employee)_secretaryRepository.Get();
-            if (employee.Email.Equals(email))
+            if (employee != null && employee.Email.Equals(email))
                 return employee;
 
             return (Employee)_doctorService.FindByEmail(email);
