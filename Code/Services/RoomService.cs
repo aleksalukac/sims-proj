@@ -44,6 +44,17 @@ namespace Services
                             break;
                         }
                     }
+
+                    foreach(var renovationInRoom in room.Renovation)
+                    {
+                        var renovation = _renovationRepository.Get(renovationInRoom);
+                        if(renovation.Date == examDateTime.Date)
+                        {
+                            isRoomFree = false;
+                            break;
+                        }
+                    }
+
                     if (isRoomFree)
                         freeRooms.Add(room);
                 }
