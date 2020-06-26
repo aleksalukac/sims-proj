@@ -10,7 +10,7 @@ namespace Model
    public class Patient : User
    {
         public string Jmbg { get; set; }
-        public int InsuranceNumber { get; set; }
+        public string InsuranceNumber { get; set; }
         public string InsuranceCarrier { get; set; }
         public string Gender { get; set; }
         public string Address { get; set; }
