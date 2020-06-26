@@ -79,8 +79,6 @@
     <Compile Include="Controllers\MedicalSupplyController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
-    <Compile Include="Controllers\FeedbackController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GuestUserController.cs" />

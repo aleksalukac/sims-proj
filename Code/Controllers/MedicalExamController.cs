@@ -53,7 +53,7 @@ namespace Controllers
       
       public MedicalExam UpdateMedicalExam(MedicalExam medicalExam)
       {
-         throw new NotImplementedException();
+            return _medicalExamService.UpdateMedicalExam(medicalExam);
       }
       
       public List<MedicalExam> GetAllFreeMedicalExam()

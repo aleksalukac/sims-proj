@@ -48,7 +48,7 @@ namespace Services
       
       public MedicalExam UpdateMedicalExam(MedicalExam medicalExam)
       {
-         throw new NotImplementedException();
+            return _medicalExamRepository.Update(medicalExam);
       }
       
       public List<MedicalExam> GetAllFreeMedicalExam()
