@@ -14,7 +14,7 @@ namespace Controllers
    {
       public List<TextContent> GetAllFeedback__()
       {
-         throw new NotImplementedException();
+            return _feedbackService.GetAllFeedback__();
       }
       
       public TextContent SetFeedback__(TextContent feedback)
@@ -29,7 +29,7 @@ namespace Controllers
       
       public TextContent AddFeedback__(TextContent feedback)
       {
-         throw new NotImplementedException();
+            return _feedbackService.AddFeedback__(feedback);
       }
       
         private FeedbackService _feedbackService;

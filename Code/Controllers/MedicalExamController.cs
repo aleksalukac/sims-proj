@@ -13,10 +13,15 @@ namespace Controllers
    {
       public List<MedicalExam> GetAllMedicalExam()
       {
-         throw new NotImplementedException();
+            return _medicalExamService.GetAllMedicalExam();
       }
-      
-      public List<MedicalExam> GetAllUpcomingMedicalExam()
+
+        public MedicalExam Add(MedicalExam medicalExam)
+        {
+            return _medicalExamService.Add(medicalExam);
+        }
+
+        public List<MedicalExam> GetAllUpcomingMedicalExam()
       {
          throw new NotImplementedException();
       }
@@ -70,7 +75,10 @@ namespace Controllers
       {
          throw new NotImplementedException();
       }
-      
+
+        public MedicalExam Remove(int id) {
+            return _medicalExamService.Remove(id);
+        }
       public MedicalExam AddTherapy(List<Drug> drugList, int medicalExamId)
       {
          throw new NotImplementedException();

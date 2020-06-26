@@ -15,7 +15,6 @@ namespace Controllers
         {
             return _userService.Login(email, password);
         }
-
         public User Get(int id)
         {
             return _userService.Get(id);

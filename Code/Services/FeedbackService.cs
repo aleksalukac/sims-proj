@@ -13,7 +13,7 @@ namespace Services
    {
       public List<TextContent> GetAllFeedback__()
       {
-         throw new NotImplementedException();
+            return _textContentRepository.GetAll();
       }
       
       public TextContent SetFeedback__(TextContent feedback)
@@ -25,10 +25,10 @@ namespace Services
       {
          throw new NotImplementedException();
       }
-      
-      public TextContent AddFeedback__(TextContent feedback)
+
+        public TextContent AddFeedback__(TextContent feedback)
       {
-         throw new NotImplementedException();
+           return _textContentRepository.Add(feedback);
       }
       
         private TextContentRepository _textContentRepository;
