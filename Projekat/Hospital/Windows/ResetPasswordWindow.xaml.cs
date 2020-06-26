@@ -1,4 +1,7 @@
-﻿using Hospital.ViewModel;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Hospital_class_diagram.Crypt;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +23,11 @@ namespace Hospital.Windows
     /// </summary>
     public partial class ResetPasswordWindow : Window
     {
+        private UserController _userController;
+
         public ResetPasswordWindow()
         {
+            _userController = (Application.Current as App).UserController;
             InitializeComponent();
         }
 
@@ -32,10 +38,19 @@ namespace Hospital.Windows
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (emailTextbox.Text.ToUpper().Equals(ManagerView.getInstance().Email.ToUpper()))
+            string email = emailTextbox.Text;
+            User user = _userController.GetByEmail(email);
+
+            if(user == null)
             {
-                ManagerView.resetPassword();
+                System.Windows.MessageBox.Show("Email nije pronadjen.");
+                return;
             }
+
+            user.Password = Crypt.Encrypt("");
+
+            _userController.Update(user);
+
             this.Close();
         }
     }

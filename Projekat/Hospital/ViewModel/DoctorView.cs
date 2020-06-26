@@ -32,7 +32,7 @@ namespace Hospital.ViewModel
         
         public Doctor Convert()
         {
-            var doctor = _doctorController.GetDoctor((int)this.Id);
+            var doctor = _doctorController.Get((int)this.Id);
 
             if (doctor == null)
             {

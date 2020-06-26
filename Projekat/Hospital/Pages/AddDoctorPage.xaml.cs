@@ -1,5 +1,6 @@
 ﻿using Controllers;
 using Hospital.ViewModel;
+using Hospital_class_diagram.Crypt;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,7 @@ namespace Hospital.Pages
             }
 
             Doctor doctor = lekar.Convert();
+            doctor.Password = Crypt.Encrypt("");
             _controller.Add(doctor);
 
             lekar.Id = (uint)doctor.Id;

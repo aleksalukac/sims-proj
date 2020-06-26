@@ -30,19 +30,17 @@ namespace Hospital.Pages
 
         public RoomPage()
         {
-            _roomController = (Application.Current as App).RoomController;
+            _roomController = (Application.Current as App).RoomController; 
+            RoomList = new ObservableCollection<RoomView>();
 
             InitializeComponent();
             this.DataContext = this;
             
-            if(RoomList.Count == 0)
-            {
-                List<Room> rooms = _roomController.GetAll();
+            List<Room> rooms = _roomController.GetAll();
 
-                for (var i = 0; i < rooms.Count; i++)
-                {
-                    RoomList.Add(new RoomView(rooms[i], _roomController));
-                }
+            for (var i = 0; i < rooms.Count; i++)
+            {
+                RoomList.Add(new RoomView(rooms[i], _roomController));
             }
 
             dataGrid.ItemsSource = RoomList;

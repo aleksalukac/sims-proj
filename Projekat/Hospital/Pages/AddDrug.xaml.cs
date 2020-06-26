@@ -1,4 +1,6 @@
-﻿using Hospital.ViewModel;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,13 +26,19 @@ namespace Hospital.Pages
     /// </summary>
     public partial class AddDrug : Page
     {
-        public AddDrug(int id)
+        private DrugController _drugController;
+        private DoctorController _doctorController;
+
+        public AddDrug()
         {
+            _drugController = (Application.Current as App).DrugController;
+            _doctorController = (Application.Current as App).DoctorController;
             InitializeComponent();
 
+            doctorDataGrid.ItemsSource = EmployeesPage.DoctorList;
             dataGrid.ItemsSource = DrugPage.DrugList;
             dataGridAlternativeDrug.ItemsSource = new ObservableCollection<DrugView>();
-            idLabel.Content = id;
+            //idLabel.Content = id;
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -45,14 +53,14 @@ namespace Hospital.Pages
                 System.Windows.MessageBox.Show("Unesite adekvatno ime leka.");
                 return;
             }
-            DrugView drug = new DrugView();
-            drug.Name = nameTextBox.Text;
-            drug.Approved = false;
-            //tried with Linq, didn't work
+
+            DrugView newDrug = new DrugView();
+            newDrug.Name = nameTextBox.Text;
+            newDrug.Approved = false;
 
             foreach(var alternativeDrug in dataGridAlternativeDrug.ItemsSource)
             {
-                drug.alternativeDrug.Add(((DrugView)alternativeDrug).Id);
+                newDrug.alternativeDrug.Add(((DrugView)alternativeDrug).Id);
             }
 
             int count = 0;
@@ -60,23 +68,44 @@ namespace Hospital.Pages
             bool success = Int32.TryParse(quantityTextBox.Text, out count);
             if(success)
             {
-                drug.Count = count;
-
-                // DEBUG FOR APPROVED DOCTOR
-                if(drug.Count == 333)
+                if (doctorDataGrid.SelectedItems.Count < 2)
                 {
-                    drug.approvedByDoctor.Add(3);
-                    drug.approvedByDoctor.Add(5);
+                    MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Molimo vas unesite bar 2 lekara");
+                    return;
                 }
-                // END DEBUG
+                newDrug.Count = count;
 
-                DrugPage.DrugListUnapproved.Add(drug);
-                var page = new Page();
+                Drug drug = new Drug();
+                drug = newDrug.Convert();
+                drug.SimilarDrug = newDrug.alternativeDrug;
+                newDrug.Id = drug.Id;
 
+                DrugPage.DrugListUnapproved.Add(newDrug);
+
+                List<Doctor> doctors = new List<Doctor>();
+
+                System.Collections.IList selectedDoctors = (System.Collections.IList)doctorDataGrid.SelectedItems;
+                
+                foreach(var doctor in selectedDoctors)
+                {
+                    DoctorView dw = (DoctorView)doctor;
+                    doctors.Add(_doctorController.Get((int)dw.Id));
+                }
+
+                foreach(var doctor in doctors)
+                {
+                    drug.ApprovedByDoctor.Add(doctor.Id);
+                    doctor.drugsToApprove.Add(drug.Id);
+
+                    _doctorController.Update(doctor);
+
+                    _doctorController.AddNewDrugNotification(doctor.Id, drug.Id);
+                }
+
+                _drugController.Add(drug);
 
                 System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
-                //NavigationService.Navigate(new Page());
-
+                var page = new Page();
                 NavigationService.Navigate(page);
             }
             else

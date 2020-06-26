@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using Model;
 using Repository;
 using Controllers;
+using Hospital_class_diagram.Crypt;
 
 namespace Hospital
 {
@@ -48,7 +49,7 @@ namespace Hospital
 
         private void login_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            string passwordText = passwordBox.Password; //Crypt.Encrypt()
+            string passwordText = Crypt.Encrypt(passwordBox.Password); //Crypt.Encrypt()
             string emailText = emailBox.Text;
 
             User loggedUser = _userController.Login(emailText, passwordText);

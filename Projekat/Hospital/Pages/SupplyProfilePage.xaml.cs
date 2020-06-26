@@ -100,6 +100,12 @@ namespace Hospital.Pages
 
         private void detele(object sender, RoutedEventArgs e)
         {
+            if(isNewSupply)
+            {
+                NavigationService.Navigate(new Page());
+                return;
+            }
+
             SupplyView newSupply = null;
             foreach (var supply in ResourcePage.SupplyList)
             {

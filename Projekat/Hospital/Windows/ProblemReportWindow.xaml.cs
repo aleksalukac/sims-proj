@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +21,20 @@ namespace Hospital.Windows
     /// </summary>
     public partial class ProblemReportWindow : Window
     {
+        private ReportController _reportController;
+
         public ProblemReportWindow()
         {
+            _reportController = (Application.Current as App).ReportController;
             InitializeComponent();
         }
 
         private void login_Copy1_Click(object sender, RoutedEventArgs e)
         {
+            Report report = new Report();
+            report.Text = problemTextBox.Text;
 
+            _reportController.Add(report);
         }
     }
 }

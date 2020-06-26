@@ -1,5 +1,6 @@
 ﻿using Controllers;
 using Hospital_class_diagram.Repository;
+using Hospital_class_diagram.Services;
 using Model;
 using Repository;
 using Services;
@@ -34,20 +35,22 @@ namespace Hospital
             var secretaryRepository = new SecretaryRepository();
             var textContentRepository = new TextContentRepository();
             var renovationRepository = new RenovationRepository();
+            var guestUserRepository = new GuestUserRepository();
 
-            var doctorService = new DoctorService(doctorRepository);
+            var notificationService = new NotificationService(notificationRepository);
+            var doctorService = new DoctorService(doctorRepository, notificationService);
             var doctorReviewService = new DoctorReviewService(medicalExamRepository);
             var drugService = new DrugService(drugRepository);
             var employeeService = new EmployeeService(managerRepository, doctorService, secretaryRepository);
             var feedbackService = new FeedbackService(textContentRepository);
-            var guestUserService = new GuestUserService(medicalExamRepository);
+            var guestUserService = new GuestUserService(medicalExamRepository, guestUserRepository);
             var medicalExamService = new MedicalExamService(medicalExamRepository);
             var medicalSupplyService = new MedicalSupplyService(medicalSupplyRepository);
             var patientService = new PatientService(patientRepository);
             var questionService = new QuestionService(textContentRepository);
             var reportService = new ReportService(reportRepository);
             var resourceService = new ResourceService(resourceRepository);
-            var roomService = new RoomService(roomRepository, renovationRepository, medicalExamService);
+            var roomService = new RoomService(roomRepository, renovationRepository, medicalExamService, patientService, resourceService);
             var userService = new UserService(employeeService, patientService);
 
             DoctorController = new DoctorController(doctorService);

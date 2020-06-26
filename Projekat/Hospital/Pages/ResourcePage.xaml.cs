@@ -34,28 +34,24 @@ namespace Hospital.Pages
         public ResourcePage()
         {
             _resourceController = (Application.Current as App).ResourceController;
-            _medicalSupplyController = (Application.Current as App).MedicalSupplyController;
+            _medicalSupplyController = (Application.Current as App).MedicalSupplyController; 
+            ResourceList = new ObservableCollection<ResourceView>();
+            SupplyList = new ObservableCollection<SupplyView>();
 
             InitializeComponent();
 
-            if(ResourceList.Count == 0)
-            {
-                List<Resource> resources = _resourceController.GetAll();
+            List<Resource> resources = _resourceController.GetAll();
 
-                for(var i = 0; i < resources.Count; i++)
-                {
-                    ResourceList.Add(new ResourceView(resources[i]));
-                }
+            for(var i = 0; i < resources.Count; i++)
+            {
+                ResourceList.Add(new ResourceView(resources[i]));
             }
 
-            if (SupplyList.Count == 0)
-            {
-                List<MedicalSupply> supplies = _medicalSupplyController.GetAll();
+            List<MedicalSupply> supplies = _medicalSupplyController.GetAll();
 
-                for (var i = 0; i < supplies.Count; i++)
-                {
-                    SupplyList.Add(new SupplyView(supplies[i]));
-                }
+            for (var i = 0; i < supplies.Count; i++)
+            {
+                SupplyList.Add(new SupplyView(supplies[i]));
             }
 
             resourceDataGrid.ItemsSource = ResourceList;

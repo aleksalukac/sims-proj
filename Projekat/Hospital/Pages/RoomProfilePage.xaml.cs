@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,16 +28,23 @@ namespace Hospital.Pages
 
         private RoomController _roomController;
 
-        private bool isNewResource = false;
+        private bool isNewRoom = false;
 
         public RoomProfilePage(RoomView room, bool isPrivate = false)
         {
-            isNewResource = isPrivate;
+            isNewRoom = isPrivate;
             _roomController = (Application.Current as App).RoomController;
 
             InitializeComponent();
-            if (!isNewResource)
+            if (!isNewRoom)
                 idLabel.Content = room.Id;
+
+            var maxNumberOfPatients = _roomController.Get((int)room.Id);
+            if (maxNumberOfPatients == null)
+                textBox.Text = "20";
+            else
+                textBox.Text = _roomController.Get((int)room.Id).MaxNumberOfPatients.ToString();
+
 
             roomComboBox.ItemsSource = Enum.GetNames(typeof(Model.RoomType));
             if(room.RoomType != null) roomComboBox.SelectedItem = room.RoomType.ToString();
@@ -47,7 +55,7 @@ namespace Hospital.Pages
             RoomView newRoom = new RoomView();
             Room room = new Room();
 
-            if (!isNewResource)
+            if (!isNewRoom)
                 foreach (var _room in RoomPage.RoomList)
                 {
                     if(_room.Id == Int32.Parse(idLabel.Content.ToString()))
@@ -59,14 +67,23 @@ namespace Hospital.Pages
             else
                 newRoom.Id = (uint)room.Id;
 
-            if (!isNewResource)
+            if (!isNewRoom)
                 RoomPage.RoomList.Remove(newRoom);
             newRoom.RoomType = roomComboBox.SelectedItem.ToString();
 
             room = newRoom.Convert();
+
+            int newMaxNumberOfPatients = Int32.Parse(textBox.Text);
+
+            if(newMaxNumberOfPatients < room.Patient.Count)
+            {
+                newMaxNumberOfPatients = room.Patient.Count;
+            }
+
+            room.MaxNumberOfPatients = newMaxNumberOfPatients;
             room.Id = (int)newRoom.Id;
 
-            if (!isNewResource)
+            if (!isNewRoom)
             {
                 _roomController.Update(room);
             }
@@ -83,6 +100,12 @@ namespace Hospital.Pages
 
         private void deleteRoom(object sender, RoutedEventArgs e)
         {
+            if(isNewRoom)
+            {
+                NavigationService.Navigate(new Page());
+                return;
+            }
+
             RoomView newRoom = null;
             foreach (var room in RoomPage.RoomList)
             {
@@ -104,6 +127,11 @@ namespace Hospital.Pages
                 NavigationService.Navigate(new Page());
             }
 
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            textBox.Text = Regex.Replace(textBox.Text, @"[^\d]", "");
         }
     }
 }

@@ -12,10 +12,12 @@
     <Grid>
         <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="210,51,0,0" VerticalAlignment="Top" Width="140" Click="button_Copy_Click" Height="30"/>
         <Label x:Name="label" Content="Tip sobe" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="21,86,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="50,86,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="ID" HorizontalAlignment="Left" Margin="21,118,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="50,118,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="roomComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Margin="20,51,0,0" Height="30"/>
-        <Button x:Name="button_Copy1" Content="Obriši sobu" HorizontalAlignment="Left" Margin="210,93,0,0" VerticalAlignment="Top" Width="140" Click="deleteRoom" Height="30"/>
+        <Button x:Name="button_Copy1" Content="Obriši sobu" HorizontalAlignment="Left" Margin="210,125,0,0" VerticalAlignment="Top" Width="140" Click="deleteRoom" Height="30"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="21,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="label_Copy" Content="Maksimalan broj pacijenata" HorizontalAlignment="Left" Margin="99,83,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

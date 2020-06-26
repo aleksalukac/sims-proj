@@ -56,28 +56,25 @@ namespace Hospital.Pages
         public EmployeesPage()
         {
             _doctorController = (Application.Current as App).DoctorController;
-            _employeeController = (Application.Current as App).EmployeeController;
+            _employeeController = (Application.Current as App).EmployeeController; 
+            DoctorList = new ObservableCollection<DoctorView>(); 
+            SecretaryList = new ObservableCollection<EmployeeView>();
 
             InitializeComponent();
             this.DataContext = this;
-            var name = RandomData.GetRandomName();
-            if(DoctorList.Count == 0)
+
+            List<Doctor> doctors = new List<Doctor>();
+            doctors = _doctorController.GetAll();
+
+            for(int i = 0; i < doctors.Count; i++)
             {
-                List<Doctor> doctors = new List<Doctor>();
-                doctors = _doctorController.GetAllDoctor();
-
-                for(int i = 0; i < doctors.Count; i++)
-                {
-                    DoctorList.Add(new DoctorView(doctors[i]));
-                }
-
+                DoctorList.Add(new DoctorView(doctors[i]));
             }
+
             dataGrid.ItemsSource = DoctorList;
 
-            if(SecretaryList.Count == 0)
-            {
-                SecretaryList.Add(new EmployeeView((Employee)_employeeController.Get()));
-            }    
+            SecretaryList.Add(new EmployeeView((Employee)_employeeController.Get()));
+
             dataGrid2.ItemsSource = SecretaryList;
             
         }

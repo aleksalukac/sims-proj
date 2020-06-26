@@ -103,6 +103,12 @@ namespace Hospital.Pages
 
         private void delete(object sender, RoutedEventArgs e)
         {
+            if(isNewResource)
+            {
+                NavigationService.Navigate(new Page());
+                return;
+            }
+
             ResourceView newResource = null;
             foreach (var resource in ResourcePage.ResourceList)
             {

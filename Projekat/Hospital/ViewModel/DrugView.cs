@@ -14,16 +14,29 @@ namespace Hospital.ViewModel
     {
         public DrugView(Drug drug)
         {
-
+            this.Count = drug.Count;
+            this.Name = drug.Name;
+            this.Id = drug.Id;
+            this.alternativeDrug = drug.SimilarDrug;
+            this.Approved = drug.Approved;
+            this.approvedByDoctor = drug.ApprovedByDoctor;
         }
 
-        public ObservableCollection<int> approvedByDoctor = new ObservableCollection<int>();
+        public Drug Convert()
+        {
+            Drug drug = new Drug();
+            drug.Count = this.Count;
+            drug.SimilarDrug = this.alternativeDrug;
+            drug.Name = this.Name;
+            drug.Approved = this.Approved;
+            drug.ApprovedByDoctor = this.approvedByDoctor;
+
+            return drug;
+        }
+
+        public List<int> approvedByDoctor = new List<int>();
 
         public List<int> alternativeDrug = new List<int>();
-
-        private static int idCount = 1;
-
-        public static int getIdCount() => idCount;
 
         public string Name { get; set; }
         public int Id { get; set; }
@@ -41,8 +54,7 @@ namespace Hospital.ViewModel
         }
 
         public DrugView(bool rand = false)
-        {
-            Id = idCount++;
+        { 
         }
 
         public bool Contains(string str)

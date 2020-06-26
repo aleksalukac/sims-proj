@@ -1,4 +1,6 @@
-﻿using Hospital.ViewModel;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +24,11 @@ namespace Hospital.Pages
     /// </summary>
     public partial class DrugProfilePage : Page
     {
+        private DrugController _drugController;
+
         public DrugProfilePage(DrugView drug)
         {
+            _drugController = (Application.Current as App).DrugController;
             InitializeComponent();
             nameTextBox.Text = drug.Name;
             quantityTextBox.Text = drug.Count.ToString();
@@ -54,39 +59,14 @@ namespace Hospital.Pages
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
-            DrugView drug = null;
-            bool approved = false;
-            foreach(var approvedDrug in DrugPage.DrugList)
-            {
-                if (approvedDrug.Id == Int32.Parse(idLabel.Content.ToString()))
-                {
-                    drug = approvedDrug;
-                    approved = true;
-                    DrugPage.DrugList.Remove(drug);
-                    break;
-                }
+            DrugView _drug = new DrugView();
+            _drug.Id = Int32.Parse(idLabel.Content.ToString());
+            _drug = new DrugView(_drugController.Get(_drug.Id));
+            _drug.Name = nameTextBox.Text;
 
-            }
-
-            if(drug == null)
-            {
-                foreach (var unapprovedDrug in DrugPage.DrugListUnapproved)
-                {
-                    if (unapprovedDrug.Id == Int32.Parse(idLabel.Content.ToString()))
-                    {
-                        drug = unapprovedDrug;
-                        DrugPage.DrugListUnapproved.Remove(drug);
-                        break;
-                    }
-                }
-
-            }
-
-
-            drug.Name = nameTextBox.Text;
             if(quantityTextBox.Text.Length == 0)
             {
-                drug.Count = 0;
+                _drug.Count = 0;
             }
             else
             {
@@ -95,17 +75,40 @@ namespace Hospital.Pages
                 int ux;
                 if (int.TryParse(s, out ux))
                 {
-                    x = int.Parse(s) % 24;
+                    x = int.Parse(s);
                 }
-                drug.Count = x;
+                _drug.Count = x;
             }
 
-            if (approved)
+            Drug drug = _drugController.Get(_drug.Id);
+            drug = _drug.Convert();
+            drug.Id = _drug.Id;
+            _drugController.Update(drug);
+
+            if (drug.Approved)
             {
-                DrugPage.DrugList.Add(drug);
+                foreach(var drugView in DrugPage.DrugList)
+                {
+                    if (drugView.Id == drug.Id)
+                    {
+                        DrugPage.DrugList.Remove(drugView);
+                        break;
+                    }
+                }
+                DrugPage.DrugList.Add(_drug);
             }
             else
-                DrugPage.DrugListUnapproved.Add(drug);
+            {
+                foreach (var drugView in DrugPage.DrugListUnapproved)
+                {
+                    if (drugView.Id == drug.Id)
+                    {
+                        DrugPage.DrugListUnapproved.Remove(drugView);
+                        break;
+                    }
+                }
+                DrugPage.DrugListUnapproved.Add(_drug);
+            }
 
             System.Windows.MessageBox.Show("Uspešno ste sačuvali informacije.");
             NavigationService.Navigate(new Page());

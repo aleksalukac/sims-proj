@@ -1,4 +1,6 @@
-﻿using Hospital.ViewModel;
+﻿using Controllers;
+using Hospital.ViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,19 +24,30 @@ namespace Hospital.Pages
     /// </summary>
     public partial class DrugPage : Page
     {
+        private DrugController _drugController;
+
         public static ObservableCollection<DrugView> DrugList = new ObservableCollection<DrugView>();
         public static ObservableCollection<DrugView> DrugListUnapproved = new ObservableCollection<DrugView>();
 
         public DrugPage()
         {
+            _drugController = (Application.Current as App).DrugController;
             InitializeComponent();
-            if(DrugList.Count == 0)
+            DrugList = new ObservableCollection<DrugView>(); 
+            DrugListUnapproved = new ObservableCollection<DrugView>();
+
+
+            List<Drug> drugs = new List<Drug>();
+            drugs = _drugController.GetAll();
+
+            for (int i = 0; i < drugs.Count; i++)
             {
-                for(var i = 0; i < 10; i++)
-                {
-                    DrugList.Add(RandomData.GetRandomDrug());
-                }
+                if (drugs[i].Approved)
+                    DrugList.Add(new DrugView(drugs[i]));
+                else
+                    DrugListUnapproved.Add(new DrugView(drugs[i]));
             }
+
             dataGrid.ItemsSource = DrugList;
             dataGridAlternativeDrug.ItemsSource = DrugListUnapproved;
         }
@@ -79,7 +92,7 @@ namespace Hospital.Pages
 
         private void addDrug_Click(object sender, RoutedEventArgs e)
         {
-            var openPage = new AddDrug((int)DrugView.getIdCount());
+            var openPage = new AddDrug();
             Drugframe.Navigate(openPage);
         }
 
