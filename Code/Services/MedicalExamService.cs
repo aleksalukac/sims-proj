@@ -13,7 +13,7 @@ namespace Services
    {
       public List<MedicalExam> GetAllMedicalExam()
       {
-         throw new NotImplementedException();
+            return _medicalExamRepository.GetAll();
       }
       
       public List<MedicalExam> GetAllUpcomingMedicalExam()
@@ -75,6 +75,12 @@ namespace Services
       {
          throw new NotImplementedException();
       }
+        public MedicalExam Add(MedicalExam medicalExam) 
+       =>     _medicalExamRepository.Add(medicalExam);
+       
+        public MedicalExam Remove(int id) {
+            return _medicalExamRepository.Remove(id);
+        }
       
       public ScheduleMedicalExam scheduleMedicalExam;
         private MedicalExamRepository _medicalExamRepository;

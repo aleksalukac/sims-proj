@@ -21,6 +21,9 @@ namespace Controllers
         public GuestUserController(GuestUserService guestUserService1)
         {
             this._guestUserService = guestUserService1;
+          }
+        public GuestUser Add(GuestUser guestUser) {
+            return _guestUserService.Add(guestUser);
         }
     }
 }

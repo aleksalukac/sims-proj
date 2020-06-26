@@ -24,5 +24,8 @@ namespace Services
             this._medicalExamRepository = medicalExamRepository;
             this._guestUserRepository = guestUserRepository;
         }
+        public GuestUser Add(GuestUser guestUser) {
+            return _guestUserRepository.Add(guestUser);
+        }
     }
 }
