@@ -54,5 +54,10 @@ namespace Controllers
         {
             return _doctorService.Remove(Get(id));
         }
+
+        public void AddNewDrugNotification(int doctorId, int drugId)
+        {
+            _doctorService.AddNewDrugNotification(doctorId, drugId);
+        }
     }
 }

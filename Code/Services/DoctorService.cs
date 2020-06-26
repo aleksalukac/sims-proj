@@ -4,6 +4,7 @@
 // Purpose: Definition of Class DoctorService
 
 using Hospital_class_diagram.Crypt;
+using Hospital_class_diagram.Services;
 using Model;
 using Repository;
 using System; using System.Collections.Generic;
@@ -13,10 +14,12 @@ namespace Services
    public class DoctorService
     {
         private DoctorRepository _doctorRepository;
+        private NotificationService _notificationService;
 
-        public DoctorService(DoctorRepository doctorRepository)
+        public DoctorService(DoctorRepository doctorRepository, NotificationService notificationService)
         {
             _doctorRepository = doctorRepository;
+            _notificationService = notificationService;
         }
 
         public Doctor Get(int id) 
@@ -53,6 +56,17 @@ namespace Services
             }
 
             return null;
+        }
+
+        internal void AddNewDrugNotification(int doctorId, int drugId)
+        {
+            Doctor doctor = Get(doctorId);
+            if (doctor == null)
+                return;
+            
+            Notification notification = _notificationService.AddNewDrugNotification(drugId, doctorId);
+            doctor.Notification.Add(notification.Id);
+            Update(doctor);
         }
 
         internal Employee Update(Employee employee)

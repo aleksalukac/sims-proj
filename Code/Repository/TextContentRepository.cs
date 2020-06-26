@@ -69,6 +69,7 @@ namespace Repository
 
             return textContentToRemove;
         }
+
         public  void WriteAll(List<TextContent> textContents)
         {
             string textContentsSerialized = Newtonsoft.Json.JsonConvert.SerializeObject(textContents);

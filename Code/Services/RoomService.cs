@@ -211,6 +211,7 @@ namespace Services
         internal bool CanRenovate(int id, DateTime renovationDateTime)
         {
             Room room = Get(id);
+
             if(room != null && renovationDateTime > DateTime.Now)
             {
                 if (GetFutureRenovation(id) != null)
