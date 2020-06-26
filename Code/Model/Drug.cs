@@ -15,12 +15,14 @@ namespace Model
         public Drug() : base(ID_PATH)
         {
             ApprovedByDoctor = new List<int>();
+            ApprovalCount = 0;
         }
 
         public string Name { get; set; }
         public int Count { get; set; }
         public bool Approved { get; set; }
-      
+        public int ApprovalCount { get; set; }
+
         public System.Collections.Generic.List<int> SimilarDrug { get; set; }
       
         public List<int> ApprovedByDoctor { get; set; }
