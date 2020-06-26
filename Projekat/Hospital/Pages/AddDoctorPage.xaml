@@ -1,0 +1,21 @@
+﻿<Page x:Class="Hospital.Pages.AddDoctorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hospital.Pages"
+      mc:Ignorable="d" 
+      FontSize="22"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddDoctorPage">
+
+    <Grid>
+        <Button x:Name="button_Copy" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="17,244,0,0" VerticalAlignment="Top" Width="163" Click="button_Copy_Click"/>
+        <TextBox x:Name="imeTextBox" HorizontalAlignment="Left" Height="28" Margin="17,48,0,0"  VerticalAlignment="Top" Width="228"/>
+        <TextBox x:Name="prezimeTextBox" HorizontalAlignment="Left" Height="32" Margin="17,103,0,0"  VerticalAlignment="Top" Width="228"/>
+        <TextBox x:Name="specijalizacijaTextBox" AcceptsReturn="False" HorizontalAlignment="Left" Height="34" Margin="17,165,0,0"  VerticalAlignment="Top" Width="228"/>
+        <Label x:Name="label" Content="Ime" HorizontalAlignment="Left" Margin="17,9,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Prezime" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Specijalizacija" HorizontalAlignment="Left" Margin="17,126,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>

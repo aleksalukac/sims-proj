@@ -1,0 +1,20 @@
+
+
+Date:2020-06-10 17:49:16,829
+Thread:[1]
+Level:ERROR
+Logger:Microsoft.SyncfusionAssemblyReference.SyncfusionAssemblyReferencePackage                         [(null)]
+Message:System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.Array.InternalGetReference(Void* elemRef, Int32 rank, Int32* pIndices)
+   at System.Array.GetValue(Int32 index)
+   at Microsoft.SyncfusionAssemblyReference.SyncfusionAssemblyReferencePackage.SyncfusionAddreferences_BeforeQueryStatus(Object sender, EventArgs e) in D:\Git\RP\vext_reference_manager\SyncfusionAssemblyReference\SyncfusionAssemblyReference.cs:line 265
+
+
+Date:2020-06-10 17:53:48,006
+Thread:[1]
+Level:ERROR
+Logger:Microsoft.Syncfusion_VSExtension_Troubleshooter.Syncfusion_VSExtension_TroubleshooterPackage                         [(null)]
+Message:System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.Array.InternalGetReference(Void* elemRef, Int32 rank, Int32* pIndices)
+   at System.Array.GetValue(Int32 index)
+   at Microsoft.Syncfusion_VSExtension_Troubleshooter.Syncfusion_VSExtension_TroubleshooterPackage.queryStatusMenuCommand_BeforeQueryStatus(Object sender, EventArgs e)

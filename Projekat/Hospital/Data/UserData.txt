@@ -1,0 +1,1 @@
+{"StartWorkingHours":8,"EndWorkingHours":16,"Password":"MoyEEuHz7lJDwRUdVqkDDQ==","Name":"Novak Nole","Surname":"Djokovic","Username":"nole","DateOfBirth":"0001-01-01T00:00:00","Email":"nole@clinic.com","Id":1,"OnVacation":false}

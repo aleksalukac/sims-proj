@@ -17,6 +17,9 @@ namespace Hospital_class_diagram.Services
             this._notificationRepository = notificationRepository;
         }
 
+        internal Notification Get(int id)
+            => _notificationRepository.Get(id);
+
         internal Notification AddNewDrugNotification(int drugId, int userId)
         {
             Notification notification = new Notification();

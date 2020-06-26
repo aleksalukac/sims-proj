@@ -18,7 +18,9 @@ namespace Model
 
         public string Text { get; set; }
         public TextContentType Type { get; set; }
-      
+        
+        public int OriginQuestion { get; set; }
+
         public int CreatorUser { get; set; }
    
    }

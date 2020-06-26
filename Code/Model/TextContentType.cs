@@ -11,6 +11,7 @@ namespace Model
    {
       question,
       feedback,
-      frequentQuestion
+      frequentQuestion,
+      answer
    }
 }

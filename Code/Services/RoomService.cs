@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Services
 {
-   public class RoomService
+   public class RoomService 
    {
 
         public List<Room> GetAllRoom()
