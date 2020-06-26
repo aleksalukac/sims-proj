@@ -1,4 +1,5 @@
 ﻿using Controllers;
+using Hospital_class_diagram.Controllers;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,20 +22,25 @@ namespace Hospital.Windows
     /// </summary>
     public partial class ProblemReportWindow : Window
     {
-        private ReportController _reportController;
+        private TextContentController _textContentController;
+        private UserController _userController;
 
         public ProblemReportWindow()
         {
-            _reportController = (Application.Current as App).ReportController;
+            _textContentController = (Application.Current as App).TextContentController;
+            _userController = (Application.Current as App).UserController;
             InitializeComponent();
         }
 
         private void login_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            Report report = new Report();
-            report.Text = problemTextBox.Text;
+            TextContent textContent = new TextContent();
+            textContent.Text = problemTextBox.Text;
+            textContent.Type = TextContentType.feedback;
+            textContent.CreatorUser = _userController.GetLoggedUser().Id;
 
-            _reportController.Add(report);
+            _textContentController.Add(textContent);
+            this.Close();
         }
     }
 }

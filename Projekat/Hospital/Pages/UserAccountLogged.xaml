@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       
       FontSize="20"
-      Title="UserAccount" Width="1080" Height="525">
+      Title="UserAccount" Width="1080" Height="625">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,15 +23,16 @@
         <Label x:Name="emailLabel" Content="" HorizontalAlignment="Left" Margin="615,270,0,0" VerticalAlignment="Top" Width="175"/>
         <Label x:Name="idLabel2" Content="ID:" HorizontalAlignment="Left" Margin="435,363,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="idLabel" Content="" HorizontalAlignment="Left" Margin="570,365,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
-        <Label x:Name="idLabel2_Copy" Content="Uloga:" HorizontalAlignment="Left" Margin="435,0,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
-        <Label x:Name="userTypeLabel" Content="" HorizontalAlignment="Left" Margin="570,0,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1"/>
+        <Label x:Name="idLabel2_Copy" Content="Uloga:" HorizontalAlignment="Left" Margin="435,416,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="userTypeLabel" Content="" HorizontalAlignment="Left" Margin="570,416,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="32" Margin="570,187,0,0"   Text="" VerticalAlignment="Top" Width="175"/>
         <TextBox x:Name="surnameTextBox" HorizontalAlignment="Left" Height="29" Margin="570,224,0,0"   Text="" VerticalAlignment="Top" Width="175"/>
         <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="29" Margin="570,258,0,0"   Text="" VerticalAlignment="Top" Width="175"/>
         <Label x:Name="emailLabel2_Copy" Content="Nova šifra:" HorizontalAlignment="Left" Margin="435,290,0,0" VerticalAlignment="Top" Width="110"/>
         <Label x:Name="emailLabel2_Copy1" Content="Potvrdi šifru:" HorizontalAlignment="Left" Margin="435,327,0,0" VerticalAlignment="Top" Width="150" Height="38"/>
-        <Button x:Name="button" Content="Sačuvaj promene" HorizontalAlignment="Left" Height="35" Margin="525,60,0,0" VerticalAlignment="Top" Width="155" Click="button_Click" Grid.Row="1"/>
+        <Button x:Name="button" Content="Sačuvaj promene" HorizontalAlignment="Left" Height="35" Margin="525,0,0,0" VerticalAlignment="Top" Width="155" Click="button_Click" Grid.Row="1"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="28" Margin="570,295,0,0" VerticalAlignment="Top" Width="175"/>
         <PasswordBox x:Name="confirmedPasswordBox" HorizontalAlignment="Left" Height="27" Margin="570,332,0,0" VerticalAlignment="Top" Width="175"/>
+        <DataGrid x:Name="notificationDataGrid" MouseDoubleClick="Row_MouseDoubleClick_ApproveDrug" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="305" Margin="95,195,0,0" SelectionChanged="notificationDataGrid_SelectionChanged"/>
     </Grid>
 </Page>

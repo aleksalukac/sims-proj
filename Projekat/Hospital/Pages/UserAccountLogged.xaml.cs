@@ -1,10 +1,12 @@
 ﻿using Controllers;
+using Hospital_class_diagram.Controllers;
 using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,10 +26,16 @@ namespace Hospital.Pages
     public partial class UserAccountLogged : Page
     {
         private UserController _userController;
+        private DoctorController _doctorController;
+        private NotificationController _notificationController;
+        private DrugController _drugController;
 
         public UserAccountLogged()
         {
             _userController = (Application.Current as App).UserController;
+            _doctorController = (Application.Current as App).DoctorController;
+            _drugController = (Application.Current as App).DrugController;
+            _notificationController = (Application.Current as App).NotificationController;
             InitializeComponent();
 
             User user = _userController.GetLoggedUser();
@@ -38,6 +46,19 @@ namespace Hospital.Pages
             idLabel.Content = user.Id.ToString();
 
             userTypeLabel.Content = user.GetType().Name;
+
+            Doctor doctor = _doctorController.Get(user.Id);
+            if(doctor != null)
+            {
+                notificationDataGrid.Visibility = Visibility.Visible;
+
+                List<Notification> notifications = new List<Notification>();
+
+                foreach (var notificationId in doctor.Notification)
+                    notifications.Add(_notificationController.Get(notificationId));
+
+                notificationDataGrid.ItemsSource = notifications;
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -91,6 +112,46 @@ namespace Hospital.Pages
             {
                 return false;
             }
+        }
+
+        private void Row_MouseDoubleClick_ApproveDrug(object sender, MouseButtonEventArgs e)
+        {
+            var data = (DataGrid)sender;
+            Notification notification = (Notification)data.SelectedValue;
+            if (notification == null)
+                return;
+            var drugId = Regex.Match(notification.Text, @"\d+").Value;
+
+            Drug drug = _drugController.Get(Int32.Parse(drugId));
+
+            if(drug != null)
+            {
+                drug.ApprovalCount++;
+
+                User user = _userController.GetLoggedUser();
+                Doctor doctor = _doctorController.Get(user.Id);
+                doctor.Notification.Remove(notification.Id);
+                _doctorController.Update(doctor);
+
+                if (drug.ApprovalCount >= 2)
+                    drug.Approved = true;
+
+                _drugController.Update(drug);
+
+                List<Notification> notifications = new List<Notification>();
+
+                foreach (var notificationId in doctor.Notification)
+                    notifications.Add(_notificationController.Get(notificationId));
+
+                notificationDataGrid.ItemsSource = notifications;
+            }
+
+
+        }
+
+        private void notificationDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

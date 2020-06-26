@@ -116,8 +116,6 @@ namespace Hospital.Pages
 
         private void addDrug_Click(object sender, RoutedEventArgs e)
         {
-            //List<DrugView> drugViews = (List<DrugView>)dataGrid.SelectedItems.ToList();
-
             System.Collections.IList drugViews = (System.Collections.IList)dataGrid.SelectedItems;
 
             List<DrugView> list = drugViews.Cast<DrugView>().ToList();
@@ -127,14 +125,10 @@ namespace Hospital.Pages
             List<DrugView> alternativeList = drugViewsAlternative.Cast<DrugView>().ToList();
 
             list.AddRange(alternativeList);
-            //list = list.GroupBy(x => x.Id).Select(x => x.First());
-            // list = list.DistinctBy(i => i.Id);
-            //var set = new HashSet<DrugView>(list);
             var uniqueList = list.GroupBy(x => x.Id).Select(x => x.First());
 
             dataGridAlternativeDrug.ItemsSource = uniqueList.Select(item => (DrugView)item.Clone()).ToList();
 
-            //var collection = items.Cast<PuzzleViewModel>();
 
         }
 

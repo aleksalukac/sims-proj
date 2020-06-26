@@ -1,4 +1,5 @@
 ﻿using Controllers;
+using Hospital_class_diagram.Controllers;
 using Hospital_class_diagram.Repository;
 using Hospital_class_diagram.Services;
 using Model;
@@ -52,7 +53,10 @@ namespace Hospital
             var resourceService = new ResourceService(resourceRepository);
             var roomService = new RoomService(roomRepository, renovationRepository, medicalExamService, patientService, resourceService);
             var userService = new UserService(employeeService, patientService);
+            var textContentService = new TextContentService(textContentRepository);
 
+            TextContentController = new TextContentController(textContentService);
+            NotificationController = new NotificationController(notificationService);
             DoctorController = new DoctorController(doctorService);
             DoctorReviewController = new DoctorReviewController(doctorReviewService);
             DrugController = new DrugController(drugService);
@@ -69,6 +73,8 @@ namespace Hospital
             UserController = new UserController(userService);
         }
 
+        public TextContentController TextContentController { get; private set; }
+        public NotificationController NotificationController { get; private set; }
         public DoctorController DoctorController { get; private set; }
         public DoctorReviewController DoctorReviewController { get; private set; }
         public DrugController DrugController { get; private set; }

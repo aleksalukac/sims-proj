@@ -127,5 +127,10 @@ namespace Hospital.Pages
         {
             frame.Navigate(new RoomChartPage());
         }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
