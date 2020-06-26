@@ -27,7 +27,6 @@ namespace Services
 
         public Doctor Add(Doctor doctor)
         {
-            doctor.Password = Crypt.Encrypt(doctor.Password);
             return _doctorRepository.Add(doctor);
         }
 

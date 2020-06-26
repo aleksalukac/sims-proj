@@ -44,7 +44,6 @@ namespace Services
 
         public Model.User Login(string email, string password)
         {
-            password = Crypt.Encrypt(password);
             User user = FindByEmail(email);
 
             if (user != null)
@@ -64,7 +63,6 @@ namespace Services
 
         internal User Update(User user)
         {
-            user.Password = Crypt.Encrypt(user.Password);
             User returnValue = _employeeService.Update(user);
 
             if (returnValue == null)

@@ -11,20 +11,25 @@ namespace Controllers
 {
    public class RoomController
    {
-      public List<Room> GetAllRoom()
-      {
-         throw new NotImplementedException();
-      }
+        public List<Room> GetAllRoom()
+        {
+            throw new NotImplementedException();
+        }
       
-      public Room SetRoomRenovation(DateTime start, DateTime finish)
-      {
-         throw new NotImplementedException();
-      }
+        public List<Room> GetFreeRooms(DateTime examDateTime, RoomType roomType)
+        {
+            return _roomService.GetFreeRooms(examDateTime, roomType);
+        }
+
+        public Room SetRoomRenovation(DateTime start, DateTime finish)
+        {
+            throw new NotImplementedException();
+        }
       
-      public List<Room> GetFreeRoom(DateTime dateTime)
-      {
-         throw new NotImplementedException();
-      }
+        public List<Room> GetFreeRoom(DateTime dateTime)
+        {
+            throw new NotImplementedException();
+        }
 
         public Renovation GetFutureRenovation(int id)
         {

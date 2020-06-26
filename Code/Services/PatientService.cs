@@ -29,9 +29,9 @@ namespace Services
 
         public Patient Add(Patient patient)
         {
-            patient.Password = Crypt.Encrypt(patient.Password);
             return _patientRepository.Add(patient);
         }
+
         public List<Patient> GetAllPatient()
             => _patientRepository.GetAll();
 

@@ -24,6 +24,34 @@ namespace Services
             throw new NotImplementedException();
         }
 
+        internal List<Room> GetFreeRooms(DateTime examDateTime, RoomType roomType)
+        {
+            List<Room> allRooms = GetByType(roomType);
+            List<Room> freeRooms = new List<Room>();
+
+            if(allRooms != null)
+            {
+                foreach(var room in allRooms)
+                {
+                    bool isRoomFree = true;
+
+                    foreach(var examInRoom in room.MedicalExam)
+                    {
+                        var medicalExam = _medicalExamService.Get(examInRoom);
+                        if(medicalExam.AppointmentStart == examDateTime)
+                        {
+                            isRoomFree = false;
+                            break;
+                        }
+                    }
+                    if (isRoomFree)
+                        freeRooms.Add(room);
+                }
+                return freeRooms;
+            }
+            return null;
+        }
+
         public Room Get(int id)
               => _roomRepository.Get(id);
 
