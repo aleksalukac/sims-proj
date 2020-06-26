@@ -38,7 +38,7 @@ namespace Controllers
 
         public List<Room> GetOccupiedRoom(DateTime dateTime)
         {
-            throw new NotImplementedException();
+            return _roomService.GetOccupiedRoom(dateTime);
         }
       
         private RoomService _roomService;

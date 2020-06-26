@@ -26,8 +26,9 @@ namespace Model
             this.TextContent = employee.TextContent;
             this.DateOfBirth = employee.DateOfBirth;
             this.Email = employee.Email;
+            this.PhoneNumber = employee.PhoneNumber;
         }
-
+        public string PhoneNumber { set; get; }
         public WorkingHours WorkingHours { get; set; }
         public Vacation Vacation { get; set; }
    
