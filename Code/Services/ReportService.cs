@@ -22,5 +22,8 @@ namespace Services
         {
             this._reportRepository = reportRepository1;
         }
+
+        internal Report Add(Report report)
+            => _reportRepository.Add(report);
     }
 }

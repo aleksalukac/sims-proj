@@ -53,6 +53,9 @@ namespace Services
         {
             List<Patient> patients = _patientRepository.GetAll();
 
+            if (patients == null)
+                return null;
+
             foreach(var patient in patients)
             {
                 if (patient.Email.Equals(email))

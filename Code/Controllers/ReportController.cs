@@ -22,5 +22,10 @@ namespace Controllers
         {
             this._reportService = reportService1;
         }
+
+        public Report Add(Report report)
+        {
+            return _reportService.Add(report);
+        }
     }
 }

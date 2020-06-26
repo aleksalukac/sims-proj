@@ -70,9 +70,8 @@ namespace Repository
             return reportToRemove;
         }
 
-        public  Report Add(Report report)
+        public Report Add(Report report)
         {
-
             if (Get(report.Id) == null)
             {
                 List<Report> reports = GetAll();
@@ -84,7 +83,7 @@ namespace Repository
             return null;
         }
 
-        public  List<Report> GetAll()
+        public List<Report> GetAll()
         {
             string reportsSerialized = System.IO.File.ReadAllText(REPORT_FILE); //reportPath
 

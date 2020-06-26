@@ -130,6 +130,9 @@ namespace Services
             Room room1 = Get(id1);
             Room room2 = Get(id2);
 
+            if (room1 == null || room2 == null)
+                return null;
+
             if(room1.RoomType != room2.RoomType)
             {
                 return null;
@@ -194,6 +197,9 @@ namespace Services
             List<MedicalExam> medicalExams = new List<MedicalExam>();
             Room room = Get(id);
 
+            if (medicalExams == null || room == null)
+                return null;
+            
             foreach (var medicalExamId in room.MedicalExam)
             {
                 medicalExams.Add(_medicalExamService.Get(medicalExamId));
