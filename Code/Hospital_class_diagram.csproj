@@ -82,6 +82,7 @@
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GuestUserController.cs" />
+    <Compile Include="Repository\GuestUserRepository.cs" />
     <Compile Include="Repository\RenovationRepository.cs" />
     <Compile Include="Services\ScheduleMedicalExam.cs" />
     <Compile Include="Services\GuestUserService.cs" />

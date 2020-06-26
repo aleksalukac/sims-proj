@@ -24,6 +24,5 @@ namespace Model
         public System.Collections.Generic.List<int> SimilarDrug { get; set; }
       
         public List<int> ApprovedByDoctor { get; set; }
-   
    }
 }

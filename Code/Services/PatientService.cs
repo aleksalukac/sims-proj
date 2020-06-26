@@ -12,31 +12,32 @@ namespace Services
 {
    public class PatientService
    {
-      public MedicalRecord GetMedicalRecord(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public MedicalRecord GetMedicalRecord(int id)
+        {
+            throw new NotImplementedException();
+        }
       
-      public MedicalRecord UpdateMedicalRecord(Patient patient, MedicalRecord medicalRecord)
-      {
-         throw new NotImplementedException();
-      }
+        public MedicalRecord UpdateMedicalRecord(Patient patient, MedicalRecord medicalRecord)
+        {
+            throw new NotImplementedException();
+        }
       
-      public Patient HospitalizePatient(Patient patient, Room room)
-      {
-         throw new NotImplementedException();
-      }
+        public Patient HospitalizePatient(Patient patient, Room room)
+        {
+            throw new NotImplementedException();
+        }
+
         public Patient Add(Patient patient)
         {
             patient.Password = Crypt.Encrypt(patient.Password);
             return _patientRepository.Add(patient);
         }
         public List<Patient> GetAllPatient()
-      => _patientRepository.GetAll();
+            => _patientRepository.GetAll();
 
 
         public Patient GetPatient(int id)
-       => _patientRepository.Get(id);
+            => _patientRepository.Get(id);
 
         internal Patient Get(int id)
             => this._patientRepository.Get(id);

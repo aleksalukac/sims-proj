@@ -11,34 +11,35 @@ namespace Controllers
 {
    public class PatientController
    {
-      public MedicalRecord GetMedicalRecord(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public MedicalRecord GetMedicalRecord(int id)
+        {
+            throw new NotImplementedException();
+        }
       
-      public MedicalRecord UpdateMedicalRecord(Patient patient, MedicalRecord medicalRecord)
-      {
-         throw new NotImplementedException();
-      }
+        public MedicalRecord UpdateMedicalRecord(Patient patient, MedicalRecord medicalRecord)
+        {
+            throw new NotImplementedException();
+        }
+
         public Patient Add(Patient patient)
         {
             return _patientService.Add(patient);
         }
 
         public Patient HospitalizePatient(Patient patient, Room room)
-      {
-         throw new NotImplementedException();
-      }
+        {
+            throw new NotImplementedException();
+        }
       
-      public List<Patient> GetAllPatient()
-      {
+        public List<Patient> GetAllPatient()
+        {
             return _patientService.GetAllPatient();
         }
       
-      public Patient GetPatient(int id)
-      {
-         throw new NotImplementedException();
-      }
+        public Patient GetPatient(int id)
+        {
+            throw new NotImplementedException();
+        }
       
         private PatientService _patientService;
 

@@ -24,6 +24,9 @@ namespace Services
         public Model.DoctorReview SetDoctorReview(Model.DoctorReview doctorReview)
         {
             MedicalExam medicalExam = _medicalExamRepository.Get(doctorReview.MedicalExam);
+            if (medicalExam == null)
+                return null;
+
             medicalExam.DoctorReview = doctorReview;
             _medicalExamRepository.Update(medicalExam);
 

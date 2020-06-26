@@ -13,6 +13,7 @@ namespace Model
         private const string ID_PATH = @"../../RoomId.txt";
         public Room() : base(ID_PATH)
         {
+            MaxNumberOfPatients = 20;
             Renovation = new List<int>();
             Patient = new List<int>();
             MedicalExam = new List<int>();
@@ -23,6 +24,7 @@ namespace Model
 
         public string Name { get; set; }
 
+        public int MaxNumberOfPatients { get; set; }
         public System.Collections.Generic.List<int> Patient { get; set; }
         public System.Collections.Generic.List<int> MedicalExam { get; set; }
         public System.Collections.Generic.List<int> Renovation { get; set; }

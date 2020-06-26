@@ -13,20 +13,23 @@ namespace Model
             private const string ID_PATH = @"..\..\Data\MedicalExamId.txt";
             public MedicalExam() : base(ID_PATH)
             {
-
+                this.IsGuestUser = false;
             }
 
             public string Report { get; set; }
             public DateTime AppointmentStart { get; set; }
+
+            public const int appointmentDurationHours = 1;
+            
             public bool IsSurgery { get; set; }
-            public DateTime AppointmentEnd { get; set; }
 
             public int Doctor { get; set; }
             public DoctorReview DoctorReview { get; set; }
             public int MedicalRecord { get; set; }
             public int Room { get; set; }
       
-            public int GuestUser { get; set; }
+            public int Patient { get; set; }
+            public bool IsGuestUser { get; set; }
             public int TherapyDrug { get; set; }  
        }
 }

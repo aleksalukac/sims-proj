@@ -11,16 +11,18 @@ namespace Services
 {
    public class GuestUserService
    {
-      public User Register(User newUser)
-      {
-         throw new NotImplementedException();
-      }
-      
+        private GuestUserRepository _guestUserRepository;
         private MedicalExamRepository _medicalExamRepository;
 
-        public GuestUserService(MedicalExamRepository medicalExamRepository)
+        public User Register(User newUser)
+        {
+            throw new NotImplementedException();
+        }
+
+        public GuestUserService(MedicalExamRepository medicalExamRepository, GuestUserRepository guestUserRepository)
         {
             this._medicalExamRepository = medicalExamRepository;
+            this._guestUserRepository = guestUserRepository;
         }
     }
 }
