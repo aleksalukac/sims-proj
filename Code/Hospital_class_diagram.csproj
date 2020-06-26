@@ -79,8 +79,6 @@
     <Compile Include="Controllers\MedicalSupplyController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
-    <Compile Include="Controllers\FeedbackController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GuestUserController.cs" />
@@ -98,8 +96,6 @@
     <Compile Include="Services\RoomService.cs" />
     <Compile Include="Services\ResourceService.cs" />
     <Compile Include="Services\MedicalSupplyService.cs" />
-    <Compile Include="Services\FeedbackService.cs" />
-    <Compile Include="Services\QuestionService.cs" />
     <Compile Include="Services\DoctorReviewService.cs" />
     <Compile Include="Services\PriorityMedicalExamDTO.cs" />
     <Compile Include="Services\EmployeeService.cs" />
