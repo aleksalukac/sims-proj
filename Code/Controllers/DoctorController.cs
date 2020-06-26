@@ -28,12 +28,12 @@ namespace Controllers
             throw new NotImplementedException();
         }
       
-        public Doctor GetDoctor(int id)
+        public Doctor Get(int id)
         {
             return _doctorService.Get(id);
         }
       
-        public List<Doctor> GetAllDoctor()
+        public List<Doctor> GetAll()
         {
             return _doctorService.GetAll();
         }
@@ -52,7 +52,7 @@ namespace Controllers
 
         public Doctor Remove(int id)
         {
-            return _doctorService.Remove(GetDoctor(id));
+            return _doctorService.Remove(Get(id));
         }
     }
 }

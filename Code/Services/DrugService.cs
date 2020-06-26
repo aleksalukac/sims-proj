@@ -26,8 +26,17 @@ namespace Services
       {
          throw new NotImplementedException();
       }
-      
 
-        
+        internal List<Drug> GetAll()
+            => _drugRepository.GetAll();
+
+        internal Drug Get(int id)
+            => _drugRepository.Get(id);
+
+        internal Drug Update(Drug drug)
+            => _drugRepository.Update(drug);
+
+        internal Drug Add(Drug drug)
+            => _drugRepository.Add(drug);
     }
 }

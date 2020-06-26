@@ -11,15 +11,14 @@ namespace Model
    {
         public Manager()
         {
-
+            Report = new List<Report>();
         }
 
         public Manager(Employee employee) : base(employee)
         {
-
+            Report = new List<Report>();
         }
 
         public List<Report> Report { get; set; }
-        
    }
 }

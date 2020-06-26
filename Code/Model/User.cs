@@ -11,7 +11,8 @@ namespace Model
    {
         public User()
         {
-
+            Notification = new List<int>();
+            TextContent = new List<int>();
         }
 
         public string Email { get; set; }

@@ -45,7 +45,12 @@ namespace Controllers
       {
          throw new NotImplementedException();
       }
-      
+
+        public User GetByEmail(string email)
+        {
+            return _userService.GetByEmail(email);
+        }
+
         private UserService _userService;
 
         public UserController(UserService userService1)

@@ -14,7 +14,8 @@ namespace Model
 
         public MedicalRecord() : base(ID_PATH)
         {
-
+            MedicalExam = new List<int>();
+            Therapy = new List<int>();
         }
 
         public int Patient { get; set; }

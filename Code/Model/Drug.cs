@@ -14,7 +14,7 @@ namespace Model
 
         public Drug() : base(ID_PATH)
         {
-
+            ApprovedByDoctor = new List<int>();
         }
 
         public string Name { get; set; }

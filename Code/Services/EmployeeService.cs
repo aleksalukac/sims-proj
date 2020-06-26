@@ -62,6 +62,27 @@ namespace Services
             return _doctorService.Update(employee);
         }
 
+        internal Employee GetByEmail(string email)
+        {
+            List<Doctor> doctors = _doctorService.GetAll();
+            if(doctors != null)
+                foreach(var doctor in doctors)
+                {
+                    if (doctor.Email.Equals(email))
+                        return doctor;
+                }
+
+            Employee secretary = _secretaryRepository.Get();
+            if (secretary != null && secretary.Email.Equals(email))
+                return secretary;
+
+            Employee manager = _managerRepository.Get();
+            if (manager != null && manager.Email.Equals(email))
+                return manager;
+
+            return null;
+        }
+
         internal Employee Update(User user)
         {
             if (_secretaryRepository.Get(user.Id) != null)

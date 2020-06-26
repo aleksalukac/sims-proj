@@ -79,5 +79,19 @@ namespace Services
             }
             return null;
         }
+
+        internal Patient GetByEmail(string email)
+        {
+            List<Patient> patients = _patientRepository.GetAll();
+
+            if(patients != null)
+                foreach(var patient in patients)
+                {
+                    if (patient.Email.Equals(email))
+                        return patient;
+                }
+
+            return null;
+        }
     }
 }

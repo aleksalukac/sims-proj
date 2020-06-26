@@ -9,6 +9,11 @@ namespace Model
 {
    public class Patient : User
    {
+        public Patient()
+        {
+            Alergy = new List<int>();
+        }
+
         public string Jmbg { get; set; }
         public string InsuranceNumber { get; set; }
         public string Gender { get; set; }

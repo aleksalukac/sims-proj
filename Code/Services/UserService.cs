@@ -61,6 +61,16 @@ namespace Services
             return null;
         }
 
+        internal User GetByEmail(string email)
+        {
+            User user = _employeeService.GetByEmail(email);
+            if (user != null)
+                return user;
+
+            user = _patientService.GetByEmail(email);
+            return user;
+        }
+
         internal User Update(User user)
         {
             User returnValue = _employeeService.Update(user);

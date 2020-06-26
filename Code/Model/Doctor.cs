@@ -12,15 +12,20 @@ namespace Model
         public Doctor()
         {
             this.specialisationType = new SpecialisationType();
+            medicalExam = new List<int>();
+            drugsToApprove = new List<int>();
         }
 
         public Doctor(Employee employee) : base(employee)
         {
             this.specialisationType = new SpecialisationType();
+            medicalExam = new List<int>();
+            drugsToApprove = new List<int>();
         }
 
         public SpecialisationType specialisationType;
         public List<int> medicalExam;
+        public List<int> drugsToApprove;
    
    }
 }

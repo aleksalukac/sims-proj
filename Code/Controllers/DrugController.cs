@@ -27,5 +27,25 @@ namespace Controllers
         {
             this._drugService = drugService1;
         }
+
+        public List<Drug> GetAll()
+        {
+            return _drugService.GetAll();
+        }
+
+        public Drug Get(int id)
+        {
+            return _drugService.Get(id);
+        }
+
+        public Drug Update(Drug drug)
+        {
+            return _drugService.Update(drug);
+        }
+
+        public Drug Add(Drug drug)
+        {
+            return _drugService.Add(drug);
+        }
     }
 }
