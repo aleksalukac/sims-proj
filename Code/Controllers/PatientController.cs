@@ -11,16 +11,7 @@ namespace Controllers
 {
    public class PatientController
    {
-        public MedicalRecord GetMedicalRecord(int id)
-        {
-            throw new NotImplementedException();
-        }
       
-        public MedicalRecord UpdateMedicalRecord(Patient patient, MedicalRecord medicalRecord)
-        {
-            throw new NotImplementedException();
-        }
-
         public Patient Add(Patient patient)
         {
             return _patientService.Add(patient);

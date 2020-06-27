@@ -96,8 +96,6 @@
     <Compile Include="Services\RoomService.cs" />
     <Compile Include="Services\ResourceService.cs" />
     <Compile Include="Services\MedicalSupplyService.cs" />
-    <Compile Include="Services\FeedbackService.cs" />
-    <Compile Include="Services\QuestionService.cs" />
     <Compile Include="Services\DoctorReviewService.cs" />
     <Compile Include="Services\PriorityMedicalExamDTO.cs" />
     <Compile Include="Services\EmployeeService.cs" />

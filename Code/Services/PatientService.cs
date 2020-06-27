@@ -12,15 +12,7 @@ namespace Services
 {
    public class PatientService
    {
-        public MedicalRecord GetMedicalRecord(int id)
-        {
-            throw new NotImplementedException();
-        }
-      
-        public MedicalRecord UpdateMedicalRecord(Patient patient, MedicalRecord medicalRecord)
-        {
-            throw new NotImplementedException();
-        }
+     
       
         public Patient HospitalizePatient(Patient patient, Room room)
         {
