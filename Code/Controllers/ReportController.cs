@@ -19,9 +19,9 @@ namespace Controllers
             this._reportService = reportService1;
         }
 
-        public Report Add(int id, Report report)
+        public Report Add(int id, string reportText)
         {
-            return _reportService.Add(report);
+            return _reportService.Add(id, reportText);
         }
     }
 }
