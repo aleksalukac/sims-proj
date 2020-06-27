@@ -230,10 +230,5 @@ namespace Services
             this._renovationRepository = renovationRepository;
             this._medicalExamService = medicalExamService;
         }
-
-        public RoomService(RoomRepository roomRepository)
-        {
-            this.roomRepository = roomRepository;
-        }
     }
 }
