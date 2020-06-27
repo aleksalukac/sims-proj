@@ -11,21 +11,16 @@ namespace Services
 {
    public class MedicalExamService
    {
-      public List<MedicalExam> GetAll()
-      {
+        public List<MedicalExam> GetAll()
+        {
             return _medicalExamRepository.GetAll();
-      }
-      
-   
-      
-      
-      public MedicalExam Update(MedicalExam medicalExam)
-      {
+        }
+
+        public MedicalExam Update(MedicalExam medicalExam)
+        {
             return _medicalExamRepository.Update(medicalExam);
-      }
-      
-     
-    
+        }
+
         public MedicalExam Add(MedicalExam medicalExam) 
        =>     _medicalExamRepository.Add(medicalExam);
        
@@ -33,7 +28,7 @@ namespace Services
             return _medicalExamRepository.Remove(id);
         }
       
-      public ScheduleMedicalExam scheduleMedicalExam;
+        public ScheduleMedicalExam scheduleMedicalExam;
         private MedicalExamRepository _medicalExamRepository;
 
         internal MedicalExam Get(int id)

@@ -33,18 +33,9 @@ namespace Services
             return _patientService.Get(id);
         }
 
-        public User FindByEmail(string email)
-        {
-            User user = (User)_employeeService.FindByEmail(email);
-            if (user != null)
-                return user;
-
-            return (User)_patientService.FindByEmail(email);
-        }
-
         public Model.User Login(string email, string password)
         {
-            User user = FindByEmail(email);
+            User user = GetByEmail(email);
 
             if (user != null)
             {

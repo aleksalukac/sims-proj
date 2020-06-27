@@ -221,7 +221,6 @@ namespace Services
         private MedicalExamService _medicalExamService;
         private PatientService _patientService;
         private ResourceService _resourceService;
-        private RoomRepository roomRepository;
 
         public RoomService(RoomRepository roomRepository, RenovationRepository renovationRepository, MedicalExamService medicalExamService, PatientService patientService, ResourceService resourceService)
         {

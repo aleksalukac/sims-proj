@@ -18,10 +18,10 @@ namespace Services
             this._medicalExamRepository = medicalExamRepository;
         }
 
-        public Model.DoctorReview GetDoctorReview(MedicalExam medicalExam)
+        public Model.DoctorReview Get(MedicalExam medicalExam)
         => _medicalExamRepository.Get(medicalExam.Id).DoctorReview;
       
-        public Model.DoctorReview SetDoctorReview(Model.DoctorReview doctorReview)
+        public Model.DoctorReview Update(Model.DoctorReview doctorReview)
         {
             MedicalExam medicalExam = _medicalExamRepository.Get(doctorReview.MedicalExam);
             if (medicalExam == null)

@@ -34,6 +34,11 @@ namespace Controllers
             this._patientService = patientService1;
         }
 
+        public Patient Update(Patient patient)
+        {
+            return _patientService.Update(patient);
+        }
+
         public Patient Remove(int id)
         {
             return _patientService.Remove(id);

@@ -20,7 +20,6 @@ namespace Controllers
             return _userService.Get(id);
         }
       
-
         public User GetByEmail(string email)
         {
             return _userService.GetByEmail(email);
