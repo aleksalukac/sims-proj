@@ -38,9 +38,9 @@ namespace Controllers
             return _resourceService.Get(id);
         }
 
-        public Resource Remove(Resource resource)
+        public Resource Remove(int id)
         {
-            return _resourceService.Remove(resource.Id);
+            return _resourceService.Remove(id);
         }
     }
 }

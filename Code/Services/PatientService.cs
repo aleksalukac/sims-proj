@@ -17,15 +17,11 @@ namespace Services
             return _patientRepository.Add(patient);
         }
 
-        public List<Patient> GetAllPatient()
+        public List<Patient> GetAll()
             => _patientRepository.GetAll();
 
-
-        public Patient GetPatient(int id)
+        public Patient Get(int id)
             => _patientRepository.Get(id);
-
-        internal Patient Get(int id)
-            => this._patientRepository.Get(id);
 
         private PatientRepository _patientRepository;
 
@@ -48,6 +44,9 @@ namespace Services
             }
             return null;
         }
+
+        internal Patient Remove(int id)
+            => _patientRepository.Remove(id);
 
         internal Patient Update(User user)
         {

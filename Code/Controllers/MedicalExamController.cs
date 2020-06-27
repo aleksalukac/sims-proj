@@ -11,9 +11,9 @@ namespace Controllers
 {
    public class MedicalExamController
    {
-      public List<MedicalExam> GetAllMedicalExam()
+      public List<MedicalExam> GetAll()
       {
-            return _medicalExamService.GetAllMedicalExam();
+            return _medicalExamService.GetAll();
       }
 
         public MedicalExam Add(MedicalExam medicalExam)
@@ -21,9 +21,9 @@ namespace Controllers
             return _medicalExamService.Add(medicalExam);
         }
 
-      public MedicalExam UpdateMedicalExam(MedicalExam medicalExam)
+      public MedicalExam Update(MedicalExam medicalExam)
       {
-            return _medicalExamService.UpdateMedicalExam(medicalExam);
+            return _medicalExamService.Update(medicalExam);
       }
 
         public MedicalExam Remove(int id) {

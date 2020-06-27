@@ -11,7 +11,7 @@ namespace Services
 {
    public class MedicalExamService
    {
-      public List<MedicalExam> GetAllMedicalExam()
+      public List<MedicalExam> GetAll()
       {
             return _medicalExamRepository.GetAll();
       }
@@ -19,7 +19,7 @@ namespace Services
    
       
       
-      public MedicalExam UpdateMedicalExam(MedicalExam medicalExam)
+      public MedicalExam Update(MedicalExam medicalExam)
       {
             return _medicalExamRepository.Update(medicalExam);
       }

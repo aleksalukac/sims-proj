@@ -17,9 +17,9 @@ namespace Controllers
             return _patientService.Add(patient);
         }
       
-        public List<Patient> GetAllPatient()
+        public List<Patient> GetAll()
         {
-            return _patientService.GetAllPatient();
+            return _patientService.GetAll();
         }
         
         public Patient Get(int id)
@@ -32,6 +32,11 @@ namespace Controllers
         public PatientController(PatientService patientService1)
         {
             this._patientService = patientService1;
+        }
+
+        public Patient Remove(int id)
+        {
+            return _patientService.Remove(id);
         }
     }
 }
