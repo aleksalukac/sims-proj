@@ -18,7 +18,6 @@ namespace Model
 
         public string Text { get; set; }
         public DateTime DateCreated { get; set; }
-        public string Name { get; set; }
    
    }
 }
