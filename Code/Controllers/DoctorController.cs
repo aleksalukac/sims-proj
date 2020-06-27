@@ -40,14 +40,10 @@ namespace Controllers
       
         public Services.DoctorService doctorService;
 
-        public void WriteAll(List<Doctor> list)
-        {
-            _doctorService.WriteAll(list);
-        }
 
-        public void Update(Doctor doctor)
+        public Doctor Update(Doctor doctor)
         {
-            _doctorService.Update(doctor);
+            return _doctorService.Update(doctor);
         }
 
         public Doctor Remove(int id)

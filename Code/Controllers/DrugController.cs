@@ -11,10 +11,6 @@ namespace Controllers
 {
    public class DrugController
    {
-      public int ApproveDrug()
-      {
-         throw new NotImplementedException();
-      }
       
       public List<Drug> GetAllDrug()
       {
@@ -46,6 +42,11 @@ namespace Controllers
         public Drug Add(Drug drug)
         {
             return _drugService.Add(drug);
+        }
+
+        public Drug Approve(int drugId, int doctorId)
+        {
+            return _drugService.Approve(drugId, doctorId);
         }
     }
 }

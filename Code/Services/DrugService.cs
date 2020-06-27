@@ -12,16 +12,14 @@ namespace Services
    public class DrugService
     {
         private DrugRepository _drugRepository;
-        public DrugService(DrugRepository drugRepository1)
+        private DoctorService _doctorService;
+
+        public DrugService(DrugRepository drugRepository1, DoctorService doctorService)
         {
             this._drugRepository = drugRepository1;
+            this._doctorService = doctorService;
         }
 
-        public int ApproveDrug()
-      {
-         throw new NotImplementedException();
-      }
-      
       public List<Drug> GetAllDrug()
       {
          throw new NotImplementedException();
@@ -38,5 +36,25 @@ namespace Services
 
         internal Drug Add(Drug drug)
             => _drugRepository.Add(drug);
+
+        internal Drug Approve(int drugId, int doctorId)
+        {
+            Drug drug = Get(drugId);
+            Doctor doctor = _doctorService.Get(doctorId);
+
+            if (drug == null || doctor == null)
+                return null;
+
+            if (!drug.ApprovedByDoctor.Contains(doctor.Id))
+                return null;
+
+            drug.ApprovalCount++;
+            _doctorService.Update(doctor);
+
+            if (drug.ApprovalCount >= 2)
+                drug.Approved = true;
+
+            return Update(drug);
+        }
     }
 }

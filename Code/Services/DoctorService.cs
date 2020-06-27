@@ -36,10 +36,7 @@ namespace Services
         public Doctor Remove(Doctor doctor)
             => _doctorRepository.Remove(doctor.Id);
 
-        internal void WriteAll(List<Doctor> list)
-            => _doctorRepository.WriteAll(list);
-
-        internal void Update(Doctor doctor)
+        internal Doctor Update(Doctor doctor)
             => _doctorRepository.Update(doctor);
 
         internal Doctor FindByEmail(string email)
