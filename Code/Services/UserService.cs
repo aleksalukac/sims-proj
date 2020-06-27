@@ -93,26 +93,6 @@ namespace Services
                 return Get(parsedId);
             }
         }
-      
-        public Boolean ChangePassword(Model.User user, string newPassword)
-        {
-            throw new NotImplementedException();
-        }
-      
-        public List<Notification> GetNotifications(Model.User user)
-        {
-            throw new NotImplementedException();
-        }
-      
-        public TextContent CreateFeedback(Model.User user, TextContent feedback)
-        {
-            throw new NotImplementedException();
-        }
-      
-        public TextContent CreateQuestion(Model.User user, TextContent question)
-        {
-            throw new NotImplementedException();
-        }
    
    }
 }

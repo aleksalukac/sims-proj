@@ -22878,7 +22878,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o821">
 <a:CreationDate>1590588734</a:CreationDate>
 <a:ModificationDate>1593250277</a:ModificationDate>
-<a:Rect>((8258,392), (24186,1581))</a:Rect>
+<a:Rect>((8258,392), (24186,1515))</a:Rect>
 <a:ListOfPoints>((8258,617),(24186,617))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -22900,7 +22900,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o823">
 <a:CreationDate>1590588656</a:CreationDate>
 <a:ModificationDate>1593250267</a:ModificationDate>
-<a:Rect>((-3440,1579), (8258,2788))</a:Rect>
+<a:Rect>((-3440,1579), (8258,2722))</a:Rect>
 <a:ListOfPoints>((-3440,1804),(8258,1804))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25155,7 +25155,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o886">
 <a:CreationDate>1593214683</a:CreationDate>
 <a:ModificationDate>1593214903</a:ModificationDate>
-<a:Rect>((-133879,1276), (-123713,2538))</a:Rect>
+<a:Rect>((-133879,1276), (-123713,2408))</a:Rect>
 <a:ListOfPoints>((-133879,1576),(-123713,1576))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25197,7 +25197,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o891">
 <a:CreationDate>1593214383</a:CreationDate>
 <a:ModificationDate>1593214903</a:ModificationDate>
-<a:Rect>((-133879,4350), (-123713,5612))</a:Rect>
+<a:Rect>((-133879,4350), (-123713,5482))</a:Rect>
 <a:ListOfPoints>((-133879,4650),(-123713,4650))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25218,7 +25218,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o893">
 <a:CreationDate>1593214325</a:CreationDate>
 <a:ModificationDate>1593214325</a:ModificationDate>
-<a:Rect>((-123713,7500), (-101095,8768))</a:Rect>
+<a:Rect>((-123713,7500), (-101095,8640))</a:Rect>
 <a:ListOfPoints>((-101095,7800),(-123713,7800))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25239,7 +25239,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o896">
 <a:CreationDate>1593214320</a:CreationDate>
 <a:ModificationDate>1593214320</a:ModificationDate>
-<a:Rect>((-101095,7650), (-80324,8918))</a:Rect>
+<a:Rect>((-101095,7650), (-80324,8790))</a:Rect>
 <a:ListOfPoints>((-80324,7950),(-101095,7950))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25260,7 +25260,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o899">
 <a:CreationDate>1593214304</a:CreationDate>
 <a:ModificationDate>1593214304</a:ModificationDate>
-<a:Rect>((-80324,7950), (-48605,9218))</a:Rect>
+<a:Rect>((-80324,7950), (-48605,9144))</a:Rect>
 <a:ListOfPoints>((-48605,8250),(-80324,8250))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25282,7 +25282,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o902">
 <a:CreationDate>1593214256</a:CreationDate>
 <a:ModificationDate>1593214287</a:ModificationDate>
-<a:Rect>((-80324,9770), (-48305,10965))</a:Rect>
+<a:Rect>((-80324,9770), (-48305,10895))</a:Rect>
 <a:ListOfPoints>((-80324,9995),(-48305,9995))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25303,7 +25303,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o904">
 <a:CreationDate>1593214196</a:CreationDate>
 <a:ModificationDate>1593214287</a:ModificationDate>
-<a:Rect>((-101095,10003), (-80098,11198))</a:Rect>
+<a:Rect>((-101095,10003), (-80098,11076))</a:Rect>
 <a:ListOfPoints>((-101095,10228),(-80098,10228))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25324,7 +25324,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o906">
 <a:CreationDate>1593214130</a:CreationDate>
 <a:ModificationDate>1593214287</a:ModificationDate>
-<a:Rect>((-123487,10163), (-100869,11358))</a:Rect>
+<a:Rect>((-123487,10163), (-100869,11232))</a:Rect>
 <a:ListOfPoints>((-123487,10388),(-100869,10388))</a:ListOfPoints>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25345,7 +25345,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o908">
 <a:CreationDate>1593213914</a:CreationDate>
 <a:ModificationDate>1593214903</a:ModificationDate>
-<a:Rect>((-133879,12901), (-123713,14177))</a:Rect>
+<a:Rect>((-133879,12901), (-123713,14059))</a:Rect>
 <a:ListOfPoints>((-133879,13201),(-123713,13201))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25366,7 +25366,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <o:MessageSymbol Id="o911">
 <a:CreationDate>1593213854</a:CreationDate>
 <a:ModificationDate>1593214903</a:ModificationDate>
-<a:Rect>((-133879,10351), (-123713,11621))</a:Rect>
+<a:Rect>((-133879,10351), (-123713,11499))</a:Rect>
 <a:ListOfPoints>((-133879,10651),(-123713,10651))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25498,7 +25498,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <a:CreationDate>1591724692</a:CreationDate>
 <a:ModificationDate>1593217995</a:ModificationDate>
 <a:CenterTextOffset>(-3825, 75)</a:CenterTextOffset>
-<a:Rect>((-138921,14585), (-123713,15940))</a:Rect>
+<a:Rect>((-138921,14585), (-123713,15824))</a:Rect>
 <a:ListOfPoints>((-133879,14885),(-123713,14885))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -25626,7 +25626,7 @@ DESTINATION 0 Arial,8,N</a:FontList>
 <a:CreationDate>1591723206</a:CreationDate>
 <a:ModificationDate>1593214903</a:ModificationDate>
 <a:CenterTextOffset>(-472, 202)</a:CenterTextOffset>
-<a:Rect>((-133879,6095), (-123713,7565))</a:Rect>
+<a:Rect>((-133879,6095), (-123713,7435))</a:Rect>
 <a:ListOfPoints>((-123713,6395),(-133879,6395))</a:ListOfPoints>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>12615808</a:LineColor>
@@ -32262,7 +32262,7 @@ UNSUCCESSFUL: Patient gets a notification stating the problem.\par
 <a:Code>Hospital</a:Code>
 <a:CreationDate>1587842808</a:CreationDate>
 <a:Creator>Aleksa</a:Creator>
-<a:ModificationDate>1593248974</a:ModificationDate>
+<a:ModificationDate>1593250490</a:ModificationDate>
 <a:Modifier>Aleksa</a:Modifier>
 <a:TargetModelURL>file:///.</a:TargetModelURL>
 <a:TargetModelID>C72492E8-3787-4446-AD0E-9EE222416E1E</a:TargetModelID>

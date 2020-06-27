@@ -11,11 +11,6 @@ namespace Controllers
 {
    public class GuestUserController
    {
-      public User Register(User newUser)
-      {
-         throw new NotImplementedException();
-      }
-      
         private GuestUserService _guestUserService;
 
         public GuestUserController(GuestUserService guestUserService1)

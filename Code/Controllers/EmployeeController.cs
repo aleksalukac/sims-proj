@@ -11,11 +11,6 @@ namespace Controllers
 {
    public class EmployeeController
    {
-      public Secretary EditProfile(Model.Employee employee)
-      {
-         throw new NotImplementedException();
-      }
-
         public Employee Get()
         {
             return _employeeService.Get();

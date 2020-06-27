@@ -11,10 +11,6 @@ namespace Controllers
 {
    public class ReportController
    {
-      public Report CreateReport(Report report)
-      {
-         throw new NotImplementedException();
-      }
       
         private ReportService _reportService;
 

@@ -12,16 +12,6 @@ namespace Controllers
 {
    public class DoctorReviewController
    {
-      public Model.DoctorReview GetDoctorReview(MedicalExam medicalExam)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Model.DoctorReview SetDoctorReview(Model.DoctorReview doctorReview, MedicalExam medicalExam)
-      {
-         throw new NotImplementedException();
-      }
-      
         private DoctorReviewService _doctorReviewService;
 
         public DoctorReviewController(DoctorReviewService doctorReviewService1)

@@ -16,20 +16,10 @@ namespace Controllers
         {
             return _patientService.Add(patient);
         }
-
-        public Patient HospitalizePatient(Patient patient, Room room)
-        {
-            throw new NotImplementedException();
-        }
       
         public List<Patient> GetAllPatient()
         {
             return _patientService.GetAllPatient();
-        }
-      
-        public Patient GetPatient(int id)
-        {
-            throw new NotImplementedException();
         }
       
         private PatientService _patientService;

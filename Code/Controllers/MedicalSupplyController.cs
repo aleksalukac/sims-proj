@@ -11,11 +11,6 @@ namespace Controllers
 {
    public class MedicalSupplyController
    {
-      public MedicalSupply GetMedicalSupplyByName(string name)
-      {
-         throw new NotImplementedException();
-      }
-
         private MedicalSupplyService _medicalSupplyService;
 
         public MedicalSupplyController(MedicalSupplyService medicalSupplyService1)

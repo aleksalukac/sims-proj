@@ -14,11 +14,6 @@ namespace Services
         private GuestUserRepository _guestUserRepository;
         private MedicalExamRepository _medicalExamRepository;
 
-        public User Register(User newUser)
-        {
-            throw new NotImplementedException();
-        }
-
         public GuestUserService(MedicalExamRepository medicalExamRepository, GuestUserRepository guestUserRepository)
         {
             this._medicalExamRepository = medicalExamRepository;

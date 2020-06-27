@@ -14,16 +14,6 @@ namespace Services
    public class RoomService 
    {
 
-        public List<Room> GetAllRoom()
-        {
-            throw new NotImplementedException();
-        }
-      
-        public Room SetRoomRenovation(DateTime start, DateTime finish)
-        {
-            throw new NotImplementedException();
-        }
-
         internal List<Room> GetFreeRooms(DateTime examDateTime, RoomType roomType)
         {
             List<Room> allRooms = GetByType(roomType);
@@ -65,16 +55,6 @@ namespace Services
 
         public Room Get(int id)
               => _roomRepository.Get(id);
-
-        public List<Room> GetFreeRoom(DateTime dateTime)
-        {
-            throw new NotImplementedException();
-        }
-      
-        public List<Room> GetOccupiedRoom(DateTime dateTime)
-        {
-            throw new NotImplementedException();
-        }
 
         internal Renovation GetFutureRenovation(int id)
         {

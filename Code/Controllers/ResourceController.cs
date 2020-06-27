@@ -11,16 +11,6 @@ namespace Controllers
 {
    public class ResourceController
    {
-      public List<Resource> GetResourceByType()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Resource ChangeResourceRoom(Resource resource, Room room)
-      {
-         throw new NotImplementedException();
-      }
-      
         private ResourceService _resourceService;
 
         public ResourceController(ResourceService resourceService1)
