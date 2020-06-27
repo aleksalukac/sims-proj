@@ -36,6 +36,7 @@ namespace Repository
 
             return Get();
         }
+
         public Manager Get(int id)
         {
             if (this.Get().Id == id)
