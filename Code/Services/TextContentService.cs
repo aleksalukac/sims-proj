@@ -33,5 +33,10 @@ namespace Hospital_class_diagram.Services
             return textContentsByType;
         }
 
+        internal TextContent Update(TextContent textContent)
+            => _textContentRepository.Update(textContent);
+
+        internal TextContent Get(int id)
+            => _textContentRepository.Get(id);
     }
 }

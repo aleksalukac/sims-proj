@@ -25,5 +25,15 @@ namespace Hospital_class_diagram.Controllers
         {
             return _textContentService.Add(textContent);
         }
+
+        public TextContent Get(int id)
+        {
+            return _textContentService.Get(id);
+        }
+
+        public TextContent Update(TextContent textContent)
+        {
+            return _textContentService.Update(textContent);
+        }
     }
 }

@@ -16,16 +16,17 @@ namespace Controllers
         {
             return _patientService.Add(patient);
         }
-        public Patient GetPatient(int id)
-        {
-            return _patientService.GetPatient(id);
-        }
-
+      
         public List<Patient> GetAllPatient()
         {
             return _patientService.GetAllPatient();
         }
-      
+        
+        public Patient Get(int id)
+        {
+            return _patientService.Get(id);
+        }
+
         private PatientService _patientService;
 
         public PatientController(PatientService patientService1)
