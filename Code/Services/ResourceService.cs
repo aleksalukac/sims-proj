@@ -11,16 +11,6 @@ namespace Services
 {
    public class ResourceService
    {
-      public List<Resource> GetResourceByType()
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Resource ChangeResourceRoom(Resource resource, Room room)
-      {
-         throw new NotImplementedException();
-      }
-      
         private ResourceRepository _resourceRepository;
 
         public ResourceService(ResourceRepository resourceRepository1)

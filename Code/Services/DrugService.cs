@@ -20,10 +20,6 @@ namespace Services
             this._doctorService = doctorService;
         }
 
-      public List<Drug> GetAllDrug()
-      {
-         throw new NotImplementedException();
-      }
 
         internal Drug GetByName(string name)
         {

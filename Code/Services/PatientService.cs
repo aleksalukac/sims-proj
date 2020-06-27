@@ -12,13 +12,6 @@ namespace Services
 {
    public class PatientService
    {
-     
-      
-        public Patient HospitalizePatient(Patient patient, Room room)
-        {
-            throw new NotImplementedException();
-        }
-
         public Patient Add(Patient patient)
         {
             return _patientRepository.Add(patient);

@@ -11,12 +11,6 @@ namespace Services
 {
    public class EmployeeService
    {
-        public Secretary EditProfile(Model.Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-
         private ManagerRepository _managerRepository;
         private DoctorService _doctorService;
 

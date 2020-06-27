@@ -11,10 +11,6 @@ namespace Services
 {
    public class MedicalSupplyService
    {
-      public MedicalSupply GetMedicalSupplyByName(string name)
-      {
-         throw new NotImplementedException();
-      }
       
         private MedicalSupplyRepository _medicalSupplyRepository;
 

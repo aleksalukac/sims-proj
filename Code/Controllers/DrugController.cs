@@ -11,12 +11,7 @@ namespace Controllers
 {
    public class DrugController
    {
-      
-        public List<Drug> GetAllDrug()
-        {
-            throw new NotImplementedException();
-        }
-      
+            
         private DrugService _drugService;
 
         public DrugController(DrugService drugService1)

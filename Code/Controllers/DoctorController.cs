@@ -23,10 +23,6 @@ namespace Controllers
             return _doctorService.Add(doctor);
         }
 
-        public SpecialisationType GetSpecialisation()
-        {
-            throw new NotImplementedException();
-        }
       
         public Doctor Get(int id)
         {

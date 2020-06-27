@@ -11,10 +11,6 @@ namespace Services
 {
    public class ReportService
    {
-      public Report CreateReport(Report report)
-      {
-         throw new NotImplementedException();
-      }
       
         private ReportRepository _reportRepository;
 
