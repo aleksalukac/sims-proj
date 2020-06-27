@@ -12,16 +12,21 @@ namespace Controllers
    public class DrugController
    {
       
-      public List<Drug> GetAllDrug()
-      {
-         throw new NotImplementedException();
-      }
+        public List<Drug> GetAllDrug()
+        {
+            throw new NotImplementedException();
+        }
       
         private DrugService _drugService;
 
         public DrugController(DrugService drugService1)
         {
             this._drugService = drugService1;
+        }
+
+        public Drug GetByName(string name)
+        {
+            return _drugService.GetByName(name);
         }
 
         public List<Drug> GetAll()

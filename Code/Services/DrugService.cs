@@ -25,6 +25,17 @@ namespace Services
          throw new NotImplementedException();
       }
 
+        internal Drug GetByName(string name)
+        {
+            List<Drug> drugs = GetAll();
+            foreach(var drug in drugs)
+            {
+                if (drug.Name.ToUpper().Equals(name.ToUpper()))
+                    return drug;
+            }
+            return null;
+        }
+
         internal List<Drug> GetAll()
             => _drugRepository.GetAll();
 
