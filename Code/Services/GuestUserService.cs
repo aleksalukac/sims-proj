@@ -12,11 +12,9 @@ namespace Services
    public class GuestUserService
    {
         private GuestUserRepository _guestUserRepository;
-        private MedicalExamRepository _medicalExamRepository;
 
-        public GuestUserService(MedicalExamRepository medicalExamRepository, GuestUserRepository guestUserRepository)
+        public GuestUserService( GuestUserRepository guestUserRepository)
         {
-            this._medicalExamRepository = medicalExamRepository;
             this._guestUserRepository = guestUserRepository;
         }
         public GuestUser Add(GuestUser guestUser) {
