@@ -54,6 +54,12 @@ namespace Hospital.Pages
                 return;
             }
 
+            if(_drugController.GetByName(nameTextBox.Text) != null)
+            {
+                System.Windows.MessageBox.Show("Ime leka vec postoji.");
+                return;
+            }
+
             DrugView newDrug = new DrugView();
             newDrug.Name = nameTextBox.Text;
             newDrug.Approved = false;

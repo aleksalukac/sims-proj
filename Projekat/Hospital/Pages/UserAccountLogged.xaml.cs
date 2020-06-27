@@ -126,24 +126,25 @@ namespace Hospital.Pages
 
             if(drug != null)
             {
-                drug.ApprovalCount++;
-
                 User user = _userController.GetLoggedUser();
                 Doctor doctor = _doctorController.Get(user.Id);
-                doctor.Notification.Remove(notification.Id);
-                _doctorController.Update(doctor);
 
-                if (drug.ApprovalCount >= 2)
-                    drug.Approved = true;
+                drug = _drugController.Approve(drug.Id, doctor.Id);               
 
-                _drugController.Update(drug);
+                if(drug != null)
+                {
+                    doctor.Notification.Remove(notification.Id);
+                    doctor = _doctorController.Update(doctor);
 
-                List<Notification> notifications = new List<Notification>();
+                    List<Notification> notifications = new List<Notification>();
 
-                foreach (var notificationId in doctor.Notification)
-                    notifications.Add(_notificationController.Get(notificationId));
+                    foreach (var notificationId in doctor.Notification)
+                        notifications.Add(_notificationController.Get(notificationId));
 
-                notificationDataGrid.ItemsSource = notifications;
+                    notificationDataGrid.ItemsSource = notifications;
+
+                }
+
             }
 
 

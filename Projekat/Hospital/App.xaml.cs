@@ -41,14 +41,12 @@ namespace Hospital
             var notificationService = new NotificationService(notificationRepository);
             var doctorService = new DoctorService(doctorRepository, notificationService);
             var doctorReviewService = new DoctorReviewService(medicalExamRepository);
-            var drugService = new DrugService(drugRepository);
+            var drugService = new DrugService(drugRepository, doctorService);
             var employeeService = new EmployeeService(managerRepository, doctorService, secretaryRepository);
-            var feedbackService = new FeedbackService(textContentRepository);
             var guestUserService = new GuestUserService(medicalExamRepository, guestUserRepository);
             var medicalExamService = new MedicalExamService(medicalExamRepository);
             var medicalSupplyService = new MedicalSupplyService(medicalSupplyRepository);
             var patientService = new PatientService(patientRepository);
-            var questionService = new QuestionService(textContentRepository);
             var reportService = new ReportService(reportRepository);
             var resourceService = new ResourceService(resourceRepository);
             var roomService = new RoomService(roomRepository, renovationRepository, medicalExamService, patientService, resourceService);
@@ -61,12 +59,10 @@ namespace Hospital
             DoctorReviewController = new DoctorReviewController(doctorReviewService);
             DrugController = new DrugController(drugService);
             EmployeeController = new EmployeeController(employeeService);
-            FeedbackController = new FeedbackController(feedbackService);
             GuestUserController = new GuestUserController(guestUserService);
             MedicalExamController = new MedicalExamController(medicalExamService);
             MedicalSupplyController = new MedicalSupplyController(medicalSupplyService);
             PatientController = new PatientController(patientService);
-            QuestionController = new QuestionController(questionService);
             ReportController = new ReportController(reportService);
             ResourceController = new ResourceController(resourceService);
             RoomController = new RoomController(roomService);
@@ -79,12 +75,10 @@ namespace Hospital
         public DoctorReviewController DoctorReviewController { get; private set; }
         public DrugController DrugController { get; private set; }
         public EmployeeController EmployeeController { get; private set; }
-        public FeedbackController FeedbackController { get; private set; }
         public GuestUserController GuestUserController { get; private set; }
         public MedicalExamController MedicalExamController { get; private set; }
         public MedicalSupplyController MedicalSupplyController { get; private set; }
         public PatientController PatientController { get; private set; }
-        public QuestionController QuestionController { get; private set; }
         public ReportController ReportController { get; private set; }
         public ResourceController ResourceController { get; private set; }
         public RoomController RoomController { get; private set; }
