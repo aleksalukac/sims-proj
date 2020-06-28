@@ -1,1 +1,1 @@
-{"Report":null,"WorkingHours":null,"Vacation":null,"Email":"nole@clinic.com","Password":"JhVht0fGPY4=","Notification":null,"TextContent":null,"Name":"Novak","Surname":"Djokovic","DateOfBirth":"0001-01-01T00:00:00","Id":9}
+{"Report":[17,18],"PhoneNumber":null,"WorkingHours":null,"Vacation":null,"Email":"nole@clinic.com","Password":"JhVht0fGPY4=","Notification":null,"TextContent":null,"Name":"Novak","Surname":"Djokovic","DateOfBirth":"0001-01-01T00:00:00","Id":9}

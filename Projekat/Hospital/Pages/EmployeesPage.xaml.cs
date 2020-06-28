@@ -141,5 +141,10 @@ namespace Hospital.Pages
                 Doctorframe.Navigate(openPage);
             }
         }
+
+        private void reportButton_Click(object sender, RoutedEventArgs e)
+        {
+            Doctorframe.Navigate(new DoctorReportPage());
+        }
     }
 }

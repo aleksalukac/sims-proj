@@ -1,0 +1,132 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E99C9F0D-9ABB-437E-A494-3C3EBB9BF9D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hospital_class_diagram</RootNamespace>
+    <AssemblyName>Hospital_class_diagram</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\TextContentController.cs" />
+    <Compile Include="Crypt\Crypt.cs" />
+    <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="Model\GuestUser.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\MedicalRecord.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\WorkingHours.cs" />
+    <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\Secretary.cs" />
+    <Compile Include="Model\Manager.cs" />
+    <Compile Include="Model\DoctorReview.cs" />
+    <Compile Include="Model\Drug.cs" />
+    <Compile Include="Model\MedicalExam.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\RoomType.cs" />
+    <Compile Include="Model\Resource.cs" />
+    <Compile Include="Model\ResourceType.cs" />
+    <Compile Include="Model\MedicalSupply.cs" />
+    <Compile Include="Model\TextContent.cs" />
+    <Compile Include="Model\SpecialisationType.cs" />
+    <Compile Include="Model\Vacation.cs" />
+    <Compile Include="Model\Notification.cs" />
+    <Compile Include="Model\TextContentType.cs" />
+    <Compile Include="Model\Renovation.cs" />
+    <Compile Include="Model\RenovationType.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Controllers\MedicalExamController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\DoctorReviewController.cs" />
+    <Compile Include="Controllers\DrugController.cs" />
+    <Compile Include="Controllers\MedicalSupplyController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\GuestUserController.cs" />
+    <Compile Include="Repository\GuestUserRepository.cs" />
+    <Compile Include="Repository\RenovationRepository.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\ScheduleMedicalExam.cs" />
+    <Compile Include="Services\GuestUserService.cs" />
+    <Compile Include="Services\TextContentService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\DrugService.cs" />
+    <Compile Include="Services\PatientService.cs" />
+    <Compile Include="Services\DoctorService.cs" />
+    <Compile Include="Services\MedicalExamService.cs" />
+    <Compile Include="Services\RoomService.cs" />
+    <Compile Include="Services\ResourceService.cs" />
+    <Compile Include="Services\MedicalSupplyService.cs" />
+    <Compile Include="Services\DoctorReviewService.cs" />
+    <Compile Include="Services\PriorityMedicalExamDTO.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\ReportService.cs" />
+    <Compile Include="Services\ScheduleMedicaExamSecretary.cs" />
+    <Compile Include="Services\ScheduleMedicaExamGuestUser.cs" />
+    <Compile Include="Services\ScheduleMedicalExamPatient.cs" />
+    <Compile Include="Repository\DrugRepository.cs" />
+    <Compile Include="Repository\RoomRepository.cs" />
+    <Compile Include="Repository\ResourceRepository.cs" />
+    <Compile Include="Repository\MedicalSupplyRepository.cs" />
+    <Compile Include="Repository\NotificationRepository.cs" />
+    <Compile Include="Repository\TextContentRepository.cs" />
+    <Compile Include="Repository\MedicalExamRepository.cs" />
+    <Compile Include="Repository\PatientRepository.cs" />
+    <Compile Include="Repository\DoctorRepository.cs" />
+    <Compile Include="Repository\ManagerRepository.cs" />
+    <Compile Include="Repository\SecretaryRepository.cs" />
+    <Compile Include="Repository\MedicalRecordRepository.cs" />
+    <Compile Include="Repository\ReportRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

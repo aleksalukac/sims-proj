@@ -19,6 +19,7 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" Margin="105,53,0,0" Source="/Hospital;component/Data/search.png"/>
         <Button x:Name="button" Content="Uredi profil lekara" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="260,490,0,0" RenderTransformOrigin="4.4,1.129" Click="button_Click" Height="40"/>
         <Button x:Name="button_Copy" Content="Uredi profil sekretara" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="455,490,0,0" RenderTransformOrigin="4.4,1.129" Click="button2_Click" Height="40"/>
+        <Button x:Name="button_Copy1" Content="Izveštaj o lekarima" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="27,490,0,0" RenderTransformOrigin="4.4,1.129" Click="reportButton_Click" Height="40"/>
 
     </Grid>
 </Page>

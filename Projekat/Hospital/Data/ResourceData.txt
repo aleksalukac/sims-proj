@@ -1,1 +1,1 @@
-[{"ResourceType":{"Name":"prozor"},"Room":1693,"Id":11},{"ResourceType":{"Name":"sto"},"Room":353,"Id":35}]
+[{"ResourceType":{"Name":"prozor"},"Room":2285,"Id":11},{"ResourceType":{"Name":"sto"},"Room":353,"Id":35}]

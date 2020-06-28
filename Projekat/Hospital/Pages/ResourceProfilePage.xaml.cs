@@ -124,7 +124,7 @@ namespace Hospital.Pages
             {
                 if (_resourceController.Get(newResource.Id) != null)
                 {
-                    _resourceController.Remove(newResource.Convert());
+                    _resourceController.Remove(newResource.Convert().Id);
                 }
                 ResourcePage.ResourceList.Remove(newResource);
                 System.Windows.MessageBox.Show("Promene uspešno sačuvane");

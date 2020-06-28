@@ -43,11 +43,11 @@ namespace Hospital
             var doctorReviewService = new DoctorReviewService(medicalExamRepository);
             var drugService = new DrugService(drugRepository, doctorService);
             var employeeService = new EmployeeService(managerRepository, doctorService, secretaryRepository);
-            var guestUserService = new GuestUserService(medicalExamRepository, guestUserRepository);
+            var guestUserService = new GuestUserService(guestUserRepository);
             var medicalExamService = new MedicalExamService(medicalExamRepository);
             var medicalSupplyService = new MedicalSupplyService(medicalSupplyRepository);
             var patientService = new PatientService(patientRepository);
-            var reportService = new ReportService(reportRepository);
+            var reportService = new ReportService(reportRepository, managerRepository);
             var resourceService = new ResourceService(resourceRepository);
             var roomService = new RoomService(roomRepository, renovationRepository, medicalExamService, patientService, resourceService);
             var userService = new UserService(employeeService, patientService);

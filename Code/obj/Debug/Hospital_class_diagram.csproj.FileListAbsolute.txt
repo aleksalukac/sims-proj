@@ -25,3 +25,12 @@ C:\Users\Aleksa\Documents\GitHub\sims-proj\Code\bin\Debug\Hospital_class_diagram
 C:\Users\Aleksa\Documents\GitHub\sims-proj\Code\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Aleksa\Documents\GitHub\sims-proj\Code\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Aleksa\Documents\GitHub\sims-proj\Code\obj\Debug\Hospital_class_diagram.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\sims-proj\Code\obj\Debug\Hospital_class_diagram.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\sims-proj\Code\obj\Debug\Hospital_class_diagram.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\sims-proj\Code\obj\Debug\Hospital_class_diagram.dll
+C:\Users\Lenovo\Desktop\sims-proj\Code\obj\Debug\Hospital_class_diagram.pdb
+C:\Users\Lenovo\Desktop\sims-proj\Code\bin\Debug\Hospital_class_diagram.dll
+C:\Users\Lenovo\Desktop\sims-proj\Code\bin\Debug\Hospital_class_diagram.pdb
+C:\Users\Lenovo\Desktop\sims-proj\Code\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lenovo\Desktop\sims-proj\Code\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Lenovo\Desktop\sims-proj\Code\obj\Debug\Hospital_class_diagram.csproj.CopyComplete
